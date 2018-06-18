@@ -19,4 +19,12 @@ export default class ProgramVersion {
     get file() {
         return this._file;
     }
+
+    get stats() {
+        return this._stats;
+    }
+
+    set stats(newStats) {
+        this._stats = newStats;
+    }
 }

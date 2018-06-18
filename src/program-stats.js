@@ -7,14 +7,16 @@ import xpath from "xpath";
 
 import {increaseObjectKey} from "./utils";
 
+const readFile = promisify(fs.readFile);
 const parser = new xmldom.DOMParser();
 
-const readFile = promisify(fs.readFile);
+export async function getProgramStatsFromFile(file) {
+    return await getProgramStatsFromString(await readFile(file, 'UTF-8'));
+}
 
-export default async function getProgramStats(programVersion) {
+export async function getProgramStatsFromString(xmlString) {
     const stats = {};
 
-    const xmlString = await readFile(programVersion.file, 'UTF-8');
     const document = parser.parseFromString(xmlString);
     stats.languageVersion = parseFloat(xpath.select(`string(/program/header/catrobatLanguageVersion)`, document));
     if (stats.languageVersion < 0.94) {
