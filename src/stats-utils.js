@@ -56,3 +56,5 @@ function parseProgramVersion(file) {
         file
     );
 }
+
+export const screenSizeToKey = (screenSize) => `${screenSize.width}x${screenSize.height}`;
