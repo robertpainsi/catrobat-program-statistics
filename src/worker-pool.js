@@ -18,8 +18,8 @@ class MultiThreadedPool {
     notifyWorkers = [];
     availableWorkers = [];
 
-    constructor(threadsCount) {
-        for (let i = 0; i < threadsCount; i++) {
+    constructor() {
+        for (let i = 0; i < config.cpuCount; i++) {
             const workerExecArgv = process.execArgv.map((arg) => {
                 if (arg.indexOf('--inspect') !== -1) {
                     return `--inspect-brk=${process.debugPort + (i + 1)}`
@@ -67,9 +67,9 @@ class MultiThreadedPool {
 
 function getPool(cpuCount) {
     if (cpuCount === 1) {
-        return new SingleThreadedPool();
+        return SingleThreadedPool;
     } else {
-        return new MultiThreadedPool(cpuCount);
+        return MultiThreadedPool;
     }
 }
 
