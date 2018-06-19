@@ -6,6 +6,7 @@ import xmldom from "xmldom";
 import xpath from "xpath";
 
 import {increaseObjectKey} from "./utils";
+import {getFeaturesFromFormula, getFeaturesFromBrick} from "./program-feature-utils";
 
 const readFile = promisify(fs.readFile);
 const parser = new xmldom.DOMParser();
@@ -88,13 +89,15 @@ export async function getProgramStatsFromString(xmlString) {
         }
     }
 
+    const features = [];
     for (const brick of [...scripts, ...bricks]) {
         stats.bricks++;
-        increaseObjectKey(stats.brickUsage, brick.getAttribute('type'));
+        let type = brick.getAttribute('type');
+        increaseObjectKey(stats.brickUsage, type);
+        features.push(...getFeaturesFromBrick(type));
     }
-
     for (const formula of formulas) {
-        const type = xpath.select1(`type`, formula).textContent;
+        let type = xpath.select1(`type`, formula).textContent;
         switch (type) {
             case `NUMBER`:
             case `STRING`:
@@ -103,18 +106,25 @@ export async function getProgramStatsFromString(xmlString) {
             case `BRACKET`:
             case `COLLISION_FORMULA`:
                 increaseObjectKey(stats.formulaUsage, type);
+                features.push(...getFeaturesFromFormula(type));
                 break;
             default:
-                const value = xpath.select1(`value`, formula).textContent;
+                let value = xpath.select1(`value`, formula).textContent;
                 if (!type || !value) {
                     throw new Error(`Incomplete formula ${type}: ${value}`);
                 }
 
+                if (type === 'SENSOR' && value === 'OBJECT_GHOSTEFFECT') {
+                    value = 'OBJECT_TRANSPARENCY';
+                }
+
                 stats.formulaUsage[type] = stats.formulaUsage[type] || {};
                 increaseObjectKey(stats.formulaUsage[type], value);
+                features.push(...getFeaturesFromFormula(value, type));
                 break;
         }
     }
+    stats.features = [...new Set(features)];
 
     return stats;
 }
