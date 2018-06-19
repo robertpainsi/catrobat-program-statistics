@@ -93,6 +93,17 @@ export async function getProgramStatsFromString(xmlString) {
     for (const brick of [...scripts, ...bricks]) {
         stats.bricks++;
         let type = brick.getAttribute('type');
+
+        if (type === 'LoopEndlessBrick') {
+            type = 'LoopEndBrick';
+        } else if (type === 'ShowVariableBrick') {
+            type = 'ShowTextBrick';
+        } else if (type === 'IfThenLogicBeginBrick') {
+            type = 'IfLogicBeginBrick';
+        } else if (type === 'IfThenLogicEndBrick') {
+            type = 'IfLogicEndBrick';
+        }
+
         increaseObjectKey(stats.brickUsage, type);
         features.push(...getFeaturesFromBrick(type));
     }
