@@ -9,15 +9,15 @@ const PEN = 'pen';
 const PHYSICS = 'physics';
 const TOUCH = 'touch';
 const FINGER = 'finger';
-const FACE_DETECTION = 'face-detection';
-const DATE_TIME = 'date-time';
-const SPEECH = 'text-to-speech';
+const FACE_DETECTION = 'faceDetection';
+const DATE_TIME = 'dateTime';
+const SPEECH = 'textToSpeech';
 const CAST = 'cast';
-const USER_BRICK = 'user-brick';
+const USER_BRICK = 'userBrick';
 
 const HARDWARE = 'hardware';
-const EXTERNAL_HARDWARE = 'external-hardware';
-const INTERNAL_HARDWARE = 'internal-hardware';
+const EXTERNAL_HARDWARE = 'externalHardware';
+const INTERNAL_HARDWARE = 'internalHardware';
 const BLUETOOTH = 'bluetooth';
 const WLAN = 'wlan';
 const NFC = 'nfc';
@@ -25,13 +25,13 @@ const NFC = 'nfc';
 const CAMERA = 'camera';
 const FLASH = 'flash';
 const LOCATION = 'location';
-const PHONE_SENSOR = 'phone-sensor';
+const PHONE_SENSOR = 'phoneSensor';
 
 const ARDUINO = 'arduino';
 const DRONE = 'drone';
 const LEGO = 'lego';
 const PHIRO = 'phiro';
-const RASPBERRY_PI = 'raspberry-pi';
+const RASPBERRY_PI = 'raspberryPi';
 
 // Feature Groups
 const VARIABLE_FEATURES = [VARIABLE];
