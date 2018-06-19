@@ -3,6 +3,7 @@
 import config from "./config";
 import {increaseObjectKey, pushIfDefined} from "./utils";
 import {getProgramHistories, screenSizeToKey} from "./stats-utils";
+import {getDisplayInfo} from "./stats-display-info";
 
 (async function() {
     console.time('runtime');
@@ -36,7 +37,7 @@ import {getProgramHistories, screenSizeToKey} from "./stats-utils";
     }
 
     const stats = {
-        display: {}, // TODO
+        display: getDisplayInfo(),
         overall: getOverallStats(allLatestVersions),
         currentYear: getOverallStats(currentYearLatestVersions),
         lastYear: getOverallStats(lastYearLatestVersions),
