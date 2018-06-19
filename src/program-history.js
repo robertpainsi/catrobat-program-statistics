@@ -32,4 +32,12 @@ export default class ProgramHistory {
     getVersionsBetween(from, to) {
         return this._versions.filter(({uploadDate}) => uploadDate >= from && (!to || uploadDate <= to));
     }
+
+    getFirstVersionsBetween(from, to) {
+        return this.getVersionsBetween(from, to).shift();
+    }
+
+    getLastVersionsBetween(from, to) {
+        return this.getVersionsBetween(from, to).pop();
+    }
 }
