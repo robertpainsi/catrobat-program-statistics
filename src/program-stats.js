@@ -106,6 +106,14 @@ export async function getProgramStatsFromString(xmlString) {
             type = 'WhenScript';
         }
 
+        if (type === 'IfLogicBeginSimpleBrick'
+            || type === 'IfLogicElseSimpleBrick'
+            || type === 'IfLogicEndSimpleBrick'
+            || type === 'VideoBrick'
+        ) {
+            continue;
+        }
+
         increaseObjectKey(stats.brickUsage, type);
         features.push(...getFeaturesFromBrick(type));
     }
