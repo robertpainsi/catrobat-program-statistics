@@ -16,15 +16,11 @@ import {getDisplayInfo} from "./stats-display-info";
 
     const now = new Date();
 
-    const lastYearDate = new Date(now.getTime());
-    lastYearDate.setFullYear(now.getFullYear() - 1);
-    const lastButOneYearDate = new Date(now.getTime());
-    lastButOneYearDate.setFullYear(now.getFullYear() - 2);
+    const lastYearDate = moment(now).subtract(365, 'days').toDate();
+    const lastButOneYearDate = moment(lastYearDate).subtract(365, 'days').toDate();
 
-    const lastMonthDate = new Date(now.getTime());
-    lastMonthDate.setMonth(now.getMonth() - 1);
-    const lastButOneMonthDate = new Date(now.getTime());
-    lastButOneMonthDate.setMonth(now.getMonth() - 2);
+    const lastMonthDate = moment(now).subtract(30, 'days').toDate();
+    const lastButOneMonthDate = moment(lastMonthDate).subtract(30, 'days').toDate();
 
     const allLatestVersions = [];
     const currentYearLatestVersions = [];
