@@ -129,8 +129,7 @@ export async function getProgramStatsFromString(xmlString) {
                     value = 'OBJECT_TRANSPARENCY';
                 }
 
-                stats.formulaUsage[type] = stats.formulaUsage[type] || {};
-                increaseObjectKey(stats.formulaUsage[type], value);
+                increaseObjectKey(stats.formulaUsage, `${type}_${value}`);
                 features.push(...getFeaturesFromFormula(value, type));
                 break;
         }

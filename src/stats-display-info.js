@@ -331,222 +331,216 @@ export function getDisplayInfo() {
             COLLISION_FORMULA:
                 {name: 'touches_object', color: colors.event},
 
-            FUNCTION: {
-                ABS:
-                    {name: 'abs', color: colors.control},
-                ARCCOS:
-                    {name: 'arccos', color: colors.control},
-                ARCSIN:
-                    {name: 'arcsin', color: colors.control},
-                ARCTAN:
-                    {name: 'arctan', color: colors.control},
-                CEIL:
-                    {name: 'ceil', color: colors.control},
-                COS:
-                    {name: 'cos', color: colors.control},
-                EXP:
-                    {name: 'exp', color: colors.control},
-                FALSE:
-                    {name: 'FALSE', color: colors.control},
-                FLOOR:
-                    {name: 'floor', color: colors.control},
-                LN:
-                    {name: 'ln', color: colors.control},
-                LOG:
-                    {name: 'log', color: colors.control},
-                MAX:
-                    {name: 'max', color: colors.control},
-                MIN:
-                    {name: 'min', color: colors.control},
-                MOD:
-                    {name: 'mod', color: colors.control},
-                PI:
-                    {name: 'PI', color: colors.control},
-                POWER:
-                    {name: 'power', color: colors.control},
-                RAND:
-                    {name: 'rand', color: colors.control},
-                ROUND:
-                    {name: 'round', color: colors.control},
-                SIN:
-                    {name: 'sin', color: colors.control},
-                SQRT:
-                    {name: 'sqrt', color: colors.control},
-                TAN:
-                    {name: 'tan', color: colors.control},
-                TRUE:
-                    {name: 'TRUE', color: colors.control},
-                JOIN:
-                    {name: 'join', color: colors.control},
-                LENGTH:
-                    {name: 'length', color: colors.control},
-                LETTER:
-                    {name: 'letter', color: colors.control},
-                CONTAINS:
-                    {name: 'contains', color: colors.data},
-                LIST_ITEM:
-                    {name: 'element', color: colors.data},
-                NUMBER_OF_ITEMS:
-                    {name: 'number_of_items', color: colors.data},
-                MULTI_FINGER_TOUCHED:
-                    {name: 'screen_is_touched', color: colors.sensor},
-                MULTI_FINGER_X:
-                    {name: 'screen_touch_x', color: colors.sensor},
-                MULTI_FINGER_Y:
-                    {name: 'screen_touch_y', color: colors.sensor},
-                ARDUINOANALOG:
-                    {name: 'arduino_analog_pin', color: colors.bluetooth},
-                ARDUINODIGITAL:
-                    {name: 'arduino_digital_pin', color: colors.bluetooth},
-                RASPIDIGITAL:
-                    {name: 'raspberry_pi_pin', color: colors.bluetooth},
-            },
-            OPERATOR: {
-                DIVIDE:
-                    {name: '÷', color: colors.control},
-                EQUAL:
-                    {name: '=', color: colors.control},
-                GREATER_OR_EQUAL:
-                    {name: '≥', color: colors.control},
-                GREATER_THAN:
-                    {name: '>', color: colors.control},
-                LOGICAL_AND:
-                    {name: 'AND', color: colors.control},
-                LOGICAL_NOT:
-                    {name: 'NOT', color: colors.control},
-                LOGICAL_OR:
-                    {name: 'OR', color: colors.control},
-                MINUS:
-                    {name: '-', color: colors.control},
-                MULT:
-                    {name: '×', color: colors.control},
-                NOT_EQUAL:
-                    {name: '≠', color: colors.control},
-                PLUS:
-                    {name: '+', color: colors.control},
-                SMALLER_OR_EQUAL:
-                    {name: '≤', color: colors.control},
-                SMALLER_THAN:
-                    {name: '<', color: colors.control},
-            },
-            SENSOR: {
-                LOUDNESS:
-                    {name: 'loudness', color: colors.sounds},
-                OBJECT_BACKGROUND_NAME:
-                    {name: 'background_name', color: colors.looks},
-                OBJECT_BACKGROUND_NUMBER:
-                    {name: 'background_number', color: colors.looks},
-                OBJECT_BRIGHTNESS:
-                    {name: 'brightness', color: colors.looks},
-                OBJECT_COLOR:
-                    {name: 'color', color: colors.looks},
-                OBJECT_LAYER:
-                    {name: 'layer', color: colors.motion},
-                OBJECT_LOOK_NAME:
-                    {name: 'look_name', color: colors.looks},
-                OBJECT_LOOK_NUMBER:
-                    {name: 'look_number', color: colors.looks},
-                OBJECT_ROTATION:
-                    {name: 'rotation', color: colors.motion},
-                OBJECT_SIZE:
-                    {name: 'size', color: colors.looks},
-                OBJECT_TRANSPARENCY:
-                    {name: 'transparency', color: colors.looks},
-                OBJECT_X:
-                    {name: 'position_x', color: colors.motion},
-                OBJECT_Y:
-                    {name: 'position_y', color: colors.motion},
-                OBJECT_DISTANCE_TO:
-                    {name: 'distance_to', color: colors.motion},
-                OBJECT_ANGULAR_VELOCITY:
-                    {name: 'angular_velocity', color: colors.motion},
-                OBJECT_X_VELOCITY:
-                    {name: 'x_velocity', color: colors.motion},
-                OBJECT_Y_VELOCITY:
-                    {name: 'y_velocity', color: colors.motion},
-                COLLIDES_WITH_EDGE:
-                    {name: 'touches_edge', color: colors.event},
-                COLLIDES_WITH_FINGER:
-                    {name: 'touches_finger', color: colors.event},
-                FINGER_TOUCHED:
-                    {name: 'screen_is_touched', color: colors.event},
-                FINGER_X:
-                    {name: 'screen_touch_x', color: colors.sensor},
-                FINGER_Y:
-                    {name: 'screen_touch_y', color: colors.sensor},
-                LAST_FINGER_INDEX:
-                    {name: 'last_screen_touch_index', color: colors.sensor},
-                DATE_DAY:
-                    {name: 'day', color: colors.sensor},
-                DATE_MONTH:
-                    {name: 'month', color: colors.sensor},
-                DATE_WEEKDAY:
-                    {name: 'weekday', color: colors.sensor},
-                DATE_YEAR:
-                    {name: 'year', color: colors.sensor},
-                TIME_HOUR:
-                    {name: 'hour', color: colors.sensor},
-                TIME_MINUTE:
-                    {name: 'minute', color: colors.sensor},
-                TIME_SECOND:
-                    {name: 'second', color: colors.sensor},
-                FACE_DETECTED:
-                    {name: 'face_is_visible', color: colors.sensor},
-                FACE_SIZE:
-                    {name: 'face_size', color: colors.sensor},
-                FACE_X_POSITION:
-                    {name: 'face_x_position', color: colors.sensor},
-                FACE_Y_POSITION:
-                    {name: 'face_y_position', color: colors.sensor},
-                X_ACCELERATION:
-                    {name: 'acceleration_x', color: colors.sensor},
-                X_INCLINATION:
-                    {name: 'inclination_x', color: colors.sensor},
-                Y_ACCELERATION:
-                    {name: 'acceleration_y', color: colors.sensor},
-                Y_INCLINATION:
-                    {name: 'inclination_y', color: colors.sensor},
-                Z_ACCELERATION:
-                    {name: 'acceleration_z', color: colors.sensor},
-                ALTITUDE:
-                    {name: 'altitude', color: colors.sensor},
-                LONGITUDE:
-                    {name: 'longitude', color: colors.sensor},
-                COMPASS_DIRECTION:
-                    {name: 'compass_direction', color: colors.sensor},
-                LATITUDE:
-                    {name: 'latitude', color: colors.sensor},
-                LOCATION_ACCURACY:
-                    {name: 'location_accuracy', color: colors.sensor},
-                DRONE_BATTERY_STATUS:
-                    {name: 'drone_battery_status', color: colors.drone},
-                EV3_SENSOR_1:
-                    {name: 'EV3_sensor_1', color: colors.lego},
-                EV3_SENSOR_3:
-                    {name: 'EV3_sensor_3', color: colors.lego},
-                EV3_SENSOR_4:
-                    {name: 'EV3_sensor_4', color: colors.lego},
-                NXT_SENSOR_1:
-                    {name: 'NXT_sensor_1', color: colors.lego},
-                NXT_SENSOR_2:
-                    {name: 'NXT_sensor_2', color: colors.lego},
-                NXT_SENSOR_3:
-                    {name: 'NXT_sensor_3', color: colors.lego},
-                NXT_SENSOR_4:
-                    {name: 'NXT_sensor_4', color: colors.lego},
-                PHIRO_BOTTOM_LEFT:
-                    {name: 'phiro_bottom_left', color: colors.bluetooth},
-                PHIRO_BOTTOM_RIGHT:
-                    {name: 'phiro_bottom_right', color: colors.bluetooth},
-                PHIRO_FRONT_LEFT:
-                    {name: 'phiro_front_left', color: colors.bluetooth},
-                PHIRO_FRONT_RIGHT:
-                    {name: 'phiro_front_right', color: colors.bluetooth},
-                PHIRO_SIDE_LEFT:
-                    {name: 'phiro_side_left', color: colors.bluetooth},
-                PHIRO_SIDE_RIGHT:
-                    {name: 'phiro_side_right', color: colors.bluetooth},
-            }
+            FUNCTION_ABS:
+                {name: 'abs', color: colors.control},
+            FUNCTION_ARCCOS:
+                {name: 'arccos', color: colors.control},
+            FUNCTION_ARCSIN:
+                {name: 'arcsin', color: colors.control},
+            FUNCTION_ARCTAN:
+                {name: 'arctan', color: colors.control},
+            FUNCTION_CEIL:
+                {name: 'ceil', color: colors.control},
+            FUNCTION_COS:
+                {name: 'cos', color: colors.control},
+            FUNCTION_EXP:
+                {name: 'exp', color: colors.control},
+            FUNCTION_FALSE:
+                {name: 'FALSE', color: colors.control},
+            FUNCTION_FLOOR:
+                {name: 'floor', color: colors.control},
+            FUNCTION_LN:
+                {name: 'ln', color: colors.control},
+            FUNCTION_LOG:
+                {name: 'log', color: colors.control},
+            FUNCTION_MAX:
+                {name: 'max', color: colors.control},
+            FUNCTION_MIN:
+                {name: 'min', color: colors.control},
+            FUNCTION_MOD:
+                {name: 'mod', color: colors.control},
+            FUNCTION_PI:
+                {name: 'PI', color: colors.control},
+            FUNCTION_POWER:
+                {name: 'power', color: colors.control},
+            FUNCTION_RAND:
+                {name: 'rand', color: colors.control},
+            FUNCTION_ROUND:
+                {name: 'round', color: colors.control},
+            FUNCTION_SIN:
+                {name: 'sin', color: colors.control},
+            FUNCTION_SQRT:
+                {name: 'sqrt', color: colors.control},
+            FUNCTION_TAN:
+                {name: 'tan', color: colors.control},
+            FUNCTION_TRUE:
+                {name: 'TRUE', color: colors.control},
+            FUNCTION_JOIN:
+                {name: 'join', color: colors.control},
+            FUNCTION_LENGTH:
+                {name: 'length', color: colors.control},
+            FUNCTION_LETTER:
+                {name: 'letter', color: colors.control},
+            FUNCTION_CONTAINS:
+                {name: 'contains', color: colors.data},
+            FUNCTION_LIST_ITEM:
+                {name: 'element', color: colors.data},
+            FUNCTION_NUMBER_OF_ITEMS:
+                {name: 'number_of_items', color: colors.data},
+            FUNCTION_MULTI_FINGER_TOUCHED:
+                {name: 'screen_is_touched', color: colors.sensor},
+            FUNCTION_MULTI_FINGER_X:
+                {name: 'screen_touch_x', color: colors.sensor},
+            FUNCTION_MULTI_FINGER_Y:
+                {name: 'screen_touch_y', color: colors.sensor},
+            FUNCTION_ARDUINOANALOG:
+                {name: 'arduino_analog_pin', color: colors.bluetooth},
+            FUNCTION_ARDUINODIGITAL:
+                {name: 'arduino_digital_pin', color: colors.bluetooth},
+            FUNCTION_RASPIDIGITAL:
+                {name: 'raspberry_pi_pin', color: colors.bluetooth},
+            OPERATOR_DIVIDE:
+                {name: '÷', color: colors.control},
+            OPERATOR_EQUAL:
+                {name: '=', color: colors.control},
+            OPERATOR_GREATER_OR_EQUAL:
+                {name: '≥', color: colors.control},
+            OPERATOR_GREATER_THAN:
+                {name: '>', color: colors.control},
+            OPERATOR_LOGICAL_AND:
+                {name: 'AND', color: colors.control},
+            OPERATOR_LOGICAL_NOT:
+                {name: 'NOT', color: colors.control},
+            OPERATOR_LOGICAL_OR:
+                {name: 'OR', color: colors.control},
+            OPERATOR_MINUS:
+                {name: '-', color: colors.control},
+            OPERATOR_MULT:
+                {name: '×', color: colors.control},
+            OPERATOR_NOT_EQUAL:
+                {name: '≠', color: colors.control},
+            OPERATOR_PLUS:
+                {name: '+', color: colors.control},
+            OPERATOR_SMALLER_OR_EQUAL:
+                {name: '≤', color: colors.control},
+            OPERATOR_SMALLER_THAN:
+                {name: '<', color: colors.control},
+            SENSOR_LOUDNESS:
+                {name: 'loudness', color: colors.sounds},
+            SENSOR_OBJECT_BACKGROUND_NAME:
+                {name: 'background_name', color: colors.looks},
+            SENSOR_OBJECT_BACKGROUND_NUMBER:
+                {name: 'background_number', color: colors.looks},
+            SENSOR_OBJECT_BRIGHTNESS:
+                {name: 'brightness', color: colors.looks},
+            SENSOR_OBJECT_COLOR:
+                {name: 'color', color: colors.looks},
+            SENSOR_OBJECT_LAYER:
+                {name: 'layer', color: colors.motion},
+            SENSOR_OBJECT_LOOK_NAME:
+                {name: 'look_name', color: colors.looks},
+            SENSOR_OBJECT_LOOK_NUMBER:
+                {name: 'look_number', color: colors.looks},
+            SENSOR_OBJECT_ROTATION:
+                {name: 'rotation', color: colors.motion},
+            SENSOR_OBJECT_SIZE:
+                {name: 'size', color: colors.looks},
+            SENSOR_OBJECT_TRANSPARENCY:
+                {name: 'transparency', color: colors.looks},
+            SENSOR_OBJECT_X:
+                {name: 'position_x', color: colors.motion},
+            SENSOR_OBJECT_Y:
+                {name: 'position_y', color: colors.motion},
+            SENSOR_OBJECT_DISTANCE_TO:
+                {name: 'distance_to', color: colors.motion},
+            SENSOR_OBJECT_ANGULAR_VELOCITY:
+                {name: 'angular_velocity', color: colors.motion},
+            SENSOR_OBJECT_X_VELOCITY:
+                {name: 'x_velocity', color: colors.motion},
+            SENSOR_OBJECT_Y_VELOCITY:
+                {name: 'y_velocity', color: colors.motion},
+            SENSOR_COLLIDES_WITH_EDGE:
+                {name: 'touches_edge', color: colors.event},
+            SENSOR_COLLIDES_WITH_FINGER:
+                {name: 'touches_finger', color: colors.event},
+            SENSOR_FINGER_TOUCHED:
+                {name: 'screen_is_touched', color: colors.event},
+            SENSOR_FINGER_X:
+                {name: 'screen_touch_x', color: colors.sensor},
+            SENSOR_FINGER_Y:
+                {name: 'screen_touch_y', color: colors.sensor},
+            SENSOR_LAST_FINGER_INDEX:
+                {name: 'last_screen_touch_index', color: colors.sensor},
+            SENSOR_DATE_DAY:
+                {name: 'day', color: colors.sensor},
+            SENSOR_DATE_MONTH:
+                {name: 'month', color: colors.sensor},
+            SENSOR_DATE_WEEKDAY:
+                {name: 'weekday', color: colors.sensor},
+            SENSOR_DATE_YEAR:
+                {name: 'year', color: colors.sensor},
+            SENSOR_TIME_HOUR:
+                {name: 'hour', color: colors.sensor},
+            SENSOR_TIME_MINUTE:
+                {name: 'minute', color: colors.sensor},
+            SENSOR_TIME_SECOND:
+                {name: 'second', color: colors.sensor},
+            SENSOR_FACE_DETECTED:
+                {name: 'face_is_visible', color: colors.sensor},
+            SENSOR_FACE_SIZE:
+                {name: 'face_size', color: colors.sensor},
+            SENSOR_FACE_X_POSITION:
+                {name: 'face_x_position', color: colors.sensor},
+            SENSOR_FACE_Y_POSITION:
+                {name: 'face_y_position', color: colors.sensor},
+            SENSOR_X_ACCELERATION:
+                {name: 'acceleration_x', color: colors.sensor},
+            SENSOR_X_INCLINATION:
+                {name: 'inclination_x', color: colors.sensor},
+            SENSOR_Y_ACCELERATION:
+                {name: 'acceleration_y', color: colors.sensor},
+            SENSOR_Y_INCLINATION:
+                {name: 'inclination_y', color: colors.sensor},
+            SENSOR_Z_ACCELERATION:
+                {name: 'acceleration_z', color: colors.sensor},
+            SENSOR_ALTITUDE:
+                {name: 'altitude', color: colors.sensor},
+            SENSOR_LONGITUDE:
+                {name: 'longitude', color: colors.sensor},
+            SENSOR_COMPASS_DIRECTION:
+                {name: 'compass_direction', color: colors.sensor},
+            SENSOR_LATITUDE:
+                {name: 'latitude', color: colors.sensor},
+            SENSOR_LOCATION_ACCURACY:
+                {name: 'location_accuracy', color: colors.sensor},
+            SENSOR_DRONE_BATTERY_STATUS:
+                {name: 'drone_battery_status', color: colors.drone},
+            SENSOR_EV3_SENSOR_1:
+                {name: 'EV3_sensor_1', color: colors.lego},
+            SENSOR_EV3_SENSOR_3:
+                {name: 'EV3_sensor_3', color: colors.lego},
+            SENSOR_EV3_SENSOR_4:
+                {name: 'EV3_sensor_4', color: colors.lego},
+            SENSOR_NXT_SENSOR_1:
+                {name: 'NXT_sensor_1', color: colors.lego},
+            SENSOR_NXT_SENSOR_2:
+                {name: 'NXT_sensor_2', color: colors.lego},
+            SENSOR_NXT_SENSOR_3:
+                {name: 'NXT_sensor_3', color: colors.lego},
+            SENSOR_NXT_SENSOR_4:
+                {name: 'NXT_sensor_4', color: colors.lego},
+            SENSOR_PHIRO_BOTTOM_LEFT:
+                {name: 'phiro_bottom_left', color: colors.bluetooth},
+            SENSOR_PHIRO_BOTTOM_RIGHT:
+                {name: 'phiro_bottom_right', color: colors.bluetooth},
+            SENSOR_PHIRO_FRONT_LEFT:
+                {name: 'phiro_front_left', color: colors.bluetooth},
+            SENSOR_PHIRO_FRONT_RIGHT:
+                {name: 'phiro_front_right', color: colors.bluetooth},
+            SENSOR_PHIRO_SIDE_LEFT:
+                {name: 'phiro_side_left', color: colors.bluetooth},
+            SENSOR_PHIRO_SIDE_RIGHT:
+                {name: 'phiro_side_right', color: colors.bluetooth},
         }
     }
 }

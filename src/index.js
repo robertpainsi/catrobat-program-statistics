@@ -112,14 +112,7 @@ function getOverallStats(versions, {getTimelineKey}) {
         }
 
         for (const [key, value] of Object.entries(stats.formulaUsage)) {
-            if (Number.isInteger(value)) {
-                increaseObjectKey(overall.formulaUsage, key, value);
-            } else {
-                overall.formulaUsage[key] = overall.formulaUsage[value] || {};
-                for (const [k, v] of Object.entries(value)) {
-                    increaseObjectKey(overall.formulaUsage[key], k, v);
-                }
-            }
+            increaseObjectKey(overall.formulaUsage, key, value);
         }
 
         for (const feature of stats.features) {
