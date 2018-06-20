@@ -14,10 +14,70 @@ const colors = {
     userBricks: '98c204',
 
     sensor: '6b72cc',
+
+    hardware: 'ff0000,' // TODO
 };
 
 export function getDisplayInfo() {
     return {
+        features: {
+            list:
+                {name: 'List', color: colors.data},
+            variable:
+                {name: 'Variable', color: colors.data},
+            text:
+                {name: 'Text', color: colors.control},
+            clone:
+                {name: 'Clone', color: colors.control},
+            pen:
+                {name: 'Pen', color: colors.pen},
+            physics:
+                {name: 'Physics', color: colors.motion},
+            touch:
+                {name: 'Touch', color: colors.sensor},
+            finger:
+                {name: 'Finger', color: colors.sensor},
+            faceDetection:
+                {name: 'Face detection', color: colors.sensor},
+            dateTime:
+                {name: 'Date-Time', color: colors.sensor},
+            textToSpeech:
+                {name: 'Text to speech', color: colors.data},
+            cast:
+                {name: 'Cast', color: colors.control},
+            userBrick:
+                {name: 'User Brick', color: colors.userBricks},
+            hardware:
+                {name: 'Hardware', color: colors.hardware},
+            externalHardware:
+                {name: 'External hardware', color: colors.hardware},
+            internalHardware:
+                {name: 'Internal hardware', color: colors.hardware},
+            bluetooth:
+                {name: 'Bluetooth', color: colors.bluetooth},
+            wlan:
+                {name: 'WLAN', color: colors.bluetooth},
+            nfc:
+                {name: 'NFC', color: colors.bluetooth},
+            camera:
+                {name: 'Camera', color: colors.sensor},
+            flash:
+                {name: 'Flash', color: colors.sensor},
+            location:
+                {name: 'Location', color: colors.sensor},
+            phoneSensor:
+                {name: 'Phone sensor', color: colors.sensor},
+            arduino:
+                {name: 'Arduino', color: colors.bluetooth},
+            drone:
+                {name: 'Drone', color: colors.bluetooth},
+            lego:
+                {name: 'Lego', color: colors.lego},
+            phiro:
+                {name: 'Phiro', color: colors.lego},
+            raspberryPi:
+                {name: 'Raspberry Pi', color: colors.bluetooth},
+        },
         bricks: {
             // Events
             StartScript:
