@@ -1,9 +1,10 @@
 'use strict';
 
+import config from "./config";
+
 import moment from "moment";
 import fse from "fs-extra";
 
-import config from "./config";
 import {increaseObjectKey, pushIfDefined} from "./utils";
 import {getProgramHistories, screenSizeToKey} from "./stats-utils";
 import {getDisplayInfo} from "./stats-display-info";

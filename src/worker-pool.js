@@ -1,7 +1,9 @@
 'use strict';
 
-import config from "./config";
+import path from "path";
 import {fork} from "child_process";
+
+import config from "./config";
 import {getProgramStatsFromFile} from "./program-stats";
 
 class SingleThreadedPool {
@@ -27,7 +29,7 @@ class MultiThreadedPool {
                     return arg;
                 }
             });
-            this.availableWorkers.push(fork('worker.js', {
+            this.availableWorkers.push(fork(path.join(config.srcFolder, 'worker.js'), {
                 execArgv: workerExecArgv
             }));
         }
