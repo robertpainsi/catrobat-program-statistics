@@ -21,7 +21,7 @@ class MultiThreadedPool {
     availableWorkers = [];
 
     constructor() {
-        for (let i = 0; i < config.cpuCount; i++) {
+        for (let i = 0; i < config.numberOfWorkers; i++) {
             const workerExecArgv = process.execArgv.map((arg) => {
                 if (arg.indexOf('--inspect') !== -1) {
                     return `--inspect-brk=${process.debugPort + (i + 1)}`
@@ -75,4 +75,4 @@ function getPool(cpuCount) {
     }
 }
 
-export default getPool(config.cpuCount);
+export default getPool(config.numberOfWorkers);
