@@ -33,7 +33,7 @@ export async function getProgramHistories(programFolder) {
                 programStatsPromise = workerPool.getProgramStatsFromFile(programVersion.file)
                     .then((stats) => {
                         programVersion.stats = stats;
-                        return fse.outputFile(cacheFile, JSON.stringify(programVersion.stats));
+                        return fse.outputJson(cacheFile, programVersion.stats, {spaces: 2});
                     });
             }
 
