@@ -104,6 +104,8 @@ export function getDisplayInfo() {
                 {name: 'When NFC', color: colors.event},
             RaspiInterruptScript:
                 {name: 'When Raspberry Pi pin changes to', color: colors.event},
+            WhenGamepadButtonScript:
+                {name: 'When gamepad button', color: colors.event},
 
             // Control
             WaitBrick:
