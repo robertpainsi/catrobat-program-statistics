@@ -1,5 +1,7 @@
 'use strict';
 
+import moment from "moment";
+
 import config from "./config";
 import {increaseObjectKey, pushIfDefined} from "./utils";
 import {getProgramHistories, screenSizeToKey} from "./stats-utils";
@@ -36,14 +38,17 @@ import {getDisplayInfo} from "./stats-display-info";
         pushIfDefined(lastMonthLatestVersions, programHistory.getLastVersionsBetween(lastButOneMonthDate, lastMonthDate));
     }
 
+    const getMonthlyTimelineKey = (date) => moment(date).format('YYYY-MM');
+    const getWeeklyTimelineKey = (date) => moment(date).format('YYYY, [week] ww');
+    const getDailyTimelineKey = (date) => moment(date).format('MM-DD');
+
     const stats = {
         display: getDisplayInfo(),
-        overall: getOverallStats(allLatestVersions),
-        currentYear: getOverallStats(currentYearLatestVersions),
-        lastYear: getOverallStats(lastYearLatestVersions),
-        currentMonth: getOverallStats(currentMonthLatestVersions),
-        lastMonth: getOverallStats(lastMonthLatestVersions),
-        timeline: {} // TODO
+        overall: getOverallStats(allLatestVersions, {getTimelineKey: getMonthlyTimelineKey}),
+        currentYear: getOverallStats(currentYearLatestVersions, {getTimelineKey: getWeeklyTimelineKey}),
+        lastYear: getOverallStats(lastYearLatestVersions, {getTimelineKey: getWeeklyTimelineKey}),
+        currentMonth: getOverallStats(currentMonthLatestVersions, {getTimelineKey: getDailyTimelineKey}),
+        lastMonth: getOverallStats(lastMonthLatestVersions, {getTimelineKey: getDailyTimelineKey}),
     };
 
     console.timeEnd('runtime');
@@ -51,7 +56,7 @@ import {getDisplayInfo} from "./stats-display-info";
     console.error(e);
 }));
 
-function getOverallStats(versions) {
+function getOverallStats(versions, {getTimelineKey}) {
     const overall = {
         programs: 0,
         programsWithMultipleScenes: 0,
@@ -74,6 +79,7 @@ function getOverallStats(versions) {
         objectLists: 0,
         programVariables: 0,
         programLists: 0,
+        timeline: {}
     };
 
     for (const version of versions) {
@@ -116,6 +122,14 @@ function getOverallStats(versions) {
 
         for (const feature of stats.features) {
             increaseObjectKey(overall.featureUsage, feature);
+        }
+
+        const timelineKey = getTimelineKey(version.uploadDate);
+        overall.timeline[timelineKey] = overall.timeline[timelineKey] || {remixes: 0, new: 0};
+        if (stats.isRemix) {
+            increaseObjectKey(overall.timeline[timelineKey], 'remixes')
+        } else {
+            increaseObjectKey(overall.timeline[timelineKey], 'new')
         }
     }
 
