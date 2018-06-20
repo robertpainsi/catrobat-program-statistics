@@ -1,6 +1,7 @@
 'use strict';
 
 import moment from "moment";
+import fse from "fs-extra";
 
 import config from "./config";
 import {increaseObjectKey, pushIfDefined} from "./utils";
@@ -50,6 +51,7 @@ import {getDisplayInfo} from "./stats-display-info";
         currentMonth: getOverallStats(currentMonthLatestVersions, {getTimelineKey: getDailyTimelineKey}),
         lastMonth: getOverallStats(lastMonthLatestVersions, {getTimelineKey: getDailyTimelineKey}),
     };
+    await fse.outputJson(config.outputFile, stats, {spaces: 2});
 
     console.timeEnd('runtime');
 }().catch((e) => {
