@@ -6,7 +6,7 @@ import xmldom from "xmldom";
 import xpath from "xpath";
 
 import {increaseObjectKey} from "./utils";
-import {getFeaturesFromFormula, getFeaturesFromBrick} from "./program-feature-utils";
+import {getFeaturesFromBrick, getFeaturesFromFormula} from "./program-feature-utils";
 
 const readFile = promisify(fs.readFile);
 const parser = new xmldom.DOMParser();
