@@ -102,6 +102,8 @@ export async function getProgramStatsFromString(xmlString) {
             type = 'IfLogicBeginBrick';
         } else if (type === 'IfThenLogicEndBrick') {
             type = 'IfLogicEndBrick';
+        } else if (type === 'WhenBrick') {
+            type = 'WhenScript';
         }
 
         increaseObjectKey(stats.brickUsage, type);
