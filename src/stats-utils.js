@@ -2,7 +2,7 @@
 
 import path from "path";
 import glob from "glob-promise/lib/index";
-const fse = require('fs-extra');
+import fse from "fs-extra";
 
 import config from "./config";
 import ProgramHistory from "./program-history";
