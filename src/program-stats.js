@@ -11,6 +11,21 @@ import {getFeaturesFromBrick, getFeaturesFromFormula} from "./program-feature-ut
 const readFile = promisify(fs.readFile);
 const parser = new xmldom.DOMParser();
 
+const renamedBricks = new Map([
+    ['LoopEndlessBrick', 'LoopEndBrick'],
+    ['ShowVariableBrick', 'ShowTextBrick'],
+    ['IfThenLogicBeginBrick', 'IfLogicBeginBrick'],
+    ['IfThenLogicEndBrick', 'IfLogicEndBrick'],
+    ['WhenBrick', 'WhenScript'],
+]);
+
+const unsupportedBricks = [
+    'IfLogicBeginSimpleBrick',
+    'IfLogicElseSimpleBrick',
+    'IfLogicEndSimpleBrick',
+    'VideoBrick',
+];
+
 export async function getProgramStatsFromFile(file) {
     return await getProgramStatsFromString(await readFile(file, 'UTF-8'));
 }
@@ -94,23 +109,10 @@ export async function getProgramStatsFromString(xmlString) {
         stats.bricks++;
         let type = brick.getAttribute('type');
 
-        if (type === 'LoopEndlessBrick') {
-            type = 'LoopEndBrick';
-        } else if (type === 'ShowVariableBrick') {
-            type = 'ShowTextBrick';
-        } else if (type === 'IfThenLogicBeginBrick') {
-            type = 'IfLogicBeginBrick';
-        } else if (type === 'IfThenLogicEndBrick') {
-            type = 'IfLogicEndBrick';
-        } else if (type === 'WhenBrick') {
-            type = 'WhenScript';
+        if (renamedBricks.has(type)) {
+            type = renamedBricks.get(type);
         }
-
-        if (type === 'IfLogicBeginSimpleBrick'
-            || type === 'IfLogicElseSimpleBrick'
-            || type === 'IfLogicEndSimpleBrick'
-            || type === 'VideoBrick'
-        ) {
+        if (unsupportedBricks.includes(type)) {
             continue;
         }
 
