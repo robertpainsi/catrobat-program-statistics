@@ -51,7 +51,7 @@ import {getDisplayInfo} from "./stats-display-info";
         currentMonth: getOverallStats(currentMonthLatestVersions, {getTimelineKey: getDailyTimelineKey}),
         lastMonth: getOverallStats(lastMonthLatestVersions, {getTimelineKey: getDailyTimelineKey}),
     };
-    await fse.outputJson(config.outputFile, stats, {spaces: 2});
+    await fse.writeJson(config.outputFile, stats, {spaces: 2});
 
     console.timeEnd('overall stats');
     console.timeEnd('runtime');
