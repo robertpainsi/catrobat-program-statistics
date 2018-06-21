@@ -12,7 +12,6 @@ const args = commandLineArgs([
     {name: 'output-file', type: String},
     {name: 'cache-folder', type: String},
     {name: 'workers', type: Number},
-    {name: 'clear-cache', type: Boolean},
 ]);
 
 const config = {
@@ -20,12 +19,13 @@ const config = {
     programFolder: toAbsolutePath(args['program-folder']),
     outputFile: toAbsolutePath(args['output-file']),
     cacheFolder: args['cache-folder'],
-    clearCache: args['clear-cache'] || false,
     numberOfWorkers: args['workers'],
 };
 
 if (config.cacheFolder) {
     config.cacheFolder = toAbsolutePath(config.cacheFolder);
+    checkPathValid(config.cacheFolder, `--cache-folder=${config.cacheFolder} isn't a valid path`);
+    checkPathExists(config.cacheFolder, `--cache-folder=${config.cacheFolder} path doesn't exist`);
 } else {
     config.cacheFolder = null;
 }

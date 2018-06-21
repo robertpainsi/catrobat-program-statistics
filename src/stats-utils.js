@@ -23,7 +23,7 @@ export async function getProgramHistories(programFolder) {
 
             let programStatsPromise;
             const cacheFile = path.join(config.cacheFolder, partialProgramFile.replace(/(.+)\..+/, '$1.json'));
-            if (config.cacheFolder && !config.clearCache && await fse.pathExists(cacheFile)) {
+            if (config.cacheFolder && await fse.pathExists(cacheFile)) {
                 programStatsPromise = fse.readJson(cacheFile)
                     .then((stats) => {
                         programVersion.stats = stats;
