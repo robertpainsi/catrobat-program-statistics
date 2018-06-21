@@ -15,7 +15,7 @@ const colors = {
 
     sensor: '6b72cc',
 
-    hardware: 'ff0000,' // TODO
+    hardware: 'ff0000,'
 };
 
 export function getDisplayInfo() {
