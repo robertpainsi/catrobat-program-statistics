@@ -24,7 +24,7 @@ export async function getProgramHistories(programFolder) {
 
             let programStatsPromise;
             const cacheFile = path.join(config.cacheFolder, partialProgramFile.replace(/(.+)\..+/, '$1.json'));
-            if (config.cacheFolder && await fse.pathExists(cacheFile)) {
+            if (config.cacheFolder && !config.clearCache && await fse.pathExists(cacheFile)) {
                 programStatsPromise = fse.readJson(cacheFile)
                     .then((stats) => {
                         programVersion.stats = stats;
@@ -33,7 +33,9 @@ export async function getProgramHistories(programFolder) {
                 programStatsPromise = workerPool.getProgramStatsFromFile(programVersion.file)
                     .then((stats) => {
                         programVersion.stats = stats;
-                        return fse.outputJson(cacheFile, programVersion.stats, {spaces: 2});
+                        if (config.cacheFolder) {
+                            return fse.outputJson(cacheFile, programVersion.stats, {spaces: 2});
+                        }
                     });
             }
 

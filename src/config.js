@@ -1,6 +1,7 @@
 'use strict';
 
 import os from "os";
+import path from "path";
 import commandLineArgs from "command-line-args";
 
 import {check, checkPathExists, checkPathValid, checkRequired} from "./check-utils";
@@ -11,13 +12,15 @@ const args = commandLineArgs([
     {name: 'output-file', type: String},
     {name: 'cache-folder', type: String},
     {name: 'workers', type: Number},
+    {name: 'clear-cache', type: Boolean},
 ]);
 
 const config = {
     srcFolder: __dirname,
-    programFolder: args['program-folder'],
-    outputFile: args['output-file'],
+    programFolder: toAbsolutePath(args['program-folder']),
+    outputFile: toAbsolutePath(args['output-file']),
     cacheFolder: args['cache-folder'],
+    clearCache: args['clear-cache'] || false,
     numberOfWorkers: args['workers'],
 };
 
@@ -27,14 +30,13 @@ if (config.cacheFolder) {
     config.cacheFolder = null;
 }
 
-config.programFolder = toAbsolutePath(config.programFolder);
 checkRequired(config.programFolder, `Missing --program-folder=<path-to-programs-folder> argument`);
 checkPathValid(config.programFolder, `--program-folder=${config.programFolder} isn't a valid path`);
 checkPathExists(config.programFolder, `--program-folder=${config.programFolder} path doesn't exist`);
 
-config.outputFile = toAbsolutePath(config.outputFile);
 checkRequired(config.outputFile, `Missing --output-file=<path-to-output-file> argument`);
 checkPathValid(config.outputFile, `--output-file=${config.outputFile} isn't a valid path`);
+checkPathExists(path.dirname(config.outputFile), `Folder for --output-file=${config.outputFile} doesn't exist`);
 
 if (config.numberOfWorkers === undefined) {
     config.numberOfWorkers = os.cpus().length;
