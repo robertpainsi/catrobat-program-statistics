@@ -10,7 +10,6 @@ import ProgramVersion from "./program-version";
 import WorkerPool from "./worker-pool";
 
 export async function getProgramHistories(programFolder) {
-    console.time('program histories');
     const workerPool = new WorkerPool();
     try {
         let programs = new Map();
@@ -46,7 +45,6 @@ export async function getProgramHistories(programFolder) {
         return [...programs.values()].sort((a, b) => a.id - b.id);
     } finally {
         workerPool.freeThreads();
-        console.timeEnd('program histories');
     }
 }
 

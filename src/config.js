@@ -44,4 +44,5 @@ if (config.numberOfWorkers === undefined) {
 check(!isNaN(config.numberOfWorkers) && config.numberOfWorkers > 0,
     `Invalid value (${config.numberOfWorkers}) for --workers`);
 
+console.log(`config:`, JSON.stringify(config, null, 2));
 export default config;

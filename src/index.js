@@ -12,9 +12,12 @@ import {getDisplayInfo} from "./stats-display-info";
 (async function() {
     console.time('runtime');
 
+    console.time('program histories');
     const programHistories = (await getProgramHistories(config.programFolder))
         .filter(({versions}) => versions.some(({stats}) => stats.languageVersion >= 0.94));
+    console.timeEnd('program histories');
 
+    console.time('overall stats');
     const now = new Date();
 
     const lastYearDate = moment(now).subtract(365, 'days').toDate();
@@ -50,6 +53,7 @@ import {getDisplayInfo} from "./stats-display-info";
     };
     await fse.outputJson(config.outputFile, stats, {spaces: 2});
 
+    console.timeEnd('overall stats');
     console.timeEnd('runtime');
 }().catch((e) => {
     console.error(e);

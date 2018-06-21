@@ -21,6 +21,7 @@ class MultiThreadedPool {
     availableWorkers = [];
 
     constructor() {
+        console.log(`Forking ${config.numberOfWorkers} workers`);
         for (let i = 0; i < config.numberOfWorkers; i++) {
             const workerExecArgv = process.execArgv.map((arg) => {
                 if (arg.indexOf('--inspect') !== -1) {
@@ -63,6 +64,7 @@ class MultiThreadedPool {
     }
 
     freeThreads() {
+        console.log(`Freeing ${this.availableWorkers.length} workers`);
         this.availableWorkers.forEach((worker) => worker.kill());
     }
 }
