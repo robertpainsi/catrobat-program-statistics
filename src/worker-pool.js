@@ -67,7 +67,7 @@ class MultiThreadedPool {
     }
 }
 
-function getPool(cpuCount) {
+function getPoolType(cpuCount) {
     if (cpuCount === 1) {
         return SingleThreadedPool;
     } else {
@@ -75,4 +75,4 @@ function getPool(cpuCount) {
     }
 }
 
-export default getPool(config.numberOfWorkers);
+export default getPoolType(config.numberOfWorkers);
