@@ -17,6 +17,11 @@ import {getDisplayInfo} from "./stats-display-info";
         .filter(({versions}) => versions.some(({stats}) => stats.languageVersion >= 0.94));
     console.timeEnd('program histories');
 
+    if (!programHistories.length) {
+        console.log(`No program histories to create overall stats from`);
+        return;
+    }
+
     console.time('overall stats');
     const now = new Date();
 

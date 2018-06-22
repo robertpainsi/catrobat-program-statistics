@@ -14,7 +14,7 @@ export async function getProgramHistories(programFolder) {
     try {
         let programs = new Map();
         const allStatsRequests = [];
-        for (const partialProgramFile of (await glob(`**/*.xml`, {cwd: programFolder})).reverse()) {
+        for (const partialProgramFile of (await glob(`**/+([0-9])_+([0-9]).xml`, {cwd: programFolder})).reverse()) {
             const programVersion = parseProgramVersion(path.join(programFolder, partialProgramFile));
             if (!programs.has(programVersion._id)) {
                 programs.set(programVersion._id, new ProgramHistory(programVersion._id));
@@ -39,6 +39,9 @@ export async function getProgramHistories(programFolder) {
             }
 
             allStatsRequests.push(programStatsPromise);
+        }
+        if (!allStatsRequests.length) {
+            console.log(`No code files found. Check program folder and that code files match [0-9]+_[0-9]+.xml. More info at https://github.com/robertpainsi/catrobat-program-statistics/issues/4`);
         }
         await Promise.all(allStatsRequests);
 
