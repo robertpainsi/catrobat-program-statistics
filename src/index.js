@@ -49,6 +49,7 @@ import {getDisplayInfo} from "./stats-display-info";
     const getDailyTimelineKey = (date) => moment(date).format('MM-DD');
 
     const stats = {
+        updated: new Date().getTime(),
         display: getDisplayInfo(),
         overall: getOverallStats(allLatestVersions, {getTimelineKey: getMonthlyTimelineKey}),
         currentYear: getOverallStats(currentYearLatestVersions, {getTimelineKey: getWeeklyTimelineKey}),
