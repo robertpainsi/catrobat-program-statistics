@@ -82,7 +82,9 @@ function getOverallStats(versions, {getTimelineKey}) {
         sounds: 0,
         bricks: 0,
         brickUsage: {},
+        programsUsingBricks: {},
         formulaUsage: {},
+        programsUsingFormula: {},
         featureUsage: {},
         objectVariables: 0,
         objectLists: 0,
@@ -116,10 +118,12 @@ function getOverallStats(versions, {getTimelineKey}) {
 
         for (const [key, value] of Object.entries(stats.brickUsage)) {
             increaseObjectKey(overall.brickUsage, key, value);
+            increaseObjectKey(overall.programsUsingBricks, key);
         }
 
         for (const [key, value] of Object.entries(stats.formulaUsage)) {
             increaseObjectKey(overall.formulaUsage, key, value);
+            increaseObjectKey(overall.programsUsingFormula, key);
         }
 
         for (const feature of stats.features) {
