@@ -23,7 +23,13 @@ import {getDisplayInfo} from "./stats-display-info";
     }
 
     console.time('overall stats');
-    const now = new Date();
+    const now = programHistories.reduce((accumulator, programHistory) => {
+        if (programHistory.latestVersion.uploadDate > accumulator) {
+            return programHistory.latestVersion.uploadDate;
+        } else {
+            return accumulator;
+        }
+    }, new Date(0));
 
     const lastYearDate = moment(now).subtract(365, 'days').toDate();
     const lastButOneYearDate = moment(lastYearDate).subtract(365, 'days').toDate();
