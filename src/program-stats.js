@@ -6,7 +6,7 @@ import xmldom from "xmldom";
 import xpath from "xpath";
 
 import {increaseObjectKey} from "./utils";
-import {getFeaturesFromBrick, getFeaturesFromFormula} from "./program-features";
+import {DRONE_FEATURES, getFeaturesFromBrick, getFeaturesFromFormula} from "./program-features";
 
 const readFile = promisify(fs.readFile);
 const parser = new xmldom.DOMParser();
@@ -52,6 +52,7 @@ export async function getProgramStatsFromString(xmlString) {
     const scenes = xpath.select(`//scene[not(@reference)]`, document);
     const objects = xpath.select(`//object[not(@reference)]`, document);
     const looks = xpath.select(`//look[not(@reference)]`, document);
+    const droneLooks = xpath.select(`//droneLook[not(@reference)]`, document);
     const sounds = xpath.select(`//sound[not(@reference)]`, document);
 
     const scripts = xpath.select(`//script[not(@reference)]`, document);
@@ -105,6 +106,9 @@ export async function getProgramStatsFromString(xmlString) {
     }
 
     const features = [];
+    if (droneLooks.length) {
+        features.push(...DRONE_FEATURES);
+    }
     for (const brick of [...scripts, ...bricks]) {
         stats.bricks++;
         let type = brick.getAttribute('type');
