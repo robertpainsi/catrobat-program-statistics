@@ -1,64 +1,64 @@
 'use strict';
 
 // Features
-const LIST = 'list';
-const VARIABLE = 'variable';
-const TEXT = 'text';
-const CLONE = 'clone';
-const PEN = 'pen';
-const PHYSICS = 'physics';
-const TOUCH = 'touch';
-const FINGER = 'finger';
-const FACE_DETECTION = 'faceDetection';
-const DATE_TIME = 'dateTime';
-const SPEECH = 'textToSpeech';
-const CAST = 'cast';
-const USER_BRICK = 'userBrick';
+export const LIST = 'list';
+export const VARIABLE = 'variable';
+export const TEXT = 'text';
+export const CLONE = 'clone';
+export const PEN = 'pen';
+export const PHYSICS = 'physics';
+export const TOUCH = 'touch';
+export const FINGER = 'finger';
+export const FACE_DETECTION = 'faceDetection';
+export const DATE_TIME = 'dateTime';
+export const SPEECH = 'textToSpeech';
+export const CAST = 'cast';
+export const USER_BRICK = 'userBrick';
 
-const HARDWARE = 'hardware';
-const EXTERNAL_HARDWARE = 'externalHardware';
-const INTERNAL_HARDWARE = 'internalHardware';
-const BLUETOOTH = 'bluetooth';
-const WLAN = 'wlan';
-const NFC = 'nfc';
+export const HARDWARE = 'hardware';
+export const EXTERNAL_HARDWARE = 'externalHardware';
+export const INTERNAL_HARDWARE = 'internalHardware';
+export const BLUETOOTH = 'bluetooth';
+export const WLAN = 'wlan';
+export const NFC = 'nfc';
 
-const CAMERA = 'camera';
-const FLASH = 'flash';
-const LOCATION = 'location';
-const PHONE_SENSOR = 'phoneSensor';
+export const CAMERA = 'camera';
+export const FLASH = 'flash';
+export const LOCATION = 'location';
+export const PHONE_SENSOR = 'phoneSensor';
 
-const ARDUINO = 'arduino';
-const DRONE = 'drone';
-const LEGO = 'lego';
-const PHIRO = 'phiro';
-const RASPBERRY_PI = 'raspberryPi';
+export const ARDUINO = 'arduino';
+export const DRONE = 'drone';
+export const LEGO = 'lego';
+export const PHIRO = 'phiro';
+export const RASPBERRY_PI = 'raspberryPi';
 
 // Feature Groups
-const VARIABLE_FEATURES = [VARIABLE];
-const LIST_FEATURES = [LIST];
-const TEXT_FEATURES = [TEXT];
-const PEN_FEATURES = [PEN];
-const CLONE_FEATURES = [CLONE];
-const PHYSICS_FEATURES = [PHYSICS];
-const TOUCH_FEATURES = [TOUCH];
-const FINGER_FEATURES = [FINGER];
-const DATE_TIME_FEATURES = [DATE_TIME];
-const SPEECH_FEATURES = [SPEECH];
-const USER_BRICK_FEATURES = [USER_BRICK];
+export const VARIABLE_FEATURES = [VARIABLE];
+export const LIST_FEATURES = [LIST];
+export const TEXT_FEATURES = [TEXT];
+export const PEN_FEATURES = [PEN];
+export const CLONE_FEATURES = [CLONE];
+export const PHYSICS_FEATURES = [PHYSICS];
+export const TOUCH_FEATURES = [TOUCH];
+export const FINGER_FEATURES = [FINGER];
+export const DATE_TIME_FEATURES = [DATE_TIME];
+export const SPEECH_FEATURES = [SPEECH];
+export const USER_BRICK_FEATURES = [USER_BRICK];
 
-const PHONE_SENSOR_FEATURES = [PHONE_SENSOR, INTERNAL_HARDWARE, HARDWARE];
-const CAMERA_FEATURES = [CAMERA, INTERNAL_HARDWARE, HARDWARE];
-const FLASH_FEATURES = [FLASH, INTERNAL_HARDWARE, HARDWARE];
-const FACE_DETECTION_FEATURES = [FACE_DETECTION, INTERNAL_HARDWARE, HARDWARE];
-const NFC_FEATURES = [NFC, INTERNAL_HARDWARE, HARDWARE];
-const LOCATION_FEATURES = [LOCATION, INTERNAL_HARDWARE, HARDWARE];
+export const PHONE_SENSOR_FEATURES = [PHONE_SENSOR, INTERNAL_HARDWARE, HARDWARE];
+export const CAMERA_FEATURES = [CAMERA, INTERNAL_HARDWARE, HARDWARE];
+export const FLASH_FEATURES = [FLASH, INTERNAL_HARDWARE, HARDWARE];
+export const FACE_DETECTION_FEATURES = [FACE_DETECTION, INTERNAL_HARDWARE, HARDWARE];
+export const NFC_FEATURES = [NFC, INTERNAL_HARDWARE, HARDWARE];
+export const LOCATION_FEATURES = [LOCATION, INTERNAL_HARDWARE, HARDWARE];
 
-const ARDUINO_FEATURES = [ARDUINO, BLUETOOTH, EXTERNAL_HARDWARE, HARDWARE];
-const CAST_FEATURES = [CAST, WLAN, EXTERNAL_HARDWARE, HARDWARE];
-const DRONE_FEATURES = [DRONE, WLAN, EXTERNAL_HARDWARE, HARDWARE];
-const LEGO_FEATURES = [LEGO, BLUETOOTH, WLAN, EXTERNAL_HARDWARE, HARDWARE];
-const PHIRO_FEATURES = [PHIRO, BLUETOOTH, EXTERNAL_HARDWARE, HARDWARE];
-const RASPBERRY_PI_FEATURES = [RASPBERRY_PI, WLAN, EXTERNAL_HARDWARE, HARDWARE];
+export const ARDUINO_FEATURES = [ARDUINO, BLUETOOTH, EXTERNAL_HARDWARE, HARDWARE];
+export const CAST_FEATURES = [CAST, WLAN, EXTERNAL_HARDWARE, HARDWARE];
+export const DRONE_FEATURES = [DRONE, WLAN, EXTERNAL_HARDWARE, HARDWARE];
+export const LEGO_FEATURES = [LEGO, BLUETOOTH, WLAN, EXTERNAL_HARDWARE, HARDWARE];
+export const PHIRO_FEATURES = [PHIRO, BLUETOOTH, EXTERNAL_HARDWARE, HARDWARE];
+export const RASPBERRY_PI_FEATURES = [RASPBERRY_PI, WLAN, EXTERNAL_HARDWARE, HARDWARE];
 
 export function getFeaturesFromBrick(brick) {
     switch (brick) {
