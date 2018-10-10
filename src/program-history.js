@@ -29,15 +29,19 @@ export default class ProgramHistory {
         return [...this._versions];
     }
 
-    getVersionsBetween(from, to) {
-        return this._versions.filter(({uploadDate}) => uploadDate >= from && (!to || uploadDate <= to));
+    getVersionsBetween(from, to, $excludeTo = false) {
+        if ($excludeTo) {
+            return this._versions.filter(({uploadDate}) => uploadDate >= from && (!to || uploadDate < to));
+        } else {
+            return this._versions.filter(({uploadDate}) => uploadDate >= from && (!to || uploadDate <= to));
+        }
     }
 
-    getFirstVersionsBetween(from, to) {
-        return this.getVersionsBetween(from, to).shift();
+    getFirstVersionsBetween(from, to, $excludeTo = false) {
+        return this.getVersionsBetween(from, to, $excludeTo).shift();
     }
 
-    getLastVersionsBetween(from, to) {
-        return this.getVersionsBetween(from, to).pop();
+    getLastVersionsBetween(from, to, $excludeTo = false) {
+        return this.getVersionsBetween(from, to, $excludeTo).pop();
     }
 }
