@@ -45,9 +45,9 @@ import {getDisplayInfo} from "./stats-display-info";
     for (const programHistory of programHistories) {
         pushIfDefined(allLatestVersions, programHistory.latestVersion);
         pushIfDefined(currentYearLatestVersions, programHistory.getLastVersionsBetween(lastYearDate, now));
-        pushIfDefined(lastYearLatestVersions, programHistory.getLastVersionsBetween(lastButOneYearDate, lastYearDate));
+        pushIfDefined(lastYearLatestVersions, programHistory.getLastVersionsBetween(lastButOneYearDate, lastYearDate, true));
         pushIfDefined(currentMonthLatestVersions, programHistory.getLastVersionsBetween(lastMonthDate, now));
-        pushIfDefined(lastMonthLatestVersions, programHistory.getLastVersionsBetween(lastButOneMonthDate, lastMonthDate));
+        pushIfDefined(lastMonthLatestVersions, programHistory.getLastVersionsBetween(lastButOneMonthDate, lastMonthDate, true));
     }
 
     const getMonthlyTimelineKey = (date) => moment(date).format('YYYY-MM');
