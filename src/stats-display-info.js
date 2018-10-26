@@ -575,8 +575,30 @@ export function getDisplayInfo() {
                 {name: 'latitude', color: colors.sensor},
             SENSOR_LOCATION_ACCURACY:
                 {name: 'location_accuracy', color: colors.sensor},
+            SENSOR_NFC_TAG_ID:
+                {name: 'nfc_tag_id', color: colors.bluetooth},
+            SENSOR_NFC_TAG_MESSAGE:
+                {name: 'nfc_tag_message', color: colors.bluetooth},
+            SENSOR_DRONE_INITIALIZED:
+                {name: 'drone_initialized', color: colors.drone},
             SENSOR_DRONE_BATTERY_STATUS:
                 {name: 'drone_battery_status', color: colors.drone},
+            SENSOR_DRONE_USB_ACTIVE:
+                {name: 'drone_usb_active', color: colors.drone},
+            SENSOR_DRONE_USB_REMAINING_TIME:
+                {name: 'drone_usb_remaining_time', color: colors.drone},
+            SENSOR_DRONE_CAMERA_READY:
+                {name: 'drone_camera_ready', color: colors.drone},
+            SENSOR_DRONE_RECORD_READY:
+                {name: 'drone_record_ready', color: colors.drone},
+            SENSOR_DRONE_RECORDING:
+                {name: 'drone_recording', color: colors.drone},
+            SENSOR_DRONE_NUM_FRAMES:
+                {name: 'drone_num_frames', color: colors.drone},
+            SENSOR_DRONE_FLYING:
+                {name: 'drone_flying', color: colors.drone},
+            SENSOR_DRONE_EMERGENCY_STATE:
+                {name: 'drone_emergency_state', color: colors.drone},
             SENSOR_EV3_SENSOR_1:
                 {name: 'EV3_sensor_1', color: colors.lego},
             SENSOR_EV3_SENSOR_3:

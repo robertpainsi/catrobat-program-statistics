@@ -370,7 +370,19 @@ export function getFeaturesFromFormula(formula, category) {
                 case 'LOCATION_ACCURACY':
                     return [...LOCATION_FEATURES];
 
+                case 'NFC_TAG_ID':
+                case 'NFC_TAG_MESSAGE':
+                    return [...NFC_FEATURES];
+                case 'DRONE_INITIALIZED':
                 case 'DRONE_BATTERY_STATUS':
+                case 'DRONE_USB_ACTIVE':
+                case 'DRONE_USB_REMAINING_TIME':
+                case 'DRONE_CAMERA_READY':
+                case 'DRONE_RECORD_READY':
+                case 'DRONE_RECORDING':
+                case 'DRONE_NUM_FRAMES':
+                case 'DRONE_FLYING':
+                case 'DRONE_EMERGENCY_STATE':
                     return [...DRONE_FEATURES];
                 case 'EV3_SENSOR_1':
                 case 'EV3_SENSOR_3':
