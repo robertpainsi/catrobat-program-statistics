@@ -201,6 +201,7 @@ export function getFeaturesFromBrick(brick) {
         case 'DroneMoveLeftBrick':
         case 'DroneMoveRightBrick':
         case 'DroneMoveUpBrick':
+        case 'DronePlayLedAnimationBrick':
         case 'DroneSwitchCameraBrick':
         case 'DroneTakeOffLandBrick':
         case 'DroneTurnLeftBrick':
