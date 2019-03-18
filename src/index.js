@@ -7,7 +7,7 @@ import fse from "fs-extra";
 
 import {increaseObjectKey, pushIfDefined} from "./utils";
 import {getProgramHistories, screenSizeToKey} from "./stats-utils";
-import {getDisplayInfo} from "./stats-display-info";
+import statsInfo from "./stats-info";
 
 (async function() {
     console.time('runtime');
@@ -56,7 +56,7 @@ import {getDisplayInfo} from "./stats-display-info";
 
     const stats = {
         updated: new Date().getTime(),
-        display: getDisplayInfo(),
+        display: statsInfo,
         overall: getOverallStats(allLatestVersions, {getTimelineKey: getMonthlyTimelineKey}),
         currentYear: getOverallStats(currentYearLatestVersions, {getTimelineKey: getWeeklyTimelineKey}),
         lastYear: getOverallStats(lastYearLatestVersions, {getTimelineKey: getWeeklyTimelineKey}),
