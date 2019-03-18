@@ -6,7 +6,7 @@ import xmldom from "xmldom";
 import xpath from "xpath";
 
 import {increaseObjectKey} from "./utils";
-import {DRONE_FEATURES, getFeaturesFromBrick, getFeaturesFromFormula} from "./program-features";
+import statsInfo, {featureGroups} from "./stats-info";
 
 const readFile = promisify(fs.readFile);
 const parser = new xmldom.DOMParser();
@@ -17,6 +17,10 @@ const renamedBricks = new Map([
     ['IfThenLogicBeginBrick', 'IfLogicBeginBrick'],
     ['IfThenLogicEndBrick', 'IfLogicEndBrick'],
     ['WhenBrick', 'WhenScript'],
+]);
+
+const renamedFormulas = new Map([
+    ['SENSOR_OBJECT_GHOSTEFFECT', 'SENSOR_OBJECT_TRANSPARENCY'],
 ]);
 
 const unsupportedBricks = [
@@ -107,7 +111,7 @@ export async function getProgramStatsFromString(xmlString) {
 
     const features = [];
     if (droneLooks.length) {
-        features.push(...DRONE_FEATURES);
+        features.push(...featureGroups.drone);
     }
     for (const brick of [...scripts, ...bricks]) {
         stats.bricks++;
@@ -121,7 +125,7 @@ export async function getProgramStatsFromString(xmlString) {
         }
 
         increaseObjectKey(stats.brickUsage, type);
-        features.push(...getFeaturesFromBrick(type));
+        features.push(...getBrickFeatures(type));
     }
     for (const formula of formulas) {
         let type = xpath.select1(`type`, formula).textContent;
@@ -133,7 +137,7 @@ export async function getProgramStatsFromString(xmlString) {
             case `BRACKET`:
             case `COLLISION_FORMULA`:
                 increaseObjectKey(stats.formulaUsage, type);
-                features.push(...getFeaturesFromFormula(type));
+                features.push(...getFormulaFeatures(type));
                 break;
             default:
                 let value = xpath.select1(`value`, formula).textContent;
@@ -141,16 +145,31 @@ export async function getProgramStatsFromString(xmlString) {
                     throw new Error(`Incomplete formula ${type}: ${value}`);
                 }
 
-                if (type === 'SENSOR' && value === 'OBJECT_GHOSTEFFECT') {
-                    value = 'OBJECT_TRANSPARENCY';
+                let formulaId = `${type}_${value}`;
+                if (renamedFormulas.has(formulaId)) {
+                    formulaId = renamedFormulas.get(formulaId);
                 }
 
-                increaseObjectKey(stats.formulaUsage, `${type}_${value}`);
-                features.push(...getFeaturesFromFormula(value, type));
+                increaseObjectKey(stats.formulaUsage, formulaId);
+                features.push(...getFormulaFeatures(formulaId));
                 break;
         }
     }
     stats.features = [...new Set(features)];
 
     return stats;
+}
+
+function getBrickFeatures(id) {
+    if (!statsInfo.bricks[id]) {
+        throw new Error(`Unknown brick type ${id}`);
+    }
+    return [...statsInfo.bricks[id].features];
+}
+
+function getFormulaFeatures(id) {
+    if (!statsInfo.formulas[id]) {
+        throw new Error(`Unknown formula type ${id}`);
+    }
+    return [...statsInfo.formulas[id].features];
 }
