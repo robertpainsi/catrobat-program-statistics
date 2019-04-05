@@ -43,6 +43,7 @@ export async function getProgramStatsFromString(xmlString) {
         return stats;
     }
 
+    const user = xpath.select(`string(/program/header/userHandle)`, document);
     const platform = xpath.select(`string(/program/header/platform)`, document);
     const landscape = xpath.select(`string(/program/header/landscapeMode)`, document) === 'true';
     const isRemix = xpath.select(`string(/program/header/remixOf)`, document).trim() !== '';
@@ -77,6 +78,7 @@ export async function getProgramStatsFromString(xmlString) {
         width: screenWidth,
         height: screenHeight,
     };
+    stats.user = user;
     stats.platform = platform;
     stats.isRemix = isRemix;
     stats.scenes = scenes.length;
