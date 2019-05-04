@@ -1,80 +1,68 @@
 'use strict';
 
-import path from "path";
-import {fork} from "child_process";
+import {Worker} from "worker_threads";
 
-import config from "./config";
-import {getProgramStatsFromFile} from "./program-stats";
+const allWorkers = new Set();
+const availableWorkers = new Set();
+const workerCallbacks = new Map();
+const workerNotify = [];
 
-class SingleThreadedPool {
-
-    async getProgramStatsFromFile(file) {
-        return getProgramStatsFromFile(file);
-    }
-
-    freeThreads() {
+export function initWorkers(count) {
+    for (let i = 0; i < count; i++) {
+        const worker = new Worker('./src/program-stats.js', {
+            workerData: {id: i},
+        });
+        worker.on('message', (stats) => {
+            notifyNewFreeWorker(worker);
+            workerCallbacks.get(worker).resolve(stats);
+        });
+        worker.on('error', (e) => {
+            notifyNewFreeWorker(worker);
+            workerCallbacks.get(worker).reject(e);
+        });
+        worker.on('exit', (code) => {
+            notifyNewFreeWorker(worker);
+            if (code !== 0 && workerCallbacks.has(worker)) {
+                workerCallbacks.get(worker).reject(new Error(`Worker stopped with exit code ${code}`));
+            }
+        });
+        allWorkers.add(worker);
+        availableWorkers.add(worker);
     }
 }
 
-class MultiThreadedPool {
-    notifyWorkers = [];
-    availableWorkers = [];
-
-    constructor() {
-        console.log(`Forking ${config.numberOfWorkers} workers`);
-        for (let i = 0; i < config.numberOfWorkers; i++) {
-            const workerExecArgv = process.execArgv.map((arg) => {
-                if (arg.indexOf('--inspect') !== -1) {
-                    return `--inspect-brk=${process.debugPort + (i + 1)}`
-                } else {
-                    return arg;
-                }
-            });
-            this.availableWorkers.push(fork(path.join(config.srcFolder, 'worker.js'), {
-                execArgv: workerExecArgv
-            }));
-        }
-    }
-
-    async getFreeWorker() {
-        return new Promise((resolve, reject) => {
-            this.notifyWorkers.push(resolve);
-            this.notifyFreeWorker();
-        });
-    }
-
-    notifyFreeWorker() {
-        if (this.notifyWorkers.length && this.availableWorkers.length) {
-            this.notifyWorkers.shift()(this.availableWorkers.shift());
-        }
-    }
-
-    async getProgramStatsFromFile(file) {
-        return new Promise((resolve, reject) => {
-            return this.getFreeWorker()
-                .then((worker) => {
-                    worker.once('message', (stats) => {
-                        this.availableWorkers.push(worker);
-                        this.notifyFreeWorker();
-                        resolve(stats);
-                    });
-                    worker.send(file);
-                })
-        });
-    }
-
-    freeThreads() {
-        console.log(`Freeing ${this.availableWorkers.length} workers`);
-        this.availableWorkers.forEach((worker) => worker.kill());
+function notifyNewFreeWorker(worker) {
+    availableWorkers.add(worker);
+    if (workerNotify.length) {
+        workerNotify.pop()(worker);
     }
 }
 
-function getPoolType(cpuCount) {
-    if (cpuCount === 1) {
-        return SingleThreadedPool;
+function getFreeWorker() {
+    if (availableWorkers.size) {
+        const worker = availableWorkers.values().next().value;
+        availableWorkers.delete(worker);
+        return new Promise((resolve) => {
+            resolve(worker);
+        });
     } else {
-        return MultiThreadedPool;
+        return new Promise((resolve) => {
+            workerNotify.push(resolve);
+        });
     }
 }
 
-export default getPoolType(config.numberOfWorkers);
+export function freeWorkers() {
+    for (const worker of allWorkers) {
+        worker.terminate();
+    }
+}
+
+export default function (file) {
+    return new Promise(async (resolve, reject) => {
+        const worker = await getFreeWorker();
+        availableWorkers.delete(worker);
+        workerCallbacks.set(worker, {resolve, reject});
+        worker.postMessage(file);
+    })
+};

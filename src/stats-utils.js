@@ -7,13 +7,14 @@ import fse from "fs-extra";
 import config from "./config";
 import ProgramHistory from "./program-history";
 import ProgramVersion from "./program-version";
-import WorkerPool from "./worker-pool";
+
+import workerPool, {freeWorkers, initWorkers} from "./worker-pool";
 
 export async function getProgramHistories(programFolder) {
-    const workerPool = new WorkerPool();
+    let programs = new Map();
+    const allStatsRequests = [];
     try {
-        let programs = new Map();
-        const allStatsRequests = [];
+        initWorkers(config.numberOfWorkers);
         for (const partialProgramFile of (await glob(`**/+([0-9])_+([0-9]).xml`, {cwd: programFolder})).reverse()) {
             const programVersion = parseProgramVersion(path.join(programFolder, partialProgramFile));
             if (!programs.has(programVersion._id)) {
@@ -32,13 +33,12 @@ export async function getProgramHistories(programFolder) {
                         programVersion.stats = stats;
                     });
             } else {
-                programStatsPromise = workerPool.getProgramStatsFromFile(programVersion.file)
-                    .then((stats) => {
-                        programVersion.stats = stats;
-                        if (cacheFile) {
-                            return fse.outputJson(cacheFile, programVersion.stats, {spaces: 2});
-                        }
-                    });
+                programStatsPromise = workerPool(programVersion.file).then((stats) => {
+                    programVersion.stats = stats;
+                    if (cacheFile) {
+                        return fse.outputJson(cacheFile, programVersion.stats, {spaces: 2});
+                    }
+                });
             }
 
             allStatsRequests.push(programStatsPromise);
@@ -47,11 +47,11 @@ export async function getProgramHistories(programFolder) {
             console.log(`No code files found. Check program folder and that code files match [0-9]+_[0-9]+.xml. More info at https://github.com/robertpainsi/catrobat-program-statistics/issues/4`);
         }
         await Promise.all(allStatsRequests);
-
-        return [...programs.values()].sort((a, b) => a.id - b.id);
     } finally {
-        workerPool.freeThreads();
+        freeWorkers();
     }
+
+    return [...programs.values()].sort((a, b) => a.id - b.id);
 }
 
 function parseProgramVersion(file) {
