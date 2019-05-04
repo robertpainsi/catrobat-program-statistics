@@ -15,7 +15,7 @@ const args = commandLineArgs([
 ]);
 
 const config = {
-    srcFolder: __dirname,
+    srcFolder: import.meta.url,
     programFolder: toAbsolutePath(args['program-folder']),
     outputFile: toAbsolutePath(args['output-file']),
     cacheFolder: args['cache-folder'],

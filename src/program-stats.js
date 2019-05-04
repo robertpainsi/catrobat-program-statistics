@@ -1,14 +1,13 @@
 'use strict';
 
-import {promisify} from "util";
 import fs from "fs";
 import xmldom from "xmldom";
 import xpath from "xpath";
+import {parentPort, workerData} from "worker_threads";
 
 import {increaseObjectKey} from "./utils";
 import statsInfo, {featureGroups} from "./stats-info";
 
-const readFile = promisify(fs.readFile);
 const parser = new xmldom.DOMParser();
 
 const renamedBricks = new Map([
@@ -21,6 +20,7 @@ const renamedBricks = new Map([
 
 const renamedFormulas = new Map([
     ['SENSOR_OBJECT_GHOSTEFFECT', 'SENSOR_OBJECT_TRANSPARENCY'],
+    ['FUNCTION_POW', 'FUNCTION_POWER'],
 ]);
 
 const unsupportedBricks = [
@@ -31,11 +31,11 @@ const unsupportedBricks = [
     'BroadcastReceiverBrick', // XXX: Ignore for now, only in 82911
 ];
 
-export async function getProgramStatsFromFile(file) {
-    return await getProgramStatsFromString(await readFile(file, 'UTF-8'));
+function getProgramStatsFromFile(file) {
+    return getProgramStatsFromString(fs.readFileSync(file, 'UTF-8'));
 }
 
-export async function getProgramStatsFromString(xmlString) {
+function getProgramStatsFromString(xmlString) {
     const stats = {};
 
     const document = parser.parseFromString(xmlString);
@@ -176,3 +176,9 @@ function getFormulaFeatures(id) {
     }
     return [...statsInfo.formulas[id].features];
 }
+
+parentPort.on('message', (file) => {
+    console.log(workerData.id, file);
+    parentPort.postMessage(getProgramStatsFromFile(file));
+});
+
