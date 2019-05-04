@@ -1,7 +1,7 @@
 'use strict';
 
-import path from "path";
-import os from "os";
+import path from 'path';
+import os from 'os';
 
 export function toAbsolutePath(filePath) {
     if (!filePath) {

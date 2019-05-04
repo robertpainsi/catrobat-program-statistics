@@ -1,12 +1,12 @@
 'use strict';
 
-import fs from "fs";
-import xmldom from "xmldom";
-import xpath from "xpath";
-import {parentPort, workerData} from "worker_threads";
+import fs from 'fs';
+import xmldom from 'xmldom';
+import xpath from 'xpath';
+import {parentPort, workerData} from 'worker_threads';
 
-import {increaseObjectKey} from "./utils";
-import statsInfo, {featureGroups} from "./stats-info";
+import {increaseObjectKey} from './utils';
+import statsInfo, {featureGroups} from './stats-info';
 
 const parser = new xmldom.DOMParser();
 

@@ -1,7 +1,7 @@
 'use strict';
 
-import fs from "fs-extra";
-import isValidPath from "is-valid-path";
+import fs from 'fs-extra';
+import isValidPath from 'is-valid-path';
 
 export function checkRequired(arg, errorMessage) {
     check(arg !== undefined && arg !== null, errorMessage);

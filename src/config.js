@@ -1,11 +1,11 @@
 'use strict';
 
-import os from "os";
-import path from "path";
-import commandLineArgs from "command-line-args";
+import os from 'os';
+import path from 'path';
+import commandLineArgs from 'command-line-args';
 
-import {check, checkPathExists, checkPathValid, checkRequired} from "./check-utils";
-import {toAbsolutePath} from "./fs-utils";
+import {check, checkPathExists, checkPathValid, checkRequired} from './check-utils';
+import {toAbsolutePath} from './fs-utils';
 
 const args = commandLineArgs([
     {name: 'program-folder', type: String},

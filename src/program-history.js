@@ -1,6 +1,6 @@
 'use strict';
 
-import binarySearchInsert from "binary-search-insert";
+import binarySearchInsert from 'binary-search-insert';
 
 export default class ProgramHistory {
 

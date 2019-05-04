@@ -13,7 +13,7 @@ const colors = {
     sounds: '8f4cba',
     userBricks: '98c204',
     sensor: '6b72cc',
-    hardware: 'ff0000,'
+    hardware: 'ff0000,',
 };
 
 const features = {
@@ -82,115 +82,115 @@ const info = {
     features: {
         list: {
             name: 'List',
-            color: colors.data
+            color: colors.data,
         },
         variable: {
             name: 'Variable',
-            color: colors.data
+            color: colors.data,
         },
         text: {
             name: 'Text',
-            color: colors.control
+            color: colors.control,
         },
         clone: {
             name: 'Clone',
-            color: colors.control
+            color: colors.control,
         },
         pen: {
             name: 'Pen',
-            color: colors.pen
+            color: colors.pen,
         },
         physics: {
             name: 'Physics',
-            color: colors.motion
+            color: colors.motion,
         },
         touch: {
             name: 'Touch',
-            color: colors.sensor
+            color: colors.sensor,
         },
         finger: {
             name: 'Finger',
-            color: colors.sensor
+            color: colors.sensor,
         },
         faceDetection: {
             name: 'Face detection',
-            color: colors.sensor
+            color: colors.sensor,
         },
         dateTime: {
             name: 'Date-Time',
-            color: colors.sensor
+            color: colors.sensor,
         },
         textToSpeech: {
             name: 'Text to speech',
-            color: colors.data
+            color: colors.data,
         },
         cast: {
             name: 'Cast',
-            color: colors.control
+            color: colors.control,
         },
         userBrick: {
             name: 'User Brick',
-            color: colors.userBricks
+            color: colors.userBricks,
         },
         hardware: {
             name: 'Hardware',
-            color: colors.hardware
+            color: colors.hardware,
         },
         externalHardware: {
             name: 'External hardware',
-            color: colors.hardware
+            color: colors.hardware,
         },
         internalHardware: {
             name: 'Internal hardware',
-            color: colors.hardware
+            color: colors.hardware,
         },
         bluetooth: {
             name: 'Bluetooth',
-            color: colors.bluetooth
+            color: colors.bluetooth,
         },
         wlan: {
             name: 'WLAN',
-            color: colors.bluetooth
+            color: colors.bluetooth,
         },
         nfc: {
             name: 'NFC',
-            color: colors.bluetooth
+            color: colors.bluetooth,
         },
         camera: {
             name: 'Camera',
-            color: colors.sensor
+            color: colors.sensor,
         },
         flash: {
             name: 'Flash',
-            color: colors.sensor
+            color: colors.sensor,
         },
         location: {
             name: 'Location',
-            color: colors.sensor
+            color: colors.sensor,
         },
         phoneSensor: {
             name: 'Phone sensor',
-            color: colors.sensor
+            color: colors.sensor,
         },
         arduino: {
             name: 'Arduino',
-            color: colors.bluetooth
+            color: colors.bluetooth,
         },
         drone: {
             name: 'Drone',
-            color: colors.bluetooth
+            color: colors.bluetooth,
         },
         lego: {
             name: 'Lego',
-            color: colors.lego
+            color: colors.lego,
         },
         phiro: {
             name: 'Phiro',
-            color: colors.lego
+            color: colors.lego,
         },
         raspberryPi: {
             name: 'Raspberry Pi',
-            color: colors.bluetooth
+            color: colors.bluetooth,
         },
     },
     bricks: {
@@ -198,1251 +198,1251 @@ const info = {
         StartScript: {
             name: 'When program starts',
             color: colors.event,
-            features: []
+            features: [],
         },
         WhenScript: {
             name: 'When tapped',
             color: colors.event,
-            features: []
+            features: [],
         },
         WhenTouchDownScript: {
             name: 'When screen is touched',
             color: colors.event,
-            features: []
+            features: [],
         },
         BroadcastScript: {
             name: 'When you receive',
             color: colors.event,
-            features: []
+            features: [],
         },
         BroadcastBrick: {
             name: 'Broadcast',
             color: colors.event,
-            features: []
+            features: [],
         },
         BroadcastWaitBrick: {
             name: 'Broadcast and Wait',
             color: colors.event,
-            features: []
+            features: [],
         },
         WhenConditionScript: {
             name: 'When _ becomes true',
             color: colors.event,
-            features: []
+            features: [],
         },
         CollisionScript: {
             name: 'When physical collision with',
             color: colors.event,
-            features: [...featureGroups.physics]
+            features: [...featureGroups.physics],
         },
         WhenBackgroundChangesScript: {
             name: 'When background changes to',
             color: colors.event,
-            features: []
+            features: [],
         },
         WhenClonedScript: {
             name: 'When I start as a clone',
             color: colors.event,
-            features: [...featureGroups.clone]
+            features: [...featureGroups.clone],
         },
         WhenNfcScript: {
             name: 'When NFC',
             color: colors.event,
-            features: [...featureGroups.nfc]
+            features: [...featureGroups.nfc],
         },
         RaspiInterruptScript: {
             name: 'When Raspberry Pi pin changes to',
             color: colors.event,
-            features: [...featureGroups.raspberryPi]
+            features: [...featureGroups.raspberryPi],
         },
         WhenGamepadButtonScript: {
             name: 'When gamepad button',
             color: colors.event,
-            features: [...featureGroups.cast]
+            features: [...featureGroups.cast],
         },
 
         // Control
         WaitBrick: {
             name: 'Wait',
             color: colors.control,
-            features: []
+            features: [],
         },
         NoteBrick: {
             name: 'Note',
             color: colors.control,
-            features: []
+            features: [],
         },
         ForeverBrick: {
             name: 'Forever',
             color: colors.control,
-            features: []
+            features: [],
         },
         LoopEndBrick: {
             name: 'End of Loop',
             color: colors.control,
-            features: []
+            features: [],
         },
         IfLogicBeginBrick: {
             name: 'If',
             color: colors.control,
-            features: []
+            features: [],
         },
         IfLogicElseBrick: {
             name: 'Else',
             color: colors.control,
-            features: []
+            features: [],
         },
         IfLogicEndBrick: {
             name: 'End If',
             color: colors.control,
-            features: []
+            features: [],
         },
         WaitUntilBrick: {
             name: 'Wait until _ is true',
             color: colors.control,
-            features: []
+            features: [],
         },
         RepeatBrick: {
             name: 'Repeat',
             color: colors.control,
-            features: []
+            features: [],
         },
         RepeatUntilBrick: {
             name: 'Repeat until _ is true',
             color: colors.control,
-            features: []
+            features: [],
         },
         SceneStartBrick: {
             name: 'Start scene',
             color: colors.control,
-            features: []
+            features: [],
         },
         SceneTransitionBrick: {
             name: 'Continue scene',
             color: colors.control,
-            features: []
+            features: [],
         },
         PhiroIfLogicBeginBrick: {
             name: 'If Phiro sensor is activated',
             color: colors.control,
-            features: [...featureGroups.phiro]
+            features: [...featureGroups.phiro],
         },
         StopScriptBrick: {
             name: 'Stop script',
             color: colors.control,
-            features: []
+            features: [],
         },
         CloneBrick: {
             name: 'Create clone',
             color: colors.control,
-            features: [...featureGroups.clone]
+            features: [...featureGroups.clone],
         },
         DeleteThisCloneBrick: {
             name: 'Delete this clone',
             color: colors.control,
-            features: [...featureGroups.clone]
+            features: [...featureGroups.clone],
         },
         SetNfcTagBrick: {
             name: 'Set next NFC tag',
             color: colors.control,
-            features: [...featureGroups.nfc]
+            features: [...featureGroups.nfc],
         },
         RaspiIfLogicBeginBrick: {
             name: 'If Raspberry Pi pin is true',
             color: colors.control,
-            features: [...featureGroups.raspberryPi]
+            features: [...featureGroups.raspberryPi],
         },
 
         // Motion
         PlaceAtBrick: {
             name: 'Place at',
             color: colors.motion,
-            features: []
+            features: [],
         },
         SetXBrick: {
             name: 'Set X',
             color: colors.motion,
-            features: []
+            features: [],
         },
         SetYBrick: {
             name: 'Set Y',
             color: colors.motion,
-            features: []
+            features: [],
         },
         ChangeXByNBrick: {
             name: 'Change X',
             color: colors.motion,
-            features: []
+            features: [],
         },
         ChangeYByNBrick: {
             name: 'Change Y',
             color: colors.motion,
-            features: []
+            features: [],
         },
         GoToBrick: {
             name: 'Go to',
             color: colors.motion,
-            features: []
+            features: [],
         },
         IfOnEdgeBounceBrick: {
             name: 'If on edge, bounce',
             color: colors.motion,
-            features: []
+            features: [],
         },
         MoveNStepsBrick: {
             name: 'Move _ steps',
             color: colors.motion,
-            features: []
+            features: [],
         },
         TurnLeftBrick: {
             name: 'Turn left',
             color: colors.motion,
-            features: []
+            features: [],
         },
         TurnRightBrick: {
             name: 'Turn right',
             color: colors.motion,
-            features: []
+            features: [],
         },
         PointInDirectionBrick: {
             name: 'Point in direction',
             color: colors.motion,
-            features: []
+            features: [],
         },
         PointToBrick: {
             name: 'Point to',
             color: colors.motion,
-            features: []
+            features: [],
         },
         SetRotationStyleBrick: {
             name: 'Set rotation style',
             color: colors.motion,
-            features: []
+            features: [],
         },
         GlideToBrick: {
             name: 'Glide to',
             color: colors.motion,
-            features: []
+            features: [],
         },
         GoNStepsBackBrick: {
             name: 'Go back _ layers',
             color: colors.motion,
-            features: []
+            features: [],
         },
         ComeToFrontBrick: {
             name: 'Come to front',
             color: colors.motion,
-            features: []
+            features: [],
         },
         VibrationBrick: {
             name: 'Vibrate',
             color: colors.motion,
-            features: []
+            features: [],
         },
         SetPhysicsObjectTypeBrick: {
             name: 'Set motion type',
             color: colors.motion,
-            features: [...featureGroups.physics]
+            features: [...featureGroups.physics],
         },
         SetVelocityBrick: {
             name: 'Set velocity',
             color: colors.motion,
-            features: [...featureGroups.physics]
+            features: [...featureGroups.physics],
         },
         TurnLeftSpeedBrick: {
             name: 'Rotate left speed',
             color: colors.motion,
-            features: [...featureGroups.physics]
+            features: [...featureGroups.physics],
         },
         TurnRightSpeedBrick: {
             name: 'Rotate right speed',
             color: colors.motion,
-            features: [...featureGroups.physics]
+            features: [...featureGroups.physics],
         },
         SetGravityBrick: {
             name: 'Set gravity',
             color: colors.motion,
-            features: [...featureGroups.physics]
+            features: [...featureGroups.physics],
         },
         SetMassBrick: {
             name: 'Set mass',
             color: colors.motion,
-            features: [...featureGroups.physics]
+            features: [...featureGroups.physics],
         },
         SetBounceBrick: {
             name: 'Set bounce factor',
             color: colors.motion,
-            features: [...featureGroups.physics]
+            features: [...featureGroups.physics],
         },
         SetFrictionBrick: {
             name: 'Set friction',
             color: colors.motion,
-            features: [...featureGroups.physics]
+            features: [...featureGroups.physics],
         },
 
         // Sounds
         PlaySoundBrick: {
             name: 'Start sound',
             color: colors.sounds,
-            features: []
+            features: [],
         },
         PlaySoundAndWaitBrick: {
             name: 'Start sound and wait',
             color: colors.sounds,
-            features: []
+            features: [],
         },
         StopAllSoundsBrick: {
             name: 'Stop all sounds',
             color: colors.sounds,
-            features: []
+            features: [],
         },
         SetVolumeToBrick: {
             name: 'Set volume',
             color: colors.sounds,
-            features: []
+            features: [],
         },
         ChangeVolumeByNBrick: {
             name: 'Change volume',
             color: colors.sounds,
-            features: []
+            features: [],
         },
         SpeakBrick: {
             name: 'Speak',
             color: colors.sounds,
-            features: []
+            features: [],
         },
         SpeakAndWaitBrick: {
             name: 'Speak and wait',
             color: colors.sounds,
-            features: []
+            features: [],
         },
         PhiroPlayToneBrick: {
             name: 'Play Phiro music tone',
             color: colors.sounds,
-            features: [...featureGroups.phiro]
+            features: [...featureGroups.phiro],
         },
         AskSpeechBrick: {
             name: 'Ask speech',
             color: colors.sounds,
-            features: [...featureGroups.variable, ...featureGroups.speech]
+            features: [...featureGroups.variable, ...featureGroups.speech],
         },
 
         // Looks
         SetLookBrick: {
             name: 'Switch to look',
             color: colors.looks,
-            features: []
+            features: [],
         },
         SetLookByIndexBrick: {
             name: 'Switch to look #',
             color: colors.looks,
-            features: []
+            features: [],
         },
         NextLookBrick: {
             name: 'Next look',
             color: colors.looks,
-            features: []
+            features: [],
         },
         PreviousLookBrick: {
             name: 'Previous look',
             color: colors.looks,
-            features: []
+            features: [],
         },
         SetSizeToBrick: {
             name: 'Set size',
             color: colors.looks,
-            features: []
+            features: [],
         },
         ChangeSizeByNBrick: {
             name: 'Change size',
             color: colors.looks,
-            features: []
+            features: [],
         },
         HideBrick: {
             name: 'Hide',
             color: colors.looks,
-            features: []
+            features: [],
         },
         ShowBrick: {
             name: 'Show',
             color: colors.looks,
-            features: []
+            features: [],
         },
         AskBrick: {
             name: 'Ask',
             color: colors.looks,
-            features: [...featureGroups.variable]
+            features: [...featureGroups.variable],
         },
         SayBubbleBrick: {
             name: 'Say',
             color: colors.looks,
-            features: []
+            features: [],
         },
         SayForBubbleBrick: {
             name: 'Say for _ seconds',
             color: colors.looks,
-            features: []
+            features: [],
         },
         ThinkBubbleBrick: {
             name: 'Think',
             color: colors.looks,
-            features: []
+            features: [],
         },
         ThinkForBubbleBrick: {
             name: 'Think for _ seconds',
             color: colors.looks,
-            features: []
+            features: [],
         },
         SetTransparencyBrick: {
             name: 'Set transparency',
             color: colors.looks,
-            features: []
+            features: [],
         },
         ChangeTransparencyByNBrick: {
             name: 'Change transparency',
             color: colors.looks,
-            features: []
+            features: [],
         },
         SetBrightnessBrick: {
             name: 'Set brightness',
             color: colors.looks,
-            features: []
+            features: [],
         },
         ChangeBrightnessByNBrick: {
             name: 'Change brightness',
             color: colors.looks,
-            features: []
+            features: [],
         },
         SetColorBrick: {
             name: 'Set color',
             color: colors.looks,
-            features: []
+            features: [],
         },
         ChangeColorByNBrick: {
             name: 'Change color',
             color: colors.looks,
-            features: []
+            features: [],
         },
         ClearBackgroundBrick: {
             name: 'Clear graphic effects',
             color: colors.looks,
-            features: [...featureGroups.pen]
+            features: [...featureGroups.pen],
         },
         SetBackgroundBrick: {
             name: 'Switch background',
             color: colors.looks,
-            features: []
+            features: [],
         },
         SetBackgroundAndWaitBrick: {
             name: 'Switch background and wait',
             color: colors.looks,
-            features: []
+            features: [],
         },
         SetBackgroundByIndexBrick: {
             name: 'Switch background to #',
             color: colors.looks,
-            features: []
+            features: [],
         },
         SetBackgroundByIndexAndWaitBrick: {
             name: 'Switch background to # and wait',
             color: colors.looks,
-            features: []
+            features: [],
         },
         CameraBrick: {
             name: 'Turn camera on/off',
             color: colors.looks,
-            features: [...featureGroups.camera]
+            features: [...featureGroups.camera],
         },
         ChooseCameraBrick: {
             name: 'Use front/back camera',
             color: colors.looks,
-            features: [...featureGroups.camera]
+            features: [...featureGroups.camera],
         },
         FlashBrick: {
             name: 'Turn flashlight',
             color: colors.looks,
-            features: [...featureGroups.flash]
+            features: [...featureGroups.flash],
         },
         PhiroRGBLightBrick: {
             name: 'Set Phiro light',
             color: colors.looks,
-            features: [...featureGroups.phiro]
+            features: [...featureGroups.phiro],
         },
 
         // Pen
         PenDownBrick: {
             name: 'Pen down',
             color: colors.pen,
-            features: [...featureGroups.pen]
+            features: [...featureGroups.pen],
         },
         PenUpBrick: {
             name: 'Pen up',
             color: colors.pen,
-            features: [...featureGroups.pen]
+            features: [...featureGroups.pen],
         },
         SetPenSizeBrick: {
             name: 'Set pen size',
             color: colors.pen,
-            features: [...featureGroups.pen]
+            features: [...featureGroups.pen],
         },
         SetPenColorBrick: {
             name: 'Set pen color',
             color: colors.pen,
-            features: [...featureGroups.pen]
+            features: [...featureGroups.pen],
         },
         StampBrick: {
             name: 'Stamp',
             color: colors.pen,
-            features: []
+            features: [],
         },
         ClearGraphicEffectBrick: {
             name: 'Clear',
             color: colors.pen,
-            features: []
+            features: [],
         },
 
         // Data
         SetVariableBrick: {
             name: 'Set variable',
             color: colors.data,
-            features: [...featureGroups.variable]
+            features: [...featureGroups.variable],
         },
         ChangeVariableBrick: {
             name: 'Change variable',
             color: colors.data,
-            features: [...featureGroups.variable]
+            features: [...featureGroups.variable],
         },
         ShowTextBrick: {
             name: 'Show variable',
             color: colors.data,
-            features: []
+            features: [],
         },
         HideTextBrick: {
             name: 'Hide variable',
             color: colors.data,
-            features: []
+            features: [],
         },
         AddItemToUserListBrick: {
             name: 'Add to list',
             color: colors.data,
-            features: [...featureGroups.list]
+            features: [...featureGroups.list],
         },
         DeleteItemOfUserListBrick: {
             name: 'Delete from list',
             color: colors.data,
-            features: [...featureGroups.list]
+            features: [...featureGroups.list],
         },
         InsertItemIntoUserListBrick: {
             name: 'Insert into list',
             color: colors.data,
-            features: [...featureGroups.list]
+            features: [...featureGroups.list],
         },
         ReplaceItemInUserListBrick: {
             name: 'Replace in list',
             color: colors.data,
-            features: [...featureGroups.list]
+            features: [...featureGroups.list],
         },
 
         // Lego
         LegoNxtMotorMoveBrick: {
             name: 'Move NXT motor',
             color: colors.lego,
-            features: [...featureGroups.lego]
+            features: [...featureGroups.lego],
         },
         LegoNxtMotorStopBrick: {
             name: 'Stop NXT motor',
             color: colors.lego,
-            features: [...featureGroups.lego]
+            features: [...featureGroups.lego],
         },
         LegoNxtMotorTurnAngleBrick: {
             name: 'Turn NXT motor',
             color: colors.lego,
-            features: [...featureGroups.lego]
+            features: [...featureGroups.lego],
         },
         LegoNxtPlayToneBrick: {
             name: 'Play NXT tone',
             color: colors.lego,
-            features: [...featureGroups.lego]
+            features: [...featureGroups.lego],
         },
         LegoEv3MotorTurnAngleBrick: {
             name: 'Turn EV3 motor',
             color: colors.lego,
-            features: [...featureGroups.lego]
+            features: [...featureGroups.lego],
         },
         LegoEv3MotorMoveBrick: {
             name: 'Move EV3 motor',
             color: colors.lego,
-            features: [...featureGroups.lego]
+            features: [...featureGroups.lego],
         },
         LegoEv3MotorStopBrick: {
             name: 'Stop EV3 motor',
             color: colors.lego,
-            features: [...featureGroups.lego]
+            features: [...featureGroups.lego],
         },
         LegoEv3PlayToneBrick: {
             name: 'Play EV3 tone',
             color: colors.lego,
-            features: [...featureGroups.lego]
+            features: [...featureGroups.lego],
         },
         LegoEv3SetLedBrick: {
             name: 'Set EV3 LED Status',
             color: colors.lego,
-            features: [...featureGroups.lego]
+            features: [...featureGroups.lego],
         },
 
         // User bricks
         UserBrick: {
             name: 'My bricks',
             color: colors.userBricks,
-            features: [...featureGroups.userBrick]
+            features: [...featureGroups.userBrick],
         },
 
         // Drone
         DroneTakeOffLandBrick: {
             name: 'Take off / Land',
             color: colors.drone,
-            features: [...featureGroups.drone]
+            features: [...featureGroups.drone],
         },
         DroneFlipBrick: {
             name: 'Flip',
             color: colors.drone,
-            features: [...featureGroups.drone]
+            features: [...featureGroups.drone],
         },
         DroneEmergencyBrick: {
             name: 'Emergency',
             color: colors.drone,
-            features: [...featureGroups.drone]
+            features: [...featureGroups.drone],
         },
         DroneMoveUpBrick: {
             name: 'Move up',
             color: colors.drone,
-            features: [...featureGroups.drone]
+            features: [...featureGroups.drone],
         },
         DroneMoveDownBrick: {
             name: 'Move down',
             color: colors.drone,
-            features: [...featureGroups.drone]
+            features: [...featureGroups.drone],
         },
         DroneMoveLeftBrick: {
             name: 'Move left',
             color: colors.drone,
-            features: [...featureGroups.drone]
+            features: [...featureGroups.drone],
         },
         DroneMoveRightBrick: {
             name: 'Move right',
             color: colors.drone,
-            features: [...featureGroups.drone]
+            features: [...featureGroups.drone],
         },
         DroneMoveForwardBrick: {
             name: 'Move forward',
             color: colors.drone,
-            features: [...featureGroups.drone]
+            features: [...featureGroups.drone],
         },
         DroneMoveBackwardBrick: {
             name: 'Move backward',
             color: colors.drone,
-            features: [...featureGroups.drone]
+            features: [...featureGroups.drone],
         },
         DroneTurnLeftBrick: {
             name: 'Turn left',
             color: colors.drone,
-            features: [...featureGroups.drone]
+            features: [...featureGroups.drone],
         },
         DroneTurnRightBrick: {
             name: 'Turn right',
             color: colors.drone,
-            features: [...featureGroups.drone]
+            features: [...featureGroups.drone],
         },
         DroneSwitchCameraBrick: {
             name: 'Switch drone camera',
             color: colors.drone,
-            features: [...featureGroups.drone]
+            features: [...featureGroups.drone],
         },
         DroneTurnLeftMagnetoBrick: {
             name: 'Turn left magneto',
             color: colors.drone,
-            features: [...featureGroups.drone]
+            features: [...featureGroups.drone],
         },
         DroneTurnRightMagnetoBrick: {
             name: 'Turn right magneto',
             color: colors.drone,
-            features: [...featureGroups.drone]
+            features: [...featureGroups.drone],
         },
         DronePlayLedAnimationBrick: {
             name: 'Play LED animation',
             color: colors.drone,
-            features: [...featureGroups.drone]
+            features: [...featureGroups.drone],
         },
 
         // Bluetooth
         PhiroMotorMoveBackwardBrick: {
             name: 'Move Phiro motor backward',
             color: colors.bluetooth,
-            features: [...featureGroups.phiro]
+            features: [...featureGroups.phiro],
         },
         PhiroMotorMoveForwardBrick: {
             name: 'Move Phiro motor forward',
             color: colors.bluetooth,
-            features: [...featureGroups.phiro]
+            features: [...featureGroups.phiro],
         },
         PhiroMotorStopBrick: {
             name: 'Stop Phiro motor',
             color: colors.bluetooth,
-            features: [...featureGroups.phiro]
+            features: [...featureGroups.phiro],
         },
         ArduinoSendDigitalValueBrick: {
             name: 'Set Arduino digital pin',
             color: colors.bluetooth,
-            features: [...featureGroups.arduino]
+            features: [...featureGroups.arduino],
         },
         ArduinoSendPWMValueBrick: {
             name: 'Set Arduino PWM~ pin',
             color: colors.bluetooth,
-            features: [...featureGroups.arduino]
+            features: [...featureGroups.arduino],
         },
         RaspiPwmBrick: {
             name: 'Set Raspberry Pi PWM pin',
             color: colors.bluetooth,
-            features: [...featureGroups.raspberryPi]
+            features: [...featureGroups.raspberryPi],
         },
         RaspiSendDigitalValueBrick: {
             name: 'Set Raspberry Pi pin',
             color: colors.bluetooth,
-            features: [...featureGroups.raspberryPi]
+            features: [...featureGroups.raspberryPi],
         },
     },
     formulas: {
         NUMBER: {
             name: 'Number',
             color: colors.control,
-            features: []
+            features: [],
         },
         STRING: {
             name: 'Text',
             color: colors.control,
-            features: [...featureGroups.text]
+            features: [...featureGroups.text],
         },
         BRACKET: {
             name: '()',
             color: colors.control,
-            features: []
+            features: [],
         },
         USER_LIST: {
             name: 'List',
             color: colors.data,
-            features: [...featureGroups.list]
+            features: [...featureGroups.list],
         },
         USER_VARIABLE: {
             name: 'Variable',
             color: colors.data,
-            features: [...featureGroups.variable]
+            features: [...featureGroups.variable],
         },
         COLLISION_FORMULA: {
             name: 'touches_object',
             color: colors.event,
-            features: [...featureGroups.touch]
+            features: [...featureGroups.touch],
         },
 
         FUNCTION_ABS: {
             name: 'abs',
             color: colors.control,
-            features: []
+            features: [],
         },
         FUNCTION_ARCCOS: {
             name: 'arccos',
             color: colors.control,
-            features: []
+            features: [],
         },
         FUNCTION_ARCSIN: {
             name: 'arcsin',
             color: colors.control,
-            features: []
+            features: [],
         },
         FUNCTION_ARCTAN: {
             name: 'arctan',
             color: colors.control,
-            features: []
+            features: [],
         },
         FUNCTION_CEIL: {
             name: 'ceil',
             color: colors.control,
-            features: []
+            features: [],
         },
         FUNCTION_COS: {
             name: 'cos',
             color: colors.control,
-            features: []
+            features: [],
         },
         FUNCTION_EXP: {
             name: 'exp',
             color: colors.control,
-            features: []
+            features: [],
         },
         FUNCTION_FALSE: {
             name: 'FALSE',
             color: colors.control,
-            features: []
+            features: [],
         },
         FUNCTION_FLOOR: {
             name: 'floor',
             color: colors.control,
-            features: []
+            features: [],
         },
         FUNCTION_LN: {
             name: 'ln',
             color: colors.control,
-            features: []
+            features: [],
         },
         FUNCTION_LOG: {
             name: 'log',
             color: colors.control,
-            features: []
+            features: [],
         },
         FUNCTION_MAX: {
             name: 'max',
             color: colors.control,
-            features: []
+            features: [],
         },
         FUNCTION_MIN: {
             name: 'min',
             color: colors.control,
-            features: []
+            features: [],
         },
         FUNCTION_MOD: {
             name: 'mod',
             color: colors.control,
-            features: []
+            features: [],
         },
         FUNCTION_PI: {
             name: 'PI',
             color: colors.control,
-            features: []
+            features: [],
         },
         FUNCTION_POWER: {
             name: 'power',
             color: colors.control,
-            features: []
+            features: [],
         },
         FUNCTION_RAND: {
             name: 'rand',
             color: colors.control,
-            features: []
+            features: [],
         },
         FUNCTION_ROUND: {
             name: 'round',
             color: colors.control,
-            features: []
+            features: [],
         },
         FUNCTION_SIN: {
             name: 'sin',
             color: colors.control,
-            features: []
+            features: [],
         },
         FUNCTION_SQRT: {
             name: 'sqrt',
             color: colors.control,
-            features: []
+            features: [],
         },
         FUNCTION_TAN: {
             name: 'tan',
             color: colors.control,
-            features: []
+            features: [],
         },
         FUNCTION_TRUE: {
             name: 'TRUE',
             color: colors.control,
-            features: []
+            features: [],
         },
         FUNCTION_JOIN: {
             name: 'join',
             color: colors.control,
-            features: [...featureGroups.text]
+            features: [...featureGroups.text],
         },
         FUNCTION_LENGTH: {
             name: 'length',
             color: colors.control,
-            features: [...featureGroups.text]
+            features: [...featureGroups.text],
         },
         FUNCTION_LETTER: {
             name: 'letter',
             color: colors.control,
-            features: [...featureGroups.text]
+            features: [...featureGroups.text],
         },
         FUNCTION_CONTAINS: {
             name: 'contains',
             color: colors.data,
-            features: [...featureGroups.list]
+            features: [...featureGroups.list],
         },
         FUNCTION_LIST_ITEM: {
             name: 'element',
             color: colors.data,
-            features: [...featureGroups.list]
+            features: [...featureGroups.list],
         },
         FUNCTION_NUMBER_OF_ITEMS: {
             name: 'number_of_items',
             color: colors.data,
-            features: [...featureGroups.list]
+            features: [...featureGroups.list],
         },
         FUNCTION_MULTI_FINGER_TOUCHED: {
             name: 'screen_is_touched',
             color: colors.sensor,
-            features: [...featureGroups.finger]
+            features: [...featureGroups.finger],
         },
         FUNCTION_MULTI_FINGER_X: {
             name: 'screen_touch_x',
             color: colors.sensor,
-            features: [...featureGroups.finger]
+            features: [...featureGroups.finger],
         },
         FUNCTION_MULTI_FINGER_Y: {
             name: 'screen_touch_y',
             color: colors.sensor,
-            features: [...featureGroups.finger]
+            features: [...featureGroups.finger],
         },
         FUNCTION_ARDUINOANALOG: {
             name: 'arduino_analog_pin',
             color: colors.bluetooth,
-            features: [...featureGroups.arduino]
+            features: [...featureGroups.arduino],
         },
         FUNCTION_ARDUINODIGITAL: {
             name: 'arduino_digital_pin', color: colors.bluetooth,
-            features: [...featureGroups.arduino]
+            features: [...featureGroups.arduino],
         },
         FUNCTION_RASPIDIGITAL: {
             name: 'raspberry_pi_pin', color: colors.bluetooth,
-            features: [...featureGroups.raspberryPi]
+            features: [...featureGroups.raspberryPi],
         },
         OPERATOR_DIVIDE: {
             name: '÷', color: colors.control,
-            features: []
+            features: [],
         },
         OPERATOR_EQUAL: {
             name: '=', color: colors.control,
-            features: []
+            features: [],
         },
         OPERATOR_GREATER_OR_EQUAL: {
             name: '≥', color: colors.control,
-            features: []
+            features: [],
         },
         OPERATOR_GREATER_THAN: {
             name: '>', color: colors.control,
-            features: []
+            features: [],
         },
         OPERATOR_LOGICAL_AND: {
             name: 'AND', color: colors.control,
-            features: []
+            features: [],
         },
         OPERATOR_LOGICAL_NOT: {
             name: 'NOT', color: colors.control,
-            features: []
+            features: [],
         },
         OPERATOR_LOGICAL_OR: {
             name: 'OR', color: colors.control,
-            features: []
+            features: [],
         },
         OPERATOR_MINUS: {
             name: '-', color: colors.control,
-            features: []
+            features: [],
         },
         OPERATOR_MULT: {
             name: '×', color: colors.control,
-            features: []
+            features: [],
         },
         OPERATOR_NOT_EQUAL: {
             name: '≠', color: colors.control,
-            features: []
+            features: [],
         },
         OPERATOR_PLUS: {
             name: '+', color: colors.control,
-            features: []
+            features: [],
         },
         OPERATOR_SMALLER_OR_EQUAL: {
             name: '≤',
             color: colors.control,
-            features: []
+            features: [],
         },
         OPERATOR_SMALLER_THAN: {
             name: '<',
             color: colors.control,
-            features: []
+            features: [],
         },
         SENSOR_LOUDNESS: {
             name: 'loudness',
             color: colors.sounds,
-            features: []
+            features: [],
         },
         SENSOR_OBJECT_BACKGROUND_NAME: {
             name: 'background_name', color: colors.looks,
-            features: []
+            features: [],
         },
         SENSOR_OBJECT_BACKGROUND_NUMBER: {
             name: 'background_number', color: colors.looks,
-            features: []
+            features: [],
         },
         SENSOR_OBJECT_BRIGHTNESS: {
             name: 'brightness', color: colors.looks,
-            features: []
+            features: [],
         },
         SENSOR_OBJECT_COLOR: {
             name: 'color', color: colors.looks,
-            features: []
+            features: [],
         },
         SENSOR_OBJECT_LAYER: {
             name: 'layer', color: colors.motion,
-            features: []
+            features: [],
         },
         SENSOR_OBJECT_LOOK_NAME: {
             name: 'look_name', color: colors.looks,
-            features: []
+            features: [],
         },
         SENSOR_OBJECT_LOOK_NUMBER: {
             name: 'look_number', color: colors.looks,
-            features: []
+            features: [],
         },
         SENSOR_OBJECT_ROTATION: {
             name: 'rotation', color: colors.motion,
-            features: []
+            features: [],
         },
         SENSOR_OBJECT_SIZE: {
             name: 'size', color: colors.looks,
-            features: []
+            features: [],
         },
         SENSOR_OBJECT_TRANSPARENCY: {
             name: 'transparency', color: colors.looks,
-            features: []
+            features: [],
         },
         SENSOR_OBJECT_X: {
             name: 'position_x', color: colors.motion,
-            features: []
+            features: [],
         },
         SENSOR_OBJECT_Y: {
             name: 'position_y', color: colors.motion,
-            features: []
+            features: [],
         },
         SENSOR_OBJECT_DISTANCE_TO: {
             name: 'distance_to', color: colors.motion,
-            features: []
+            features: [],
         },
         SENSOR_OBJECT_ANGULAR_VELOCITY: {
             name: 'angular_velocity', color: colors.motion,
-            features: [...featureGroups.physics]
+            features: [...featureGroups.physics],
         },
         SENSOR_OBJECT_X_VELOCITY: {
             name: 'x_velocity', color: colors.motion,
-            features: [...featureGroups.physics]
+            features: [...featureGroups.physics],
         },
         SENSOR_OBJECT_Y_VELOCITY: {
             name: 'y_velocity', color: colors.motion,
-            features: [...featureGroups.physics]
+            features: [...featureGroups.physics],
         },
         SENSOR_COLLIDES_WITH_EDGE: {
             name: 'touches_edge', color: colors.event,
-            features: [...featureGroups.touch]
+            features: [...featureGroups.touch],
         },
         SENSOR_COLLIDES_WITH_FINGER: {
             name: 'touches_finger', color: colors.event,
-            features: [...featureGroups.touch, ...featureGroups.finger]
+            features: [...featureGroups.touch, ...featureGroups.finger],
         },
         SENSOR_FINGER_TOUCHED: {
             name: 'screen_is_touched', color: colors.event,
-            features: [...featureGroups.finger]
+            features: [...featureGroups.finger],
         },
         SENSOR_FINGER_X: {
             name: 'screen_touch_x', color: colors.sensor,
-            features: [...featureGroups.finger]
+            features: [...featureGroups.finger],
         },
         SENSOR_FINGER_Y: {
             name: 'screen_touch_y', color: colors.sensor,
-            features: [...featureGroups.finger]
+            features: [...featureGroups.finger],
         },
         SENSOR_LAST_FINGER_INDEX: {
             name: 'last_screen_touch_index', color: colors.sensor,
-            features: [...featureGroups.finger]
+            features: [...featureGroups.finger],
         },
         SENSOR_DATE_DAY: {
             name: 'day', color: colors.sensor,
-            features: [...featureGroups.dateTime]
+            features: [...featureGroups.dateTime],
         },
         SENSOR_DATE_MONTH: {
             name: 'month', color: colors.sensor,
-            features: [...featureGroups.dateTime]
+            features: [...featureGroups.dateTime],
         },
         SENSOR_DATE_WEEKDAY: {
             name: 'weekday', color: colors.sensor,
-            features: [...featureGroups.dateTime]
+            features: [...featureGroups.dateTime],
         },
         SENSOR_DATE_YEAR: {
             name: 'year', color: colors.sensor,
-            features: [...featureGroups.dateTime]
+            features: [...featureGroups.dateTime],
         },
         SENSOR_TIME_HOUR: {
             name: 'hour', color: colors.sensor,
-            features: [...featureGroups.dateTime]
+            features: [...featureGroups.dateTime],
         },
         SENSOR_TIME_MINUTE: {
             name: 'minute', color: colors.sensor,
-            features: [...featureGroups.dateTime]
+            features: [...featureGroups.dateTime],
         },
         SENSOR_TIME_SECOND: {
             name: 'second', color: colors.sensor,
-            features: [...featureGroups.dateTime]
+            features: [...featureGroups.dateTime],
         },
         SENSOR_FACE_DETECTED: {
             name: 'face_is_visible', color: colors.sensor,
-            features: [...featureGroups.faceDetection]
+            features: [...featureGroups.faceDetection],
         },
         SENSOR_FACE_SIZE: {
             name: 'face_size', color: colors.sensor,
-            features: [...featureGroups.faceDetection]
+            features: [...featureGroups.faceDetection],
         },
         SENSOR_FACE_X_POSITION: {
             name: 'face_x_position', color: colors.sensor,
-            features: [...featureGroups.faceDetection]
+            features: [...featureGroups.faceDetection],
         },
         SENSOR_FACE_Y_POSITION: {
             name: 'face_y_position', color: colors.sensor,
-            features: [...featureGroups.faceDetection]
+            features: [...featureGroups.faceDetection],
         },
         SENSOR_X_ACCELERATION: {
             name: 'acceleration_x', color: colors.sensor,
-            features: [...featureGroups.phoneSensor]
+            features: [...featureGroups.phoneSensor],
         },
         SENSOR_X_INCLINATION: {
             name: 'inclination_x', color: colors.sensor,
-            features: [...featureGroups.phoneSensor]
+            features: [...featureGroups.phoneSensor],
         },
         SENSOR_Y_ACCELERATION: {
             name: 'acceleration_y', color: colors.sensor,
-            features: [...featureGroups.phoneSensor]
+            features: [...featureGroups.phoneSensor],
         },
         SENSOR_Y_INCLINATION: {
             name: 'inclination_y', color: colors.sensor,
-            features: [...featureGroups.phoneSensor]
+            features: [...featureGroups.phoneSensor],
         },
         SENSOR_Z_ACCELERATION: {
             name: 'acceleration_z', color: colors.sensor,
-            features: [...featureGroups.phoneSensor]
+            features: [...featureGroups.phoneSensor],
         },
         SENSOR_ALTITUDE: {
             name: 'altitude', color: colors.sensor,
-            features: [...featureGroups.location]
+            features: [...featureGroups.location],
         },
         SENSOR_LONGITUDE: {
             name: 'longitude', color: colors.sensor,
-            features: [...featureGroups.location]
+            features: [...featureGroups.location],
         },
         SENSOR_COMPASS_DIRECTION: {
             name: 'compass_direction', color: colors.sensor,
-            features: [...featureGroups.location]
+            features: [...featureGroups.location],
         },
         SENSOR_LATITUDE: {
             name: 'latitude', color: colors.sensor,
-            features: [...featureGroups.location]
+            features: [...featureGroups.location],
         },
         SENSOR_LOCATION_ACCURACY: {
             name: 'location_accuracy', color: colors.sensor,
-            features: [...featureGroups.location]
+            features: [...featureGroups.location],
         },
         SENSOR_NFC_TAG_ID: {
             name: 'nfc_tag_id', color: colors.bluetooth,
-            features: [...featureGroups.nfc]
+            features: [...featureGroups.nfc],
         },
         SENSOR_NFC_TAG_MESSAGE: {
             name: 'nfc_tag_message', color: colors.bluetooth,
-            features: [...featureGroups.nfc]
+            features: [...featureGroups.nfc],
         },
         SENSOR_DRONE_INITIALIZED: {
             name: 'drone_initialized', color: colors.drone,
-            features: [...featureGroups.drone]
+            features: [...featureGroups.drone],
         },
         SENSOR_DRONE_BATTERY_STATUS: {
             name: 'drone_battery_status', color: colors.drone,
-            features: [...featureGroups.drone]
+            features: [...featureGroups.drone],
         },
         SENSOR_DRONE_USB_ACTIVE: {
             name: 'drone_usb_active', color: colors.drone,
-            features: [...featureGroups.drone]
+            features: [...featureGroups.drone],
         },
         SENSOR_DRONE_USB_REMAINING_TIME: {
             name: 'drone_usb_remaining_time', color: colors.drone,
-            features: [...featureGroups.drone]
+            features: [...featureGroups.drone],
         },
         SENSOR_DRONE_CAMERA_READY: {
             name: 'drone_camera_ready', color: colors.drone,
-            features: [...featureGroups.drone]
+            features: [...featureGroups.drone],
         },
         SENSOR_DRONE_RECORD_READY: {
             name: 'drone_record_ready', color: colors.drone,
-            features: [...featureGroups.drone]
+            features: [...featureGroups.drone],
         },
         SENSOR_DRONE_RECORDING: {
             name: 'drone_recording', color: colors.drone,
-            features: [...featureGroups.drone]
+            features: [...featureGroups.drone],
         },
         SENSOR_DRONE_NUM_FRAMES: {
             name: 'drone_num_frames', color: colors.drone,
-            features: [...featureGroups.drone]
+            features: [...featureGroups.drone],
         },
         SENSOR_DRONE_FLYING: {
             name: 'drone_flying', color: colors.drone,
-            features: [...featureGroups.drone]
+            features: [...featureGroups.drone],
         },
         SENSOR_DRONE_EMERGENCY_STATE: {
             name: 'drone_emergency_state', color: colors.drone,
-            features: [...featureGroups.drone]
+            features: [...featureGroups.drone],
         },
         SENSOR_EV3_SENSOR_1: {
             name: 'EV3_sensor_1', color: colors.lego,
-            features: [...featureGroups.lego]
+            features: [...featureGroups.lego],
         },
         SENSOR_EV3_SENSOR_3: {
             name: 'EV3_sensor_3', color: colors.lego,
-            features: [...featureGroups.lego]
+            features: [...featureGroups.lego],
         },
         SENSOR_EV3_SENSOR_4: {
             name: 'EV3_sensor_4', color: colors.lego,
-            features: [...featureGroups.lego]
+            features: [...featureGroups.lego],
         },
         SENSOR_NXT_SENSOR_1: {
             name: 'NXT_sensor_1', color: colors.lego,
-            features: [...featureGroups.lego]
+            features: [...featureGroups.lego],
         },
         SENSOR_NXT_SENSOR_2: {
             name: 'NXT_sensor_2', color: colors.lego,
-            features: [...featureGroups.lego]
+            features: [...featureGroups.lego],
         },
         SENSOR_NXT_SENSOR_3: {
             name: 'NXT_sensor_3', color: colors.lego,
-            features: [...featureGroups.lego]
+            features: [...featureGroups.lego],
         },
         SENSOR_NXT_SENSOR_4: {
             name: 'NXT_sensor_4', color: colors.lego,
-            features: [...featureGroups.lego]
+            features: [...featureGroups.lego],
         },
         SENSOR_PHIRO_BOTTOM_LEFT: {
             name: 'phiro_bottom_left', color: colors.bluetooth,
-            features: [...featureGroups.phiro]
+            features: [...featureGroups.phiro],
         },
         SENSOR_PHIRO_BOTTOM_RIGHT: {
             name: 'phiro_bottom_right', color: colors.bluetooth,
-            features: [...featureGroups.phiro]
+            features: [...featureGroups.phiro],
         },
         SENSOR_PHIRO_FRONT_LEFT: {
             name: 'phiro_front_left', color: colors.bluetooth,
-            features: [...featureGroups.phiro]
+            features: [...featureGroups.phiro],
         },
         SENSOR_PHIRO_FRONT_RIGHT: {
             name: 'phiro_front_right', color: colors.bluetooth,
-            features: [...featureGroups.phiro]
+            features: [...featureGroups.phiro],
         },
         SENSOR_PHIRO_SIDE_LEFT: {
             name: 'phiro_side_left', color: colors.bluetooth,
-            features: [...featureGroups.phiro]
+            features: [...featureGroups.phiro],
         },
         SENSOR_PHIRO_SIDE_RIGHT: {
             name: 'phiro_side_right', color: colors.bluetooth,
-            features: [...featureGroups.phiro]
+            features: [...featureGroups.phiro],
         },
-    }
+    },
 };
 
 export default info;

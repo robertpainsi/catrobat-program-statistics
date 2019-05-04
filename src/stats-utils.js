@@ -1,14 +1,14 @@
 'use strict';
 
-import path from "path";
-import glob from "glob-promise/lib/index";
-import fse from "fs-extra";
+import path from 'path';
+import glob from 'glob-promise/lib/index';
+import fse from 'fs-extra';
 
-import config from "./config";
-import ProgramHistory from "./program-history";
-import ProgramVersion from "./program-version";
+import config from './config';
+import ProgramHistory from './program-history';
+import ProgramVersion from './program-version';
 
-import workerPool, {freeWorkers, initWorkers} from "./worker-pool";
+import workerPool, {freeWorkers, initWorkers} from './worker-pool';
 
 export async function getProgramHistories(programFolder) {
     let programs = new Map();
@@ -59,7 +59,7 @@ function parseProgramVersion(file) {
     return new ProgramVersion(
         parseInt(match[2]),
         new Date(parseInt(match[1])),
-        file
+        file,
     );
 }
 

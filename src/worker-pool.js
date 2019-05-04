@@ -1,6 +1,6 @@
 'use strict';
 
-import {Worker} from "worker_threads";
+import {Worker} from 'worker_threads';
 
 const allWorkers = new Set();
 const availableWorkers = new Set();
@@ -58,11 +58,11 @@ export function freeWorkers() {
     }
 }
 
-export default function (file) {
+export default function(file) {
     return new Promise(async (resolve, reject) => {
         const worker = await getFreeWorker();
         availableWorkers.delete(worker);
         workerCallbacks.set(worker, {resolve, reject});
         worker.postMessage(file);
-    })
+    });
 };

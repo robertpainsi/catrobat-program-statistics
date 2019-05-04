@@ -1,13 +1,13 @@
 'use strict';
 
-import config from "./config";
+import config from './config';
 
-import moment from "moment";
-import fse from "fs-extra";
+import moment from 'moment';
+import fse from 'fs-extra';
 
-import {increaseObjectKey, pushIfDefined} from "./utils";
-import {getProgramHistories, screenSizeToKey} from "./stats-utils";
-import statsInfo from "./stats-info";
+import {increaseObjectKey, pushIfDefined} from './utils';
+import {getProgramHistories, screenSizeToKey} from './stats-utils';
+import statsInfo from './stats-info';
 
 (async function() {
     console.time('runtime');
@@ -96,7 +96,7 @@ function getOverallStats(versions, {getTimelineKey}) {
         objectLists: 0,
         programVariables: 0,
         programLists: 0,
-        timeline: {}
+        timeline: {},
     };
 
     for (const version of versions) {
@@ -139,9 +139,9 @@ function getOverallStats(versions, {getTimelineKey}) {
         const timelineKey = getTimelineKey(version.uploadDate);
         overall.timeline[timelineKey] = overall.timeline[timelineKey] || {remixes: 0, new: 0};
         if (stats.isRemix) {
-            increaseObjectKey(overall.timeline[timelineKey], 'remixes')
+            increaseObjectKey(overall.timeline[timelineKey], 'remixes');
         } else {
-            increaseObjectKey(overall.timeline[timelineKey], 'new')
+            increaseObjectKey(overall.timeline[timelineKey], 'new');
         }
     }
 
