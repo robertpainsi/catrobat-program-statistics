@@ -1,15 +1,13 @@
 {
   "name": "catrobat-program-statistics",
-  "version": "0.1.0",
-  "description": "",
-  "repository": "",
-  "main": "src/index.js",
-  "type": "module",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "version": "1.0.0",
+  "description": "Create data for Catrobat statistics",
+  "repository": "https://github.com/robertpainsi/catrobat-program-statistics",
   "author": "Robert Painsi",
   "license": "MIT",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {},
   "dependencies": {
     "binary-search-insert": "^1.0.3",
     "command-line-args": "^5.0.2",
@@ -18,36 +16,7 @@
     "glob-promise": "^3.3.0",
     "is-valid-path": "^0.1.1",
     "moment": "^2.24.0",
-    "semver-compare": "^1.0.0",
     "xmldom": "^0.1.27",
     "xpath": "^0.0.24"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.0.0",
-    "@babel/core": "^7.0.0",
-    "@babel/plugin-proposal-class-properties": "^7.0.0",
-    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
-    "@babel/plugin-proposal-optional-chaining": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
-    "@babel/register": "^7.0.0",
-    "babel-loader": "^8.0.5"
-  },
-  "babel": {
-    "sourceMaps": "both",
-    "presets": [
-      [
-        "@babel/preset-env",
-        {
-          "targets": {
-            "node": "current"
-          }
-        }
-      ]
-    ],
-    "plugins": [
-      "@babel/plugin-proposal-class-properties",
-      "@babel/plugin-proposal-object-rest-spread",
-      "@babel/plugin-proposal-optional-chaining"
-    ]
   }
 }
