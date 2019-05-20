@@ -57,11 +57,31 @@ import statsInfo from './stats-info';
     const stats = {
         updated: new Date().getTime(),
         display: statsInfo,
-        overall: getOverallStats(allLatestVersions, {getTimelineKey: getMonthlyTimelineKey}),
-        currentYear: getOverallStats(currentYearLatestVersions, {getTimelineKey: getWeeklyTimelineKey}),
-        lastYear: getOverallStats(lastYearLatestVersions, {getTimelineKey: getWeeklyTimelineKey}),
-        currentMonth: getOverallStats(currentMonthLatestVersions, {getTimelineKey: getDailyTimelineKey}),
-        lastMonth: getOverallStats(lastMonthLatestVersions, {getTimelineKey: getDailyTimelineKey}),
+        overall: getOverallStats(allLatestVersions, {
+            type: `overall`,
+            hasLastData: false,
+            getTimelineKey: getMonthlyTimelineKey,
+        }),
+        currentYear: getOverallStats(currentYearLatestVersions, {
+            type: `year`,
+            hasLastData: true,
+            getTimelineKey: getWeeklyTimelineKey,
+        }),
+        lastYear: getOverallStats(lastYearLatestVersions, {
+            type: `year`,
+            hasLastData: false,
+            getTimelineKey: getWeeklyTimelineKey,
+        }),
+        currentMonth: getOverallStats(currentMonthLatestVersions, {
+            type: `month`,
+            hasLastData: true,
+            getTimelineKey: getDailyTimelineKey,
+        }),
+        lastMonth: getOverallStats(lastMonthLatestVersions, {
+            type: `month`,
+            hasLastData: false,
+            getTimelineKey: getDailyTimelineKey,
+        }),
     };
     await fse.writeJson(config.outputFile, stats, {spaces: 2});
 
@@ -71,8 +91,10 @@ import statsInfo from './stats-info';
     console.error(e);
 }));
 
-function getOverallStats(versions, {getTimelineKey}) {
+function getOverallStats(versions, {type, hasLastData, getTimelineKey}) {
     const overall = {
+        type,
+        hasLastData,
         programs: 0,
         programsWithMultipleScenes: 0,
         programsWithGroups: 0,
@@ -97,10 +119,30 @@ function getOverallStats(versions, {getTimelineKey}) {
         programVariables: 0,
         programLists: 0,
         timeline: {},
+        weekdayUploads: {
+            monday: 0,
+            tuesday: 0,
+            wednesday: 0,
+            thursday: 0,
+            friday: 0,
+            saturday: 0,
+            sunday: 0,
+        },
+    };
+
+    const weekdayKey = {
+        1: 'monday',
+        2: 'tuesday',
+        3: 'wednesday',
+        4: 'thursday',
+        5: 'friday',
+        6: 'saturday',
+        0: 'sunday',
     };
 
     for (const version of versions) {
-        const {stats} = version;
+        const {stats, uploadDate} = version;
+        overall.weekdayUploads[weekdayKey[uploadDate.getDay()]]++;
 
         overall.programs++;
         overall.scenes += stats.scenes;
