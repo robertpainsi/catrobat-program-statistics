@@ -28,7 +28,8 @@ const unsupportedBricks = [
     'IfLogicElseSimpleBrick',
     'IfLogicEndSimpleBrick',
     'VideoBrick',
-    'BroadcastReceiverBrick', // XXX: Ignore for now, only in 82911
+    'BroadcastReceiverBrick',
+    'WhenConditionBrick',
 ];
 
 function getProgramStatsFromFile(file) {
