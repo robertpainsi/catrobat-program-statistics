@@ -119,30 +119,10 @@ function getOverallStats(versions, {type, hasLastData, getTimelineKey}) {
         programVariables: 0,
         programLists: 0,
         timeline: {},
-        weekdayUploads: {
-            monday: 0,
-            tuesday: 0,
-            wednesday: 0,
-            thursday: 0,
-            friday: 0,
-            saturday: 0,
-            sunday: 0,
-        },
-    };
-
-    const weekdayKey = {
-        1: 'monday',
-        2: 'tuesday',
-        3: 'wednesday',
-        4: 'thursday',
-        5: 'friday',
-        6: 'saturday',
-        0: 'sunday',
     };
 
     for (const version of versions) {
-        const {stats, uploadDate} = version;
-        overall.weekdayUploads[weekdayKey[uploadDate.getDay()]]++;
+        const {stats} = version;
 
         overall.programs++;
         overall.scenes += stats.scenes;
