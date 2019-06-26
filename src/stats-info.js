@@ -1058,6 +1058,11 @@ const info = {
             color: colors.control,
             features: [...featureGroups.text],
         },
+        FUNCTION_REGEX: {
+            name: 'regular expression',
+            color: colors.control,
+            features: [...featureGroups.text],
+        },
         FUNCTION_LENGTH: {
             name: 'length',
             color: colors.control,
