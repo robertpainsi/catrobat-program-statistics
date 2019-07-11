@@ -14,6 +14,7 @@ const colors = {
     userBricks: '98c204',
     sensor: '6b72cc',
     hardware: 'ff0000,',
+    embroidery: 'cc73a1',
 };
 
 const features = {
@@ -30,6 +31,8 @@ const features = {
     speech: 'textToSpeech',
     cast: 'cast',
     userBrick: 'userBrick',
+
+    embroidery: 'embroidery',
 
     hardware: 'hardware',
     externalHardware: 'externalHardware',
@@ -62,6 +65,8 @@ export const featureGroups = {
     dateTime: [features.dateTime],
     speech: [features.speech],
     userBrick: [features.userBrick],
+
+    embroidery: [features.embroidery],
 
     phoneSensor: [features.phoneSensor, features.internalHardware, features.hardware],
     camera: [features.camera, features.internalHardware, features.hardware],
@@ -131,6 +136,10 @@ const info = {
         userBrick: {
             name: 'User Brick',
             color: colors.userBricks,
+        },
+        embroidery: {
+            name: 'Embroidery',
+            color: colors.embroidery,
         },
         hardware: {
             name: 'Hardware',
@@ -230,9 +239,9 @@ const info = {
             color: colors.event,
             features: [],
         },
-        CollisionScript: {
-            name: 'When physical collision with',
-            color: colors.event,
+        WhenBounceOffScript: {
+            name: 'When you bounce off',
+            color: colors.motion,
             features: [...featureGroups.physics],
         },
         WhenBackgroundChangesScript: {
@@ -715,12 +724,27 @@ const info = {
         ShowTextBrick: {
             name: 'Show variable',
             color: colors.data,
-            features: [],
+            features: [...featureGroups.variable],
+        },
+        ShowTextColorSizeAlignmentBrick: {
+            name: 'Show variable with size and aligned',
+            color: colors.data,
+            features: [...featureGroups.variable],
         },
         HideTextBrick: {
             name: 'Hide variable',
             color: colors.data,
-            features: [],
+            features: [...featureGroups.variable],
+        },
+        WriteVariableOnDeviceBrick: {
+            name: 'Write variable on device',
+            color: colors.data,
+            features: [...featureGroups.variable],
+        },
+        ReadVariableFromDeviceBrick: {
+            name: 'Read variable from device',
+            color: colors.data,
+            features: [...featureGroups.variable],
         },
         AddItemToUserListBrick: {
             name: 'Add to list',
@@ -910,6 +934,11 @@ const info = {
             color: colors.bluetooth,
             features: [...featureGroups.raspberryPi],
         },
+        StitchBrick: {
+            name: 'Stich',
+            color: colors.embroidery,
+            features: [...featureGroups.embroidery],
+        }
     },
     formulas: {
         NUMBER: {

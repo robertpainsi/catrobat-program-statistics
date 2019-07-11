@@ -15,7 +15,7 @@ export async function getProgramHistories(programFolder) {
     const allStatsRequests = [];
     try {
         initWorkers(config.numberOfWorkers);
-        for (const partialProgramFile of (await glob(`**/+([0-9])_+([0-9]).xml`, {cwd: programFolder})).reverse()) {
+        for (const partialProgramFile of (await glob(`**/+([0-9])_+([0-9]).xml`, {cwd: programFolder}))) {
             const programVersion = parseProgramVersion(path.join(programFolder, partialProgramFile));
             if (!programs.has(programVersion._id)) {
                 programs.set(programVersion._id, new ProgramHistory(programVersion._id));
