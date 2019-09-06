@@ -821,84 +821,133 @@ const info = {
             features: [...featureGroups.userBrick],
         },
 
-        // Drone
+        // Robots
+
+        //AR.Drone
         DroneTakeOffLandBrick: {
-            name: 'Take off / Land',
-            color: colors.drone,
-            features: [...featureGroups.drone],
-        },
-        DroneFlipBrick: {
-            name: 'Flip',
+            name: 'Take off / land AR.Drone',
             color: colors.drone,
             features: [...featureGroups.drone],
         },
         DroneEmergencyBrick: {
-            name: 'Emergency',
+            name: 'Emergency AR.Drone',
             color: colors.drone,
             features: [...featureGroups.drone],
         },
         DroneMoveUpBrick: {
-            name: 'Move up',
+            name: 'Move AR.Drone up',
             color: colors.drone,
             features: [...featureGroups.drone],
         },
         DroneMoveDownBrick: {
-            name: 'Move down',
+            name: 'Move AR.Drone down',
             color: colors.drone,
             features: [...featureGroups.drone],
         },
         DroneMoveLeftBrick: {
-            name: 'Move left',
+            name: 'Move AR.Drone left',
             color: colors.drone,
             features: [...featureGroups.drone],
         },
         DroneMoveRightBrick: {
-            name: 'Move right',
+            name: 'Move AR.Drone right',
             color: colors.drone,
             features: [...featureGroups.drone],
         },
         DroneMoveForwardBrick: {
-            name: 'Move forward',
+            name: 'Move AR.Drone forward',
             color: colors.drone,
             features: [...featureGroups.drone],
         },
         DroneMoveBackwardBrick: {
-            name: 'Move backward',
+            name: 'Move AR.Drone backward',
             color: colors.drone,
             features: [...featureGroups.drone],
         },
         DroneTurnLeftBrick: {
-            name: 'Turn left',
+            name: 'Turn AR.Drone left',
             color: colors.drone,
             features: [...featureGroups.drone],
         },
         DroneTurnRightBrick: {
-            name: 'Turn right',
+            name: 'Turn AR.Drone right',
             color: colors.drone,
             features: [...featureGroups.drone],
         },
-        DroneSwitchCameraBrick: {
-            name: 'Switch drone camera',
-            color: colors.drone,
-            features: [...featureGroups.drone],
-        },
-        DroneTurnLeftMagnetoBrick: {
-            name: 'Turn left magneto',
-            color: colors.drone,
-            features: [...featureGroups.drone],
-        },
-        DroneTurnRightMagnetoBrick: {
-            name: 'Turn right magneto',
+        DroneFlipBrick: {
+            name: 'Flip AR.Drone',
             color: colors.drone,
             features: [...featureGroups.drone],
         },
         DronePlayLedAnimationBrick: {
-            name: 'Play LED animation',
+            name: 'Play AR.Drone flash animation',
+            color: colors.drone,
+            features: [...featureGroups.drone],
+        },
+        DroneSwitchCameraBrick: {
+            name: 'Switch AR.Drone camera',
             color: colors.drone,
             features: [...featureGroups.drone],
         },
 
-        // Bluetooth
+        // Jumping Sumo
+        JumpingSumoMoveForwardBrick: {
+            name: 'Move Jumping Sumo forward',
+            color: colors.drone,
+            features: [...featureGroups.drone],
+        },
+        JumpingSumoMoveBackwardBrick: {
+            name: 'Move Jumping Sumo backward',
+            color: colors.drone,
+            features: [...featureGroups.drone],
+        },
+        JumpingSumoAnimationsBrick: {
+            name: 'Animations Jumping Sumo',
+            color: colors.drone,
+            features: [...featureGroups.drone],
+        },
+        JumpingSumoSoundBrick: {
+            name: 'Jumping Sumo Sound and Volume',
+            color: colors.drone,
+            features: [...featureGroups.drone],
+        },
+        JumpingSumoNoSoundBrick: {
+            name: 'No Jumping Sumo sound',
+            color: colors.drone,
+            features: [...featureGroups.drone],
+        },
+        JumpingSumoJumpLongBrick: {
+            name: 'Jump Jumping Sumo long',
+            color: colors.drone,
+            features: [...featureGroups.drone],
+        },
+        JumpingSumoJumpHighBrick: {
+            name: 'Jump Jumping Sumo high',
+            color: colors.drone,
+            features: [...featureGroups.drone],
+        },
+        JumpingSumoRotateLeftBrick: {
+            name: 'Turn Jumping Sumo left',
+            color: colors.drone,
+            features: [...featureGroups.drone],
+        },
+        JumpingSumoRotateRightBrick: {
+            name: 'Turn Jumping Sumo right',
+            color: colors.drone,
+            features: [...featureGroups.drone],
+        },
+        JumpingSumoTurnBrick: {
+            name: 'Flip Jumping Sumo',
+            color: colors.drone,
+            features: [...featureGroups.drone],
+        },
+        JumpingSumoTakingPictureBrick: {
+            name: 'Taking picture Jumping Sumo',
+            color: colors.drone,
+            features: [...featureGroups.drone],
+        },
+
+        // Phiro
         PhiroMotorMoveBackwardBrick: {
             name: 'Move Phiro motor backward',
             color: colors.bluetooth,
@@ -914,6 +963,8 @@ const info = {
             color: colors.bluetooth,
             features: [...featureGroups.phiro],
         },
+
+        // Arduino
         ArduinoSendDigitalValueBrick: {
             name: 'Set Arduino digital pin',
             color: colors.bluetooth,
@@ -924,6 +975,8 @@ const info = {
             color: colors.bluetooth,
             features: [...featureGroups.arduino],
         },
+
+        // Raspberry Pi
         RaspiPwmBrick: {
             name: 'Set Raspberry Pi PWM pin',
             color: colors.bluetooth,
@@ -934,11 +987,13 @@ const info = {
             color: colors.bluetooth,
             features: [...featureGroups.raspberryPi],
         },
+
+        // Embroidery
         StitchBrick: {
             name: 'Stich',
             color: colors.embroidery,
             features: [...featureGroups.embroidery],
-        }
+        },
     },
     formulas: {
         NUMBER: {
@@ -989,6 +1044,11 @@ const info = {
         },
         FUNCTION_ARCTAN: {
             name: 'arctan',
+            color: colors.control,
+            features: [],
+        },
+        FUNCTION_ARCTAN2: {
+            name: 'arctan2',
             color: colors.control,
             features: [],
         },

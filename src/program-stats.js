@@ -31,6 +31,7 @@ const unsupportedBricks = [
     'VideoBrick',
     'BroadcastReceiverBrick',
     'WhenConditionBrick',
+    'WhenStartedBrick',
 ];
 
 function getProgramStatsFromFile(file) {
