@@ -15,6 +15,7 @@ const colors = {
     sensor: '6b72cc',
     hardware: 'ff0000,',
     embroidery: 'cc73a1',
+    cast: '886a4a',
 };
 
 const features = {
@@ -1535,6 +1536,30 @@ const info = {
         SENSOR_PHIRO_SIDE_RIGHT: {
             name: 'phiro_side_right', color: colors.bluetooth,
             features: [...featureGroups.phiro],
+        },
+        SENSOR_GAMEPAD_A_PRESSED: {
+            name: 'gamepad_A_pressed', color: colors.cast,
+            features: [...featureGroups.cast],
+        },
+        SENSOR_GAMEPAD_B_PRESSED: {
+            name: 'gamepad_B_pressed', color: colors.cast,
+            features: [...featureGroups.cast],
+        },
+        SENSOR_GAMEPAD_UP_PRESSED: {
+            name: 'gamepad_up_pressed', color: colors.cast,
+            features: [...featureGroups.cast],
+        },
+        SENSOR_GAMEPAD_DOWN_PRESSED: {
+            name: 'gamepad_down_pressed', color: colors.cast,
+            features: [...featureGroups.cast],
+        },
+        SENSOR_GAMEPAD_LEFT_PRESSED: {
+            name: 'gamepad_left_pressed', color: colors.cast,
+            features: [...featureGroups.cast],
+        },
+        SENSOR_GAMEPAD_RIGHT_PRESSED: {
+            name: 'gamepad_right_pressed', color: colors.cast,
+            features: [...featureGroups.cast],
         },
     },
 };
