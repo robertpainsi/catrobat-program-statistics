@@ -132,10 +132,10 @@ const info = {
         },
         cast: {
             name: 'Cast',
-            color: colors.control,
+            color: colors.cast,
         },
         userBrick: {
-            name: 'User Brick',
+            name: 'User brick',
             color: colors.userBricks,
         },
         embroidery: {
@@ -206,7 +206,7 @@ const info = {
     bricks: {
         // Events
         StartScript: {
-            name: 'When program starts',
+            name: 'When scene starts',
             color: colors.event,
             features: [],
         },
@@ -216,7 +216,7 @@ const info = {
             features: [],
         },
         WhenTouchDownScript: {
-            name: 'When screen is touched',
+            name: 'When stage is tapped',
             color: colors.event,
             features: [],
         },
@@ -231,7 +231,7 @@ const info = {
             features: [],
         },
         BroadcastWaitBrick: {
-            name: 'Broadcast and Wait',
+            name: 'Broadcast and wait',
             color: colors.event,
             features: [],
         },
@@ -251,7 +251,7 @@ const info = {
             features: [],
         },
         WhenClonedScript: {
-            name: 'When I start as a clone',
+            name: 'When you start as a clone',
             color: colors.event,
             features: [...featureGroups.clone],
         },
@@ -288,7 +288,7 @@ const info = {
             features: [],
         },
         LoopEndBrick: {
-            name: 'End of Loop',
+            name: 'End of loop',
             color: colors.control,
             features: [],
         },
@@ -353,7 +353,7 @@ const info = {
             features: [...featureGroups.clone],
         },
         SetNfcTagBrick: {
-            name: 'Set next NFC tag',
+            name: 'Wait for next NFC tag to write',
             color: colors.control,
             features: [...featureGroups.nfc],
         },
@@ -370,22 +370,22 @@ const info = {
             features: [],
         },
         SetXBrick: {
-            name: 'Set X',
+            name: 'Set x',
             color: colors.motion,
             features: [],
         },
         SetYBrick: {
-            name: 'Set Y',
+            name: 'Set y',
             color: colors.motion,
             features: [],
         },
         ChangeXByNBrick: {
-            name: 'Change X',
+            name: 'Change x',
             color: colors.motion,
             features: [],
         },
         ChangeYByNBrick: {
-            name: 'Change Y',
+            name: 'Change y',
             color: colors.motion,
             features: [],
         },
@@ -420,7 +420,7 @@ const info = {
             features: [],
         },
         PointToBrick: {
-            name: 'Point to',
+            name: 'Point towards',
             color: colors.motion,
             features: [],
         },
@@ -440,7 +440,7 @@ const info = {
             features: [],
         },
         ComeToFrontBrick: {
-            name: 'Come to front',
+            name: 'Go to front',
             color: colors.motion,
             features: [],
         },
@@ -450,7 +450,7 @@ const info = {
             features: [],
         },
         SetPhysicsObjectTypeBrick: {
-            name: 'Set motion type',
+            name: 'Set your motion type',
             color: colors.motion,
             features: [...featureGroups.physics],
         },
@@ -460,12 +460,12 @@ const info = {
             features: [...featureGroups.physics],
         },
         TurnLeftSpeedBrick: {
-            name: 'Rotate left speed',
+            name: 'Spin left',
             color: colors.motion,
             features: [...featureGroups.physics],
         },
         TurnRightSpeedBrick: {
-            name: 'Rotate right speed',
+            name: 'Spin right',
             color: colors.motion,
             features: [...featureGroups.physics],
         },
@@ -639,22 +639,22 @@ const info = {
             features: [...featureGroups.pen],
         },
         SetBackgroundBrick: {
-            name: 'Switch background',
+            name: 'Set background',
             color: colors.looks,
             features: [],
         },
         SetBackgroundAndWaitBrick: {
-            name: 'Switch background and wait',
+            name: 'Set background and wait',
             color: colors.looks,
             features: [],
         },
         SetBackgroundByIndexBrick: {
-            name: 'Switch background to #',
+            name: 'Set background to #',
             color: colors.looks,
             features: [],
         },
         SetBackgroundByIndexAndWaitBrick: {
-            name: 'Switch background to # and wait',
+            name: 'Set background to # and wait',
             color: colors.looks,
             features: [],
         },
@@ -728,7 +728,7 @@ const info = {
             features: [...featureGroups.variable],
         },
         ShowTextColorSizeAlignmentBrick: {
-            name: 'Show variable with size and aligned',
+            name: 'Show variable at position with size and aligned',
             color: colors.data,
             features: [...featureGroups.variable],
         },
@@ -763,14 +763,14 @@ const info = {
             features: [...featureGroups.list],
         },
         ReplaceItemInUserListBrick: {
-            name: 'Replace in list',
+            name: 'Replace item in list',
             color: colors.data,
             features: [...featureGroups.list],
         },
 
         // Lego
         LegoNxtMotorMoveBrick: {
-            name: 'Move NXT motor',
+            name: 'Set NXT motor speed',
             color: colors.lego,
             features: [...featureGroups.lego],
         },
@@ -795,7 +795,7 @@ const info = {
             features: [...featureGroups.lego],
         },
         LegoEv3MotorMoveBrick: {
-            name: 'Move EV3 motor',
+            name: 'Set EV3 motor speed',
             color: colors.lego,
             features: [...featureGroups.lego],
         },
@@ -810,7 +810,7 @@ const info = {
             features: [...featureGroups.lego],
         },
         LegoEv3SetLedBrick: {
-            name: 'Set EV3 LED Status',
+            name: 'Set EV3 LED status',
             color: colors.lego,
             features: [...featureGroups.lego],
         },
@@ -826,67 +826,67 @@ const info = {
 
         //AR.Drone
         DroneTakeOffLandBrick: {
-            name: 'Take off / land AR.Drone',
+            name: 'Take off / land AR.Drone 2.0',
             color: colors.drone,
             features: [...featureGroups.drone],
         },
         DroneEmergencyBrick: {
-            name: 'Emergency AR.Drone',
+            name: 'Emergency AR.Drone 2.0',
             color: colors.drone,
             features: [...featureGroups.drone],
         },
         DroneMoveUpBrick: {
-            name: 'Move AR.Drone up',
+            name: 'Move AR.Drone 2.0 up',
             color: colors.drone,
             features: [...featureGroups.drone],
         },
         DroneMoveDownBrick: {
-            name: 'Move AR.Drone down',
+            name: 'Move AR.Drone 2.0 down',
             color: colors.drone,
             features: [...featureGroups.drone],
         },
         DroneMoveLeftBrick: {
-            name: 'Move AR.Drone left',
+            name: 'Move AR.Drone 2.0 left',
             color: colors.drone,
             features: [...featureGroups.drone],
         },
         DroneMoveRightBrick: {
-            name: 'Move AR.Drone right',
+            name: 'Move AR.Drone 2.0 right',
             color: colors.drone,
             features: [...featureGroups.drone],
         },
         DroneMoveForwardBrick: {
-            name: 'Move AR.Drone forward',
+            name: 'Move AR.Drone 2.0 forward',
             color: colors.drone,
             features: [...featureGroups.drone],
         },
         DroneMoveBackwardBrick: {
-            name: 'Move AR.Drone backward',
+            name: 'Move AR.Drone 2.0 backward',
             color: colors.drone,
             features: [...featureGroups.drone],
         },
         DroneTurnLeftBrick: {
-            name: 'Turn AR.Drone left',
+            name: 'Turn AR.Drone 2.0 left',
             color: colors.drone,
             features: [...featureGroups.drone],
         },
         DroneTurnRightBrick: {
-            name: 'Turn AR.Drone right',
+            name: 'Turn AR.Drone 2.0 right',
             color: colors.drone,
             features: [...featureGroups.drone],
         },
         DroneFlipBrick: {
-            name: 'Flip AR.Drone',
+            name: 'Flip AR.Drone 2.0',
             color: colors.drone,
             features: [...featureGroups.drone],
         },
         DronePlayLedAnimationBrick: {
-            name: 'Play AR.Drone flash animation',
+            name: 'Play AR.Drone 2.0 flash animation',
             color: colors.drone,
             features: [...featureGroups.drone],
         },
         DroneSwitchCameraBrick: {
-            name: 'Switch AR.Drone camera',
+            name: 'Switch AR.Drone 2.0 camera',
             color: colors.drone,
             features: [...featureGroups.drone],
         },
@@ -991,7 +991,7 @@ const info = {
 
         // Embroidery
         StitchBrick: {
-            name: 'Stich',
+            name: 'Stitch',
             color: colors.embroidery,
             features: [...featureGroups.embroidery],
         },
@@ -1023,53 +1023,53 @@ const info = {
             features: [...featureGroups.variable],
         },
         COLLISION_FORMULA: {
-            name: 'touches_object',
+            name: 'touches actor or object',
             color: colors.event,
             features: [...featureGroups.touch],
         },
 
         FUNCTION_ABS: {
-            name: 'abs',
+            name: 'absolute value',
             color: colors.control,
             features: [],
         },
         FUNCTION_ARCCOS: {
-            name: 'arccos',
+            name: 'arccosine',
             color: colors.control,
             features: [],
         },
         FUNCTION_ARCSIN: {
-            name: 'arcsin',
+            name: 'arcsine',
             color: colors.control,
             features: [],
         },
         FUNCTION_ARCTAN: {
-            name: 'arctan',
+            name: 'arctangent',
             color: colors.control,
             features: [],
         },
         FUNCTION_ARCTAN2: {
-            name: 'arctan2',
+            name: 'arctangent2',
             color: colors.control,
             features: [],
         },
         FUNCTION_CEIL: {
-            name: 'ceil',
+            name: 'ceiling',
             color: colors.control,
             features: [],
         },
         FUNCTION_COS: {
-            name: 'cos',
+            name: 'cosine',
             color: colors.control,
             features: [],
         },
         FUNCTION_EXP: {
-            name: 'exp',
+            name: 'exponent',
             color: colors.control,
             features: [],
         },
         FUNCTION_FALSE: {
-            name: 'FALSE',
+            name: 'false',
             color: colors.control,
             features: [],
         },
@@ -1079,32 +1079,32 @@ const info = {
             features: [],
         },
         FUNCTION_LN: {
-            name: 'ln',
+            name: 'natural logarithm',
             color: colors.control,
             features: [],
         },
         FUNCTION_LOG: {
-            name: 'log',
+            name: 'decimal logarithm',
             color: colors.control,
             features: [],
         },
         FUNCTION_MAX: {
-            name: 'max',
+            name: 'maximum of',
             color: colors.control,
             features: [],
         },
         FUNCTION_MIN: {
-            name: 'min',
+            name: 'minimum of',
             color: colors.control,
             features: [],
         },
         FUNCTION_MOD: {
-            name: 'mod',
+            name: 'modulo',
             color: colors.control,
             features: [],
         },
         FUNCTION_PI: {
-            name: 'PI',
+            name: 'pi',
             color: colors.control,
             features: [],
         },
@@ -1114,7 +1114,7 @@ const info = {
             features: [],
         },
         FUNCTION_RAND: {
-            name: 'rand',
+            name: 'random value',
             color: colors.control,
             features: [],
         },
@@ -1124,22 +1124,22 @@ const info = {
             features: [],
         },
         FUNCTION_SIN: {
-            name: 'sin',
+            name: 'sine',
             color: colors.control,
             features: [],
         },
         FUNCTION_SQRT: {
-            name: 'sqrt',
+            name: 'square root',
             color: colors.control,
             features: [],
         },
         FUNCTION_TAN: {
-            name: 'tan',
+            name: 'tangent',
             color: colors.control,
             features: [],
         },
         FUNCTION_TRUE: {
-            name: 'TRUE',
+            name: 'true',
             color: colors.control,
             features: [],
         },
@@ -1169,41 +1169,41 @@ const info = {
             features: [...featureGroups.list],
         },
         FUNCTION_LIST_ITEM: {
-            name: 'element',
+            name: 'item',
             color: colors.data,
             features: [...featureGroups.list],
         },
         FUNCTION_NUMBER_OF_ITEMS: {
-            name: 'number_of_items',
+            name: 'number of items',
             color: colors.data,
             features: [...featureGroups.list],
         },
         FUNCTION_MULTI_FINGER_TOUCHED: {
-            name: 'screen_is_touched',
+            name: 'stage is touched',
             color: colors.sensor,
             features: [...featureGroups.finger],
         },
         FUNCTION_MULTI_FINGER_X: {
-            name: 'screen_touch_x',
+            name: 'stage touch x',
             color: colors.sensor,
             features: [...featureGroups.finger],
         },
         FUNCTION_MULTI_FINGER_Y: {
-            name: 'screen_touch_y',
+            name: 'stage touch y',
             color: colors.sensor,
             features: [...featureGroups.finger],
         },
         FUNCTION_ARDUINOANALOG: {
-            name: 'arduino_analog_pin',
+            name: 'arduino analog pin',
             color: colors.bluetooth,
             features: [...featureGroups.arduino],
         },
         FUNCTION_ARDUINODIGITAL: {
-            name: 'arduino_digital_pin', color: colors.bluetooth,
+            name: 'arduino digital pin', color: colors.bluetooth,
             features: [...featureGroups.arduino],
         },
         FUNCTION_RASPIDIGITAL: {
-            name: 'raspberry_pi_pin', color: colors.bluetooth,
+            name: 'raspberry pi pin', color: colors.bluetooth,
             features: [...featureGroups.raspberryPi],
         },
         OPERATOR_DIVIDE: {
@@ -1223,15 +1223,15 @@ const info = {
             features: [],
         },
         OPERATOR_LOGICAL_AND: {
-            name: 'AND', color: colors.control,
+            name: 'and', color: colors.control,
             features: [],
         },
         OPERATOR_LOGICAL_NOT: {
-            name: 'NOT', color: colors.control,
+            name: 'not', color: colors.control,
             features: [],
         },
         OPERATOR_LOGICAL_OR: {
-            name: 'OR', color: colors.control,
+            name: 'or', color: colors.control,
             features: [],
         },
         OPERATOR_MINUS: {
@@ -1266,11 +1266,11 @@ const info = {
             features: [],
         },
         SENSOR_OBJECT_BACKGROUND_NAME: {
-            name: 'background_name', color: colors.looks,
+            name: 'background name', color: colors.looks,
             features: [],
         },
         SENSOR_OBJECT_BACKGROUND_NUMBER: {
-            name: 'background_number', color: colors.looks,
+            name: 'background number', color: colors.looks,
             features: [],
         },
         SENSOR_OBJECT_BRIGHTNESS: {
@@ -1286,15 +1286,15 @@ const info = {
             features: [],
         },
         SENSOR_OBJECT_LOOK_NAME: {
-            name: 'look_name', color: colors.looks,
+            name: 'look name', color: colors.looks,
             features: [],
         },
         SENSOR_OBJECT_LOOK_NUMBER: {
-            name: 'look_number', color: colors.looks,
+            name: 'look number', color: colors.looks,
             features: [],
         },
         SENSOR_OBJECT_ROTATION: {
-            name: 'rotation', color: colors.motion,
+            name: 'direction', color: colors.motion,
             features: [],
         },
         SENSOR_OBJECT_SIZE: {
@@ -1306,51 +1306,51 @@ const info = {
             features: [],
         },
         SENSOR_OBJECT_X: {
-            name: 'position_x', color: colors.motion,
+            name: 'position x', color: colors.motion,
             features: [],
         },
         SENSOR_OBJECT_Y: {
-            name: 'position_y', color: colors.motion,
+            name: 'position y', color: colors.motion,
             features: [],
         },
         SENSOR_OBJECT_DISTANCE_TO: {
-            name: 'distance_to', color: colors.motion,
+            name: 'distance to touch position', color: colors.motion,
             features: [],
         },
         SENSOR_OBJECT_ANGULAR_VELOCITY: {
-            name: 'angular_velocity', color: colors.motion,
+            name: 'angular velocity', color: colors.motion,
             features: [...featureGroups.physics],
         },
         SENSOR_OBJECT_X_VELOCITY: {
-            name: 'x_velocity', color: colors.motion,
+            name: 'x velocity', color: colors.motion,
             features: [...featureGroups.physics],
         },
         SENSOR_OBJECT_Y_VELOCITY: {
-            name: 'y_velocity', color: colors.motion,
+            name: 'y velocity', color: colors.motion,
             features: [...featureGroups.physics],
         },
         SENSOR_COLLIDES_WITH_EDGE: {
-            name: 'touches_edge', color: colors.event,
+            name: 'touches edge', color: colors.event,
             features: [...featureGroups.touch],
         },
         SENSOR_COLLIDES_WITH_FINGER: {
-            name: 'touches_finger', color: colors.event,
+            name: 'touches finger', color: colors.event,
             features: [...featureGroups.touch, ...featureGroups.finger],
         },
         SENSOR_FINGER_TOUCHED: {
-            name: 'screen_is_touched', color: colors.event,
+            name: 'stage is touched', color: colors.event,
             features: [...featureGroups.finger],
         },
         SENSOR_FINGER_X: {
-            name: 'screen_touch_x', color: colors.sensor,
+            name: 'stage touch x', color: colors.sensor,
             features: [...featureGroups.finger],
         },
         SENSOR_FINGER_Y: {
-            name: 'screen_touch_y', color: colors.sensor,
+            name: 'stage touch y', color: colors.sensor,
             features: [...featureGroups.finger],
         },
         SENSOR_LAST_FINGER_INDEX: {
-            name: 'last_screen_touch_index', color: colors.sensor,
+            name: 'last stage touch index', color: colors.sensor,
             features: [...featureGroups.finger],
         },
         SENSOR_DATE_DAY: {
@@ -1382,39 +1382,39 @@ const info = {
             features: [...featureGroups.dateTime],
         },
         SENSOR_FACE_DETECTED: {
-            name: 'face_is_visible', color: colors.sensor,
+            name: 'face is visible', color: colors.sensor,
             features: [...featureGroups.faceDetection],
         },
         SENSOR_FACE_SIZE: {
-            name: 'face_size', color: colors.sensor,
+            name: 'face size', color: colors.sensor,
             features: [...featureGroups.faceDetection],
         },
         SENSOR_FACE_X_POSITION: {
-            name: 'face_x_position', color: colors.sensor,
+            name: 'face x position', color: colors.sensor,
             features: [...featureGroups.faceDetection],
         },
         SENSOR_FACE_Y_POSITION: {
-            name: 'face_y_position', color: colors.sensor,
+            name: 'face y position', color: colors.sensor,
             features: [...featureGroups.faceDetection],
         },
         SENSOR_X_ACCELERATION: {
-            name: 'acceleration_x', color: colors.sensor,
+            name: 'acceleration x', color: colors.sensor,
             features: [...featureGroups.phoneSensor],
         },
         SENSOR_X_INCLINATION: {
-            name: 'inclination_x', color: colors.sensor,
+            name: 'inclination x', color: colors.sensor,
             features: [...featureGroups.phoneSensor],
         },
         SENSOR_Y_ACCELERATION: {
-            name: 'acceleration_y', color: colors.sensor,
+            name: 'acceleration y', color: colors.sensor,
             features: [...featureGroups.phoneSensor],
         },
         SENSOR_Y_INCLINATION: {
-            name: 'inclination_y', color: colors.sensor,
+            name: 'inclination y', color: colors.sensor,
             features: [...featureGroups.phoneSensor],
         },
         SENSOR_Z_ACCELERATION: {
-            name: 'acceleration_z', color: colors.sensor,
+            name: 'acceleration z', color: colors.sensor,
             features: [...featureGroups.phoneSensor],
         },
         SENSOR_ALTITUDE: {
@@ -1426,7 +1426,7 @@ const info = {
             features: [...featureGroups.location],
         },
         SENSOR_COMPASS_DIRECTION: {
-            name: 'compass_direction', color: colors.sensor,
+            name: 'compass direction', color: colors.sensor,
             features: [...featureGroups.location],
         },
         SENSOR_LATITUDE: {
@@ -1434,131 +1434,135 @@ const info = {
             features: [...featureGroups.location],
         },
         SENSOR_LOCATION_ACCURACY: {
-            name: 'location_accuracy', color: colors.sensor,
+            name: 'location accuracy', color: colors.sensor,
             features: [...featureGroups.location],
         },
         SENSOR_NFC_TAG_ID: {
-            name: 'nfc_tag_id', color: colors.bluetooth,
+            name: 'nfc tag id', color: colors.bluetooth,
             features: [...featureGroups.nfc],
         },
         SENSOR_NFC_TAG_MESSAGE: {
-            name: 'nfc_tag_message', color: colors.bluetooth,
+            name: 'nfc tag message', color: colors.bluetooth,
             features: [...featureGroups.nfc],
         },
         SENSOR_DRONE_INITIALIZED: {
-            name: 'drone_initialized', color: colors.drone,
+            name: 'drone initialized', color: colors.drone,
             features: [...featureGroups.drone],
         },
         SENSOR_DRONE_BATTERY_STATUS: {
-            name: 'drone_battery_status', color: colors.drone,
+            name: 'drone battery status', color: colors.drone,
             features: [...featureGroups.drone],
         },
         SENSOR_DRONE_USB_ACTIVE: {
-            name: 'drone_usb_active', color: colors.drone,
+            name: 'drone usb active', color: colors.drone,
             features: [...featureGroups.drone],
         },
         SENSOR_DRONE_USB_REMAINING_TIME: {
-            name: 'drone_usb_remaining_time', color: colors.drone,
+            name: 'drone usb remaining time', color: colors.drone,
             features: [...featureGroups.drone],
         },
         SENSOR_DRONE_CAMERA_READY: {
-            name: 'drone_camera_ready', color: colors.drone,
+            name: 'drone camera ready', color: colors.drone,
             features: [...featureGroups.drone],
         },
         SENSOR_DRONE_RECORD_READY: {
-            name: 'drone_record_ready', color: colors.drone,
+            name: 'drone record ready', color: colors.drone,
             features: [...featureGroups.drone],
         },
         SENSOR_DRONE_RECORDING: {
-            name: 'drone_recording', color: colors.drone,
+            name: 'drone camera recording', color: colors.drone,
             features: [...featureGroups.drone],
         },
         SENSOR_DRONE_NUM_FRAMES: {
-            name: 'drone_num_frames', color: colors.drone,
+            name: 'drone camera number of frames', color: colors.drone,
             features: [...featureGroups.drone],
         },
         SENSOR_DRONE_FLYING: {
-            name: 'drone_flying', color: colors.drone,
+            name: 'drone flying', color: colors.drone,
             features: [...featureGroups.drone],
         },
         SENSOR_DRONE_EMERGENCY_STATE: {
-            name: 'drone_emergency_state', color: colors.drone,
+            name: 'drone emergency state', color: colors.drone,
             features: [...featureGroups.drone],
         },
         SENSOR_EV3_SENSOR_1: {
-            name: 'EV3_sensor_1', color: colors.lego,
+            name: 'EV3 touch', color: colors.lego,
+            features: [...featureGroups.lego],
+        },
+        SENSOR_EV3_SENSOR_2: {
+            name: 'EV3 infrared', color: colors.lego,
             features: [...featureGroups.lego],
         },
         SENSOR_EV3_SENSOR_3: {
-            name: 'EV3_sensor_3', color: colors.lego,
+            name: 'EV3 color', color: colors.lego,
             features: [...featureGroups.lego],
         },
         SENSOR_EV3_SENSOR_4: {
-            name: 'EV3_sensor_4', color: colors.lego,
+            name: 'EV3 ambient color', color: colors.lego,
             features: [...featureGroups.lego],
         },
         SENSOR_NXT_SENSOR_1: {
-            name: 'NXT_sensor_1', color: colors.lego,
+            name: 'NXT touch', color: colors.lego,
             features: [...featureGroups.lego],
         },
         SENSOR_NXT_SENSOR_2: {
-            name: 'NXT_sensor_2', color: colors.lego,
+            name: 'NXT sound', color: colors.lego,
             features: [...featureGroups.lego],
         },
         SENSOR_NXT_SENSOR_3: {
-            name: 'NXT_sensor_3', color: colors.lego,
+            name: 'NXT light', color: colors.lego,
             features: [...featureGroups.lego],
         },
         SENSOR_NXT_SENSOR_4: {
-            name: 'NXT_sensor_4', color: colors.lego,
+            name: 'NXT light active', color: colors.lego,
             features: [...featureGroups.lego],
         },
         SENSOR_PHIRO_BOTTOM_LEFT: {
-            name: 'phiro_bottom_left', color: colors.bluetooth,
+            name: 'Phiro bottom Left Sensor', color: colors.bluetooth,
             features: [...featureGroups.phiro],
         },
         SENSOR_PHIRO_BOTTOM_RIGHT: {
-            name: 'phiro_bottom_right', color: colors.bluetooth,
+            name: 'Phiro bottom right sensor', color: colors.bluetooth,
             features: [...featureGroups.phiro],
         },
         SENSOR_PHIRO_FRONT_LEFT: {
-            name: 'phiro_front_left', color: colors.bluetooth,
+            name: 'Phiro front left sensor', color: colors.bluetooth,
             features: [...featureGroups.phiro],
         },
         SENSOR_PHIRO_FRONT_RIGHT: {
-            name: 'phiro_front_right', color: colors.bluetooth,
+            name: 'Phiro front right sensor', color: colors.bluetooth,
             features: [...featureGroups.phiro],
         },
         SENSOR_PHIRO_SIDE_LEFT: {
-            name: 'phiro_side_left', color: colors.bluetooth,
+            name: 'Phiro side left sensor', color: colors.bluetooth,
             features: [...featureGroups.phiro],
         },
         SENSOR_PHIRO_SIDE_RIGHT: {
-            name: 'phiro_side_right', color: colors.bluetooth,
+            name: 'Phiro side right sensor', color: colors.bluetooth,
             features: [...featureGroups.phiro],
         },
         SENSOR_GAMEPAD_A_PRESSED: {
-            name: 'gamepad_A_pressed', color: colors.cast,
+            name: 'gamepad A pressed', color: colors.cast,
             features: [...featureGroups.cast],
         },
         SENSOR_GAMEPAD_B_PRESSED: {
-            name: 'gamepad_B_pressed', color: colors.cast,
+            name: 'gamepad B pressed', color: colors.cast,
             features: [...featureGroups.cast],
         },
         SENSOR_GAMEPAD_UP_PRESSED: {
-            name: 'gamepad_up_pressed', color: colors.cast,
+            name: 'gamepad up pressed', color: colors.cast,
             features: [...featureGroups.cast],
         },
         SENSOR_GAMEPAD_DOWN_PRESSED: {
-            name: 'gamepad_down_pressed', color: colors.cast,
+            name: 'gamepad down pressed', color: colors.cast,
             features: [...featureGroups.cast],
         },
         SENSOR_GAMEPAD_LEFT_PRESSED: {
-            name: 'gamepad_left_pressed', color: colors.cast,
+            name: 'gamepad left pressed', color: colors.cast,
             features: [...featureGroups.cast],
         },
         SENSOR_GAMEPAD_RIGHT_PRESSED: {
-            name: 'gamepad_right_pressed', color: colors.cast,
+            name: 'gamepad right pressed', color: colors.cast,
             features: [...featureGroups.cast],
         },
     },
