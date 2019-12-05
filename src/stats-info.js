@@ -767,6 +767,16 @@ const info = {
             color: colors.data,
             features: [...featureGroups.list],
         },
+        WriteListOnDeviceBrick: {
+            name: 'Write list on device',
+            color: colors.data,
+            features: [...featureGroups.list],
+        },
+        ReadListFromDeviceBrick: {
+            name: 'Read list from device',
+            color: colors.data,
+            features: [...featureGroups.list],
+        },
 
         // Lego
         LegoNxtMotorMoveBrick: {
