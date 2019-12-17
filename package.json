@@ -11,8 +11,8 @@
   "dependencies": {
     "binary-search-insert": "^1.0.3",
     "command-line-args": "^5.0.2",
-    "fs-extra": "^7.0.1",
-    "glob": "^7.1.3",
+    "fs-extra": "^8.0.1",
+    "glob": "^7.1.6",
     "glob-promise": "^3.3.0",
     "is-valid-path": "^0.1.1",
     "moment": "^2.24.0",
