@@ -51,7 +51,7 @@ import statsInfo from './stats-info';
     }
 
     const getMonthlyTimelineKey = (date) => moment(date).format('YYYY-MM');
-    const getWeeklyTimelineKey = (date) => moment(date).format('YYYY, [week] ww');
+    const getWeeklyTimelineKey = (date) => moment(date).format('GGGG, [week] WW');
     const getDailyTimelineKey = (date) => moment(date).format('MM-DD');
 
     const stats = {
