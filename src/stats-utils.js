@@ -9,13 +9,18 @@ import ProgramHistory from './program-history';
 import ProgramVersion from './program-version';
 
 import workerPool, {freeWorkers, initWorkers} from './worker-pool';
+import xpath from 'xpath';
+import xmldom from 'xmldom';
+import {getCodeXmlStringFromFile} from './utils';
+
+const parser = new xmldom.DOMParser();
 
 export async function getProgramHistories(programFolder) {
     let programs = new Map();
     const allStatsRequests = [];
     try {
         initWorkers(config.numberOfWorkers);
-        for (const partialProgramFile of (await glob(`**/+([0-9])_+([0-9a-f-]).xml`, {cwd: programFolder}))) {
+        for (const partialProgramFile of await glob(`**/*.{catrobat,xml}`, {cwd: programFolder})) {
             const programVersion = parseProgramVersion(path.join(programFolder, partialProgramFile));
             if (!programs.has(programVersion._id)) {
                 programs.set(programVersion._id, new ProgramHistory(programVersion._id));
@@ -56,11 +61,26 @@ export async function getProgramHistories(programFolder) {
 
 function parseProgramVersion(file) {
     const match = file.match(/.*\/([0-9]+)_([0-9a-f-]+).xml/);
-    return new ProgramVersion(
-        match[2],
-        new Date(parseInt(match[1])),
-        file,
-    );
+    if (match) {
+        return new ProgramVersion(
+            match[2],
+            new Date(parseInt(match[1])),
+            file,
+        );
+    } else {
+        const document = parser.parseFromString(getCodeXmlStringFromFile(file));
+        const programUrl = xpath.select(`string(/program/header/url)`, document);
+        const match = programUrl.match(/(.*\/([1-9][0-9]*))|(.*\/([0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}))$/);
+        if (!match) {
+            throw new Error(`Invalid program id parsed from string(${programUrl}), file(${file})`);
+        }
+        const id = match[2] || match[4];
+        return new ProgramVersion(
+            id,
+            new Date(0),
+            file,
+        );
+    }
 }
 
 export const screenSizeToKey = (screenSize) => `${screenSize.width}x${screenSize.height}`;
