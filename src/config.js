@@ -22,13 +22,14 @@ const config = {
     numberOfWorkers: args['workers'],
 };
 
-if (config.cacheFolder) {
-    config.cacheFolder = toAbsolutePath(config.cacheFolder);
-    checkPathValid(config.cacheFolder, `--cache-folder=${config.cacheFolder} isn't a valid path`);
-    checkPathExists(config.cacheFolder, `--cache-folder=${config.cacheFolder} path doesn't exist`);
-} else {
-    config.cacheFolder = null;
-}
+// TODO: Fix caching
+// if (config.cacheFolder) {
+// config.cacheFolder = toAbsolutePath(config.cacheFolder);
+// checkPathValid(config.cacheFolder, `--cache-folder=${config.cacheFolder} isn't a valid path`);
+// checkPathExists(config.cacheFolder, `--cache-folder=${config.cacheFolder} path doesn't exist`);
+// } else {
+config.cacheFolder = null;
+// }
 
 checkRequired(config.programFolder, `Missing --program-folder=<path-to-programs-folder> argument`);
 checkPathValid(config.programFolder, `--program-folder=${config.programFolder} isn't a valid path`);

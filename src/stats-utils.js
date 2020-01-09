@@ -2,6 +2,7 @@
 
 import path from 'path';
 import glob from 'glob-promise/lib/index';
+import fs from 'fs';
 import fse from 'fs-extra';
 
 import config from './config';
@@ -20,8 +21,15 @@ export async function getProgramHistories(programFolder) {
     const allStatsRequests = [];
     try {
         initWorkers(config.numberOfWorkers);
-        for (const partialProgramFile of await glob(`**/*.{catrobat,xml}`, {cwd: programFolder})) {
-            const programVersion = parseProgramVersion(path.join(programFolder, partialProgramFile));
+        let programFilePaths;
+        if (fs.lstatSync(programFolder).isDirectory()) {
+            programFilePaths = (await glob(`**/*.{catrobat,xml}`, {cwd: programFolder}))
+                .map((partialProgramFile) => path.join(programFolder, partialProgramFile));
+        } else {
+            programFilePaths = [programFolder];
+        }
+        for (const programFile of programFilePaths) {
+            const programVersion = parseProgramVersion(programFile);
             if (!programs.has(programVersion._id)) {
                 programs.set(programVersion._id, new ProgramHistory(programVersion._id));
             }
@@ -29,9 +37,10 @@ export async function getProgramHistories(programFolder) {
 
             let programStatsPromise;
             let cacheFile;
-            if (config.cacheFolder) {
-                cacheFile = path.join(config.cacheFolder, partialProgramFile.replace(/(.+)\..+/, '$1.json'));
-            }
+            // TODO: Fix caching
+            // if (config.cacheFolder) {
+            //     cacheFile = path.join(config.cacheFolder, partialProgramFile.replace(/(.+)\..+/, '$1.json'));
+            // }
             if (cacheFile && await fse.pathExists(cacheFile)) {
                 programStatsPromise = fse.readJson(cacheFile)
                     .then((stats) => {
