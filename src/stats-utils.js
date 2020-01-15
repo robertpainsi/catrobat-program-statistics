@@ -69,7 +69,7 @@ export async function getProgramHistories(programFolder) {
 }
 
 function parseProgramVersion(file) {
-    const match = file.match(/.*\/([0-9]+)_([0-9a-f-]+).xml/);
+    const match = file.match(/.*\/([0-9]+)_([0-9a-f-]+)\.((catrobat)|(xml))/);
     if (match) {
         return new ProgramVersion(
             match[2],
