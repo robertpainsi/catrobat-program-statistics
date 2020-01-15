@@ -69,27 +69,24 @@ export async function getProgramHistories(programFolder) {
 }
 
 function parseProgramVersion(file) {
+    let id;
+    let uploadDate;
+
     const match = file.match(/.*\/([0-9]+)_([0-9a-f-]+)\.((catrobat)|(xml))/);
     if (match) {
-        return new ProgramVersion(
-            match[2],
-            new Date(parseInt(match[1])),
-            file,
-        );
+        id = match[2];
+        uploadDate = new Date(parseInt(match[1]));
     } else {
         const document = parser.parseFromString(getCodeXmlStringFromFile(file));
         const programUrl = xpath.select(`string(/program/header/url)`, document);
-        const match = programUrl.match(/(.*\/([1-9][0-9]*))|(.*\/([0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}))$/);
+        const match = programUrl.match(/.*\/(([1-9][0-9]*)|([0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}))$/);
         if (!match) {
             throw new Error(`Invalid program id parsed from string(${programUrl}), file(${file})`);
         }
-        const id = match[2] || match[4];
-        return new ProgramVersion(
-            id,
-            new Date(0),
-            file,
-        );
+        id = match[1];
+        uploadDate = new Date(0);
     }
+    return new ProgramVersion(id, uploadDate, file);
 }
 
 export const screenSizeToKey = (screenSize) => `${screenSize.width}x${screenSize.height}`;
