@@ -65,7 +65,7 @@ export async function getProgramHistories(programFolder) {
         freeWorkers();
     }
 
-    return [...programs.values()]; //.sort((a, b) => a.id - b.id);
+    return [...programs.values()];
 }
 
 function parseProgramVersion(file) {
