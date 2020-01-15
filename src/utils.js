@@ -24,7 +24,6 @@ export function getCodeXmlStringFromFile(file) {
             xmlString = fs.readFileSync(file, 'UTF-8');
             break;
         case 'catrobat':
-        case 'zip':
             xmlString = new AdmZip(file).getEntries().find(function(zipEntry) {
                 return zipEntry.entryName === 'code.xml';
             }).getData().toString('utf8');
