@@ -56,7 +56,6 @@ import statsInfo from './stats-info';
 
     const stats = {
         updated: new Date().getTime(),
-        display: statsInfo,
         overall: getOverallStats(allLatestVersions, {
             type: `overall`,
             hasLastData: false,
@@ -82,6 +81,7 @@ import statsInfo from './stats-info';
             hasLastData: false,
             getTimelineKey: getDailyTimelineKey,
         }),
+        display: statsInfo,
     };
     await fse.writeJson(config.outputFile, stats, {spaces: 2});
 
