@@ -24,7 +24,7 @@ export async function getProgramHistories(programFolder) {
         let programFilePaths;
         if (fs.lstatSync(programFolder).isDirectory()) {
             programFilePaths = (await glob(`**/*.{catrobat,xml}`, {cwd: programFolder}))
-                .map((partialProgramFile) => path.join(programFolder, partialProgramFile));
+                .map((partialProgramFile) => path.resolve(path.join(programFolder, partialProgramFile)));
         } else {
             programFilePaths = [programFolder];
         }
