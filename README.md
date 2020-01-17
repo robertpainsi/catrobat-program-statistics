@@ -14,7 +14,9 @@ Recent statistics can be found at
 
 ### Usage
 
-* Calculate statistics by using `node --experimental-modules --es-module-specifier-resolution=node --experimental-worker index.js <arguments>`
+* Calculate statistics by using
+  * `npm start -- <arguments>` (note the additional `--`) or
+  * `node --experimental-modules --es-module-specifier-resolution=node --experimental-worker index.js <arguments>`
 
 | argument | description | status | default |
 | --- | --- |  --- | --- |
@@ -25,6 +27,10 @@ Recent statistics can be found at
 
 ### Example
 
-```
-node --experimental-modules --es-module-specifier-resolution=node --experimental-worker index.js --program-folder path/to/programs --output-file path/to/output/statistics.json
-```
+* `npm start -- --program-folder path/to/programs --output-file path/to/output/statistics.json` (note the additional `--`)
+* `node --experimental-modules --es-module-specifier-resolution=node --experimental-worker index.js --program-folder path/to/programs --output-file path/to/output/statistics.json`
+
+### Troubleshoot
+
+* `UNKNOWN_VALUE` is caused when using `npm start` and you forget to add `--` to separate `npm start` from the program arguments. See examples on how to use it.
+* `index.js` is a link pointing to `src/index.js`. It may cause problems on some machines. Just try `node ... src/index ...` instead.

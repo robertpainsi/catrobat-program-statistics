@@ -7,7 +7,9 @@
   "license": "MIT",
   "main": "src/index.js",
   "type": "module",
-  "scripts": {},
+  "scripts": {
+    "start": "node --experimental-modules --es-module-specifier-resolution=node --experimental-worker src/index.js"
+  },
   "dependencies": {
     "adm-zip": "^0.4.13",
     "binary-search-insert": "^1.0.3",
