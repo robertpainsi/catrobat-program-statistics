@@ -11,8 +11,8 @@ const args = commandLineArgs([
     {name: 'program-folder', type: String},
     {name: 'output-file', type: String},
     {name: 'cache-folder', type: String},
-    {name: 'workers', type: Number, defaultOption: os.cpus().length},
-    {name: 'debug', type: Boolean, defaultOption: false},
+    {name: 'workers', type: Number, defaultValue: os.cpus().length},
+    {name: 'debug', type: Boolean, defaultValue: false},
 ]);
 
 const config = {
@@ -21,7 +21,7 @@ const config = {
     outputFile: args['output-file'],
     cacheFolder: args['cache-folder'],
     numberOfWorkers: args['workers'],
-    debug: !!args['debug'],
+    debug: args['debug'],
 };
 
 // TODO: Fix caching
