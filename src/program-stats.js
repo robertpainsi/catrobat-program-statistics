@@ -35,10 +35,6 @@ const unsupportedBricks = [
     'WhenStartedBrick',
 ];
 
-function getProgramStatsFromFile(file) {
-    return getProgramStatsFromString(fs.readFileSync(file, 'UTF-8'));
-}
-
 function getProgramStatsFromString(xmlString) {
     const stats = {};
 
