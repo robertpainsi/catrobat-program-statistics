@@ -34,3 +34,10 @@ Recent statistics can be found at
 
 * `UNKNOWN_VALUE` is caused when using `npm start` and you forget to add `--` to separate `npm start` from the program arguments. See examples on how to use it.
 * `index.js` is a link pointing to `src/index.js`. It may cause problems on some machines. Just try `node ... src/index ...` instead.
+
+### Test
+
+* Place tests in the `test/assets` folder. Each test is a folder containing a
+  * `code.xml`
+  * `stats.json`. It isn't necessary to place all data in the json, only set, not empty, not 0 ones. A skeleton is used to fill out the data which is specified at [text/utils.js](https://github.com/robertpainsi/catrobat-program-statistics/blob/master/test/utils.js).
+* Run `npm test` (don't forget to install dependencies by running `npm install` first)

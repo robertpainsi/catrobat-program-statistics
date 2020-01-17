@@ -1,7 +1,7 @@
 'use strict';
 
 import path from 'path';
-import glob from 'glob-promise/lib/index';
+import glob from 'glob';
 import fs from 'fs';
 import fse from 'fs-extra';
 
@@ -23,7 +23,7 @@ export async function getProgramHistories(programFolder) {
         initWorkers(config.numberOfWorkers);
         let programFilePaths;
         if (fs.lstatSync(programFolder).isDirectory()) {
-            programFilePaths = (await glob(`**/*.{catrobat,xml}`, {cwd: programFolder}))
+            programFilePaths = glob.sync(`**/*.{catrobat,xml}`, {cwd: programFolder})
                 .map((partialProgramFile) => path.resolve(path.join(programFolder, partialProgramFile)));
         } else {
             programFilePaths = [programFolder];

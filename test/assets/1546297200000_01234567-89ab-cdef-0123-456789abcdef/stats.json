@@ -1,0 +1,11 @@
+{
+  "languageVersion": 0.99994,
+  "isLandscape": true,
+  "screenSize": {
+    "width": 800,
+    "height": 600
+  },
+  "platform": "Android",
+  "scenes": 1,
+  "objects": 1
+}

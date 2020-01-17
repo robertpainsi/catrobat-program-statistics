@@ -1,10 +1,9 @@
 'use strict';
 
-import {getProgramStatsFromFile} from './program-stats';
+import {getProgramStatsFromString} from './program-stats';
+import {parentPort} from "worker_threads";
+import {getCodeXmlStringFromFile} from './utils';
 
-process.on('message', (programFile) => {
-    getProgramStatsFromFile(programFile)
-        .then((stats) => {
-            process.send(stats);
-        });
+parentPort.on('message', (file) => {
+    parentPort.postMessage(getProgramStatsFromString(getCodeXmlStringFromFile(file)));
 });

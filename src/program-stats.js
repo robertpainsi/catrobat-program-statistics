@@ -1,12 +1,11 @@
 'use strict';
 
-import fs from 'fs';
 import xmldom from 'xmldom';
 import xpath from 'xpath';
 import {parentPort} from 'worker_threads';
 
-import {getCodeXmlStringFromFile, increaseObjectKey} from './utils';
-import statsInfo, {featureGroups} from './stats-info';
+import {getCodeXmlStringFromFile, increaseObjectKey} from './utils.js';
+import statsInfo, {featureGroups} from './stats-info.js';
 
 const parser = new xmldom.DOMParser();
 
@@ -35,7 +34,7 @@ const unsupportedBricks = [
     'WhenStartedBrick',
 ];
 
-function getProgramStatsFromString(xmlString) {
+export function getProgramStatsFromString(xmlString) {
     const stats = {};
 
     const document = parser.parseFromString(xmlString);
@@ -44,7 +43,6 @@ function getProgramStatsFromString(xmlString) {
         return stats;
     }
 
-    const user = xpath.select(`string(/program/header/userHandle)`, document);
     const platform = xpath.select(`string(/program/header/platform)`, document);
     const landscape = xpath.select(`string(/program/header/landscapeMode)`, document) === 'true';
     const isRemix = xpath.select(`string(/program/header/remixOf)`, document).trim() !== '';
@@ -79,7 +77,6 @@ function getProgramStatsFromString(xmlString) {
         width: screenWidth,
         height: screenHeight,
     };
-    stats.user = user;
     stats.platform = platform;
     stats.isRemix = isRemix;
     stats.scenes = scenes.length;
@@ -176,8 +173,3 @@ function getFormulaFeatures(id) {
     }
     return [...statsInfo.formulas[id].features];
 }
-
-parentPort.on('message', (file) => {
-    parentPort.postMessage(getProgramStatsFromString(getCodeXmlStringFromFile(file)));
-});
-

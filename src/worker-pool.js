@@ -10,7 +10,7 @@ const workerNotify = [];
 
 export function initWorkers(count) {
     for (let i = 0; i < count; i++) {
-        const worker = new Worker('./src/program-stats.js');
+        const worker = new Worker('./src/worker.js');
         worker.on('message', (stats) => {
             notifyNewFreeWorker(worker);
             workerCallbacks.get(worker).resolve(stats);
