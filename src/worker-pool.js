@@ -1,6 +1,7 @@
 'use strict';
 
 import {Worker} from 'worker_threads';
+import {log} from './logger';
 
 const allWorkers = new Set();
 const availableWorkers = new Set();
@@ -9,9 +10,7 @@ const workerNotify = [];
 
 export function initWorkers(count) {
     for (let i = 0; i < count; i++) {
-        const worker = new Worker('./src/program-stats.js', {
-            workerData: {id: i},
-        });
+        const worker = new Worker('./src/program-stats.js');
         worker.on('message', (stats) => {
             notifyNewFreeWorker(worker);
             workerCallbacks.get(worker).resolve(stats);
@@ -63,6 +62,8 @@ export default function(file) {
         const worker = await getFreeWorker();
         availableWorkers.delete(worker);
         workerCallbacks.set(worker, {resolve, reject});
+
+        log(`⛑ ${file}`);
         worker.postMessage(file);
     });
 };

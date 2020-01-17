@@ -11,15 +11,17 @@ const args = commandLineArgs([
     {name: 'program-folder', type: String},
     {name: 'output-file', type: String},
     {name: 'cache-folder', type: String},
-    {name: 'workers', type: Number},
+    {name: 'workers', type: Number, defaultOption: os.cpus().length},
+    {name: 'debug', type: Boolean, defaultOption: false},
 ]);
 
 const config = {
     srcFolder: import.meta.url,
     programFolder: toAbsolutePath(args['program-folder']),
-    outputFile: toAbsolutePath(args['output-file']),
+    outputFile: args['output-file'],
     cacheFolder: args['cache-folder'],
     numberOfWorkers: args['workers'],
+    debug: !!args['debug'],
 };
 
 // TODO: Fix caching
@@ -35,15 +37,12 @@ checkRequired(config.programFolder, `Missing --program-folder=<path-to-programs-
 checkPathValid(config.programFolder, `--program-folder=${config.programFolder} isn't a valid path`);
 checkPathExists(config.programFolder, `--program-folder=${config.programFolder} path doesn't exist`);
 
-checkRequired(config.outputFile, `Missing --output-file=<path-to-output-file> argument`);
-checkPathValid(config.outputFile, `--output-file=${config.outputFile} isn't a valid path`);
-checkPathExists(path.dirname(config.outputFile), `Folder for --output-file=${config.outputFile} doesn't exist`);
-
-if (config.numberOfWorkers === undefined) {
-    config.numberOfWorkers = os.cpus().length;
+if (config.outputFile) {
+    config.outputFile = toAbsolutePath(config.outputFile);
+    checkPathValid(config.outputFile, `--output-file=${config.outputFile} isn't a valid path`);
+    checkPathExists(path.dirname(config.outputFile), `Folder for --output-file=${config.outputFile} doesn't exist`);
 }
-check(!isNaN(config.numberOfWorkers) && config.numberOfWorkers > 0,
-    `Invalid value (${config.numberOfWorkers}) for --workers`);
 
-console.log(`config:`, JSON.stringify(config, null, 2));
+check(!isNaN(config.numberOfWorkers) && config.numberOfWorkers > 0, `Invalid value (${config.numberOfWorkers}) for --workers`);
+
 export default config;

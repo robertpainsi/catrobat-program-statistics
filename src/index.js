@@ -8,21 +8,18 @@ import fse from 'fs-extra';
 import {increaseObjectKey, pushIfDefined} from './utils';
 import {getProgramHistories, screenSizeToKey} from './stats-utils';
 import statsInfo from './stats-info';
+import {log} from './logger';
 
 (async function() {
-    console.time('runtime');
-
-    console.time('program histories');
+    log(config);
     const programHistories = (await getProgramHistories(config.programFolder))
         .filter(({versions}) => versions.some(({stats}) => stats.languageVersion >= 0.94));
-    console.timeEnd('program histories');
 
     if (!programHistories.length) {
         console.log(`No program histories to create overall stats from`);
         return;
     }
 
-    console.time('overall stats');
     const now = programHistories.reduce((accumulator, programHistory) => {
         if (programHistory.latestVersion.uploadDate > accumulator) {
             return programHistory.latestVersion.uploadDate;
@@ -83,10 +80,12 @@ import statsInfo from './stats-info';
         }),
         display: statsInfo,
     };
-    await fse.writeJson(config.outputFile, stats, {spaces: 2});
 
-    console.timeEnd('overall stats');
-    console.timeEnd('runtime');
+    if (config.outputFile) {
+        await fse.writeJson(config.outputFile, stats, {spaces: 2});
+    } else {
+        console.log(JSON.stringify(stats, null, 2));
+    }
 }().catch((e) => {
     console.error(e);
 }));

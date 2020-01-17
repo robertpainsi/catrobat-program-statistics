@@ -57,8 +57,8 @@ export async function getProgramHistories(programFolder) {
 
             allStatsRequests.push(programStatsPromise);
         }
-        if (!allStatsRequests.length) {
-            console.log(`No code files found. Check program folder and that code files match [0-9]+_[0-9]+.xml. More info at https://github.com/robertpainsi/catrobat-program-statistics/issues/4`);
+        if (allStatsRequests.length === 0) {
+            console.log(`No code files found in/at ${config.programFolder}`);
         }
         await Promise.all(allStatsRequests);
     } finally {

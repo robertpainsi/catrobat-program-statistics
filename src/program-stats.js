@@ -3,7 +3,7 @@
 import fs from 'fs';
 import xmldom from 'xmldom';
 import xpath from 'xpath';
-import {parentPort, workerData} from 'worker_threads';
+import {parentPort} from 'worker_threads';
 
 import {getCodeXmlStringFromFile, increaseObjectKey} from './utils';
 import statsInfo, {featureGroups} from './stats-info';
@@ -182,7 +182,6 @@ function getFormulaFeatures(id) {
 }
 
 parentPort.on('message', (file) => {
-    console.log(workerData.id, file);
     parentPort.postMessage(getProgramStatsFromString(getCodeXmlStringFromFile(file)));
 });
 
