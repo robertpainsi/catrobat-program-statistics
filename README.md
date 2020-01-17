@@ -14,7 +14,7 @@ Recent statistics can be found at
 
 ### Usage
 
-* Calculate statistics by using `node --experimental-modules --es-module-specifier-resolution=node --experimental-worker src/index.js <arguments>`
+* Calculate statistics by using `node --experimental-modules --es-module-specifier-resolution=node --experimental-worker index.js <arguments>`
 
 | argument | description | status | default |
 | --- | --- |  --- | --- |
@@ -26,5 +26,5 @@ Recent statistics can be found at
 ### Example
 
 ```
-node --experimental-modules --es-module-specifier-resolution=node --experimental-worker src/index.js --program-folder path/to/programs --output-file path/to/output/statistics.json
+node --experimental-modules --es-module-specifier-resolution=node --experimental-worker index.js --program-folder path/to/programs --output-file path/to/output/statistics.json
 ```
