@@ -1005,6 +1005,26 @@ const info = {
             color: colors.embroidery,
             features: [...featureGroups.embroidery],
         },
+        RunningStitchBrick: {
+            name: 'Start running stitch with length',
+            color: colors.embroidery,
+            features: [...featureGroups.embroidery],
+        },
+        ZigZagStitchBrick: {
+            name: 'Start zigzag stitch with length and width',
+            color: colors.embroidery,
+            features: [...featureGroups.embroidery],
+        },
+        TripleStitchBrick: {
+            name: 'Start triple stitch with length',
+            color: colors.embroidery,
+            features: [...featureGroups.embroidery],
+        },
+        StopRunningStitchBrick: {
+            name: 'Stop current stitch',
+            color: colors.embroidery,
+            features: [...featureGroups.embroidery],
+        },
     },
     formulas: {
         NUMBER: {
