@@ -633,10 +633,11 @@ const info = {
             color: colors.looks,
             features: [],
         },
-        ClearBackgroundBrick: {
+
+        ClearGraphicEffectBrick: {
             name: 'Clear graphic effects',
             color: colors.looks,
-            features: [...featureGroups.pen],
+            features: [],
         },
         SetBackgroundBrick: {
             name: 'Set background',
@@ -705,10 +706,10 @@ const info = {
             color: colors.pen,
             features: [],
         },
-        ClearGraphicEffectBrick: {
+        ClearBackgroundBrick: {
             name: 'Clear',
-            color: colors.pen,
-            features: [],
+            color: colors.looks,
+            features: [...featureGroups.pen],
         },
 
         // Data

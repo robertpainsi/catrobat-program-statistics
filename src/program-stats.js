@@ -16,6 +16,7 @@ const renamedBricks = new Map([
     ['WhenBrick', 'WhenScript'],
     ['CollisionScript', 'WhenBounceOffScript'],
     ['comeToFrontBrick', 'ComeToFrontBrick'],
+    ['PenClearBrick', 'ClearBackgroundBrick'],
 ]);
 
 const renamedFormulas = new Map([
