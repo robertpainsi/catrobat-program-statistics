@@ -2,9 +2,8 @@
 
 import xmldom from 'xmldom';
 import xpath from 'xpath';
-import {parentPort} from 'worker_threads';
 
-import {getCodeXmlStringFromFile, increaseObjectKey} from './utils.js';
+import {increaseObjectKey} from './utils.js';
 import statsInfo, {featureGroups} from './stats-info.js';
 
 const parser = new xmldom.DOMParser();
