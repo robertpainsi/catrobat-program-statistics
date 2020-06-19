@@ -16,6 +16,7 @@ const colors = {
     hardware: 'ff0000,',
     embroidery: 'cc73a1',
     cast: '886a4a',
+    web: 'd26666',
 };
 
 const features = {
@@ -32,6 +33,7 @@ const features = {
     speech: 'textToSpeech',
     cast: 'cast',
     userBrick: 'userBrick',
+    web: 'web',
 
     embroidery: 'embroidery',
 
@@ -66,6 +68,7 @@ export const featureGroups = {
     dateTime: [features.dateTime],
     speech: [features.speech],
     userBrick: [features.userBrick],
+    web: [features.web, features.wlan, features.hardware],
 
     embroidery: [features.embroidery],
 
@@ -165,6 +168,10 @@ const info = {
         nfc: {
             name: 'NFC',
             color: colors.bluetooth,
+        },
+        web: {
+            name: 'Web',
+            color: colors.web,
         },
         camera: {
             name: 'Camera',
@@ -674,6 +681,16 @@ const info = {
             color: colors.looks,
             features: [...featureGroups.flash],
         },
+        LookRequestBrick: {
+            name: 'Get image and use as current look',
+            color: colors.looks,
+            features: [...featureGroups.web],
+        },
+        BackgroundRequestBrick: {
+            name: 'Get image and use as current background',
+            color: colors.looks,
+            features: [...featureGroups.web],
+        },
         PhiroRGBLightBrick: {
             name: 'Set Phiro light',
             color: colors.looks,
@@ -758,6 +775,11 @@ const info = {
             color: colors.data,
             features: [...featureGroups.list],
         },
+        ClearUserListBrick: {
+            name: 'Delete all items from list',
+            color: colors.data,
+            features: [...featureGroups.list],
+        },
         InsertItemIntoUserListBrick: {
             name: 'Insert into list',
             color: colors.data,
@@ -777,6 +799,16 @@ const info = {
             name: 'Read list from device',
             color: colors.data,
             features: [...featureGroups.list],
+        },
+        StoreCSVIntoUserListBrick: {
+            name: 'Store column of comma-separated values',
+            color: colors.data,
+            features: [...featureGroups.list],
+        },
+        WebRequestBrick: {
+            name: 'Send web request',
+            color: colors.data,
+            features: [...featureGroups.variable, ...featureGroups.web],
         },
 
         // Lego
