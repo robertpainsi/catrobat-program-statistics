@@ -1231,6 +1231,11 @@ const info = {
             color: colors.data,
             features: [...featureGroups.list],
         },
+        FUNCTION_INDEX_OF_ITEM: {
+            name: `item's index`,
+            color: colors.data,
+            features: [...featureGroups.list],
+        },
         FUNCTION_LIST_ITEM: {
             name: 'item',
             color: colors.data,
