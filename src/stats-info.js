@@ -329,6 +329,11 @@ const info = {
             color: colors.control,
             features: [],
         },
+        ForVariableFromToBrick: {
+            name: 'For variable from _ to _',
+            color: colors.control,
+            features: [],
+        },
         SceneStartBrick: {
             name: 'Start scene',
             color: colors.control,
@@ -762,6 +767,16 @@ const info = {
         },
         ReadVariableFromDeviceBrick: {
             name: 'Read variable from device',
+            color: colors.data,
+            features: [...featureGroups.variable],
+        },
+        WriteVariableToFileBrick: {
+            name: 'Write variable to file',
+            color: colors.data,
+            features: [...featureGroups.variable],
+        },
+        ReadVariableFromFileBrick: {
+            name: 'Read variable from file',
             color: colors.data,
             features: [...featureGroups.variable],
         },
