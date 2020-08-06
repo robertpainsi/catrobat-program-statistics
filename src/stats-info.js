@@ -339,6 +339,11 @@ const info = {
             color: colors.control,
             features: [],
         },
+        ExitStageBrick: {
+            name: 'Finish stage',
+            color: colors.control,
+            features: [],
+        },
         SceneTransitionBrick: {
             name: 'Continue scene',
             color: colors.control,
@@ -510,6 +515,11 @@ const info = {
         },
         PlaySoundAndWaitBrick: {
             name: 'Start sound and wait',
+            color: colors.sounds,
+            features: [],
+        },
+        StopSoundBrick : {
+            name: 'Stop sound',
             color: colors.sounds,
             features: [],
         },
