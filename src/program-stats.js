@@ -34,6 +34,11 @@ const unsupportedBricks = [
     'WhenStartedBrick',
 ];
 
+const skipBricks = [
+    'AssertEqualsBrick',
+    'FinishStageBrick',
+];
+
 export function getProgramStatsFromString(xmlString) {
     const stats = {};
 
@@ -117,6 +122,9 @@ export function getProgramStatsFromString(xmlString) {
         stats.bricks++;
         let type = brick.getAttribute('type');
 
+        if (skipBricks.includes(type)) {
+            return null;
+        }
         if (renamedBricks.has(type)) {
             type = renamedBricks.get(type);
         }

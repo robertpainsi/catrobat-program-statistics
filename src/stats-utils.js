@@ -3,7 +3,6 @@
 import path from 'path';
 import glob from 'glob';
 import fs from 'fs';
-import fse from 'fs-extra';
 
 import config from './config';
 import ProgramHistory from './program-history';
@@ -30,30 +29,19 @@ export async function getProgramHistories(programFolder) {
         }
         for (const programFile of programFilePaths) {
             const programVersion = parseProgramVersion(programFile);
-            if (!programs.has(programVersion._id)) {
-                programs.set(programVersion._id, new ProgramHistory(programVersion._id));
-            }
-            programs.get(programVersion._id).addVersion(programVersion);
 
             let programStatsPromise;
-            let cacheFile;
-            // TODO: Fix caching
-            // if (config.cacheFolder) {
-            //     cacheFile = path.join(config.cacheFolder, partialProgramFile.replace(/(.+)\..+/, '$1.json'));
-            // }
-            if (cacheFile && await fse.pathExists(cacheFile)) {
-                programStatsPromise = fse.readJson(cacheFile)
-                    .then((stats) => {
-                        programVersion.stats = stats;
-                    });
-            } else {
-                programStatsPromise = workerPool(programVersion.file).then((stats) => {
-                    programVersion.stats = stats;
-                    if (cacheFile) {
-                        return fse.outputJson(cacheFile, programVersion.stats, {spaces: 2});
-                    }
-                });
-            }
+            programStatsPromise = workerPool(programVersion.file).then((stats) => {
+                if (!stats) {
+                    return;
+                }
+
+                if (!programs.has(programVersion._id)) {
+                    programs.set(programVersion._id, new ProgramHistory(programVersion._id));
+                }
+                programs.get(programVersion._id).addVersion(programVersion);
+                programVersion.stats = stats;
+            });
 
             allStatsRequests.push(programStatsPromise);
         }
