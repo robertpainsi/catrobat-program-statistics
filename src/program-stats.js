@@ -36,7 +36,10 @@ const unsupportedBricks = [
 
 const skipBricks = [
     'AssertEqualsBrick',
+    'AssertUserListsBrick',
     'FinishStageBrick',
+    'TapAtBrick',
+    'TapForBrick',
 ];
 
 export function getProgramStatsFromString(xmlString) {

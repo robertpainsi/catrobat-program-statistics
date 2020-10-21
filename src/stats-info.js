@@ -330,9 +330,14 @@ const info = {
             features: [],
         },
         ForVariableFromToBrick: {
-            name: 'For variable from _ to _',
+            name: 'For values from _ to _',
             color: colors.control,
-            features: [],
+            features: [...featureGroups.variable, ...featureGroups.list],
+        },
+        ForItemInUserListBrick: {
+            name: 'For each value from _',
+            color: colors.control,
+            features: [...featureGroups.variable, ...featureGroups.list],
         },
         SceneStartBrick: {
             name: 'Start scene',
@@ -518,7 +523,7 @@ const info = {
             color: colors.sounds,
             features: [],
         },
-        StopSoundBrick : {
+        StopSoundBrick: {
             name: 'Stop sound',
             color: colors.sounds,
             features: [],
@@ -557,6 +562,11 @@ const info = {
             name: 'Ask speech',
             color: colors.sounds,
             features: [...featureGroups.variable, ...featureGroups.speech],
+        },
+        PauseForBeatsBrick: {
+            name: 'Pause for beats',
+            color: colors.sounds,
+            features: [],
         },
 
         // Looks
