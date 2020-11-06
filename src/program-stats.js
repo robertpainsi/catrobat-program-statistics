@@ -40,6 +40,7 @@ const skipBricks = [
     'FinishStageBrick',
     'TapAtBrick',
     'TapForBrick',
+    'WaitTillIdleBrick',
 ];
 
 export function getProgramStatsFromString(xmlString) {

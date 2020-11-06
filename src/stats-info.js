@@ -563,6 +563,26 @@ const info = {
             color: colors.sounds,
             features: [...featureGroups.variable, ...featureGroups.speech],
         },
+        StartListeningBrick: {
+            name: 'Start listening to voice and store spoken words',
+            color: colors.sounds,
+            features: [...featureGroups.speech],
+        },
+        SetListeningLanguageBrick: {
+            name: 'Set listening language',
+            color: colors.sounds,
+            features: [...featureGroups.speech],
+        },
+        SetInstrumentBrick: {
+            name: 'Set instrument',
+            color: colors.sounds,
+            features: [],
+        },
+        SetTempoBrick: {
+            name: 'Set tempo',
+            color: colors.sounds,
+            features: [],
+        },
         PauseForBeatsBrick: {
             name: 'Pause for beats',
             color: colors.sounds,
@@ -1093,6 +1113,11 @@ const info = {
             color: colors.embroidery,
             features: [...featureGroups.embroidery],
         },
+        WriteEmbroideryToFileBrick: {
+            name: 'Write embroidery data to file',
+            color: colors.embroidery,
+            features: [...featureGroups.embroidery],
+        },
     },
     formulas: {
         NUMBER: {
@@ -1440,6 +1465,10 @@ const info = {
             name: 'touches finger', color: colors.event,
             features: [...featureGroups.touch, ...featureGroups.finger],
         },
+        FUNCTION_COLLIDES_WITH_COLOR: {
+            name: 'touches color', color: colors.event,
+            features: [...featureGroups.touch, ...featureGroups.finger],
+        },
         SENSOR_FINGER_TOUCHED: {
             name: 'stage is touched', color: colors.event,
             features: [...featureGroups.finger],
@@ -1500,6 +1529,10 @@ const info = {
             name: 'face y position', color: colors.sensor,
             features: [...featureGroups.faceDetection],
         },
+        SENSOR_TEXT_FROM_CAMERA: {
+            name: 'text from camera', color: colors.sensor,
+            features: [...featureGroups.camera],
+        },
         SENSOR_X_ACCELERATION: {
             name: 'acceleration x', color: colors.sensor,
             features: [...featureGroups.phoneSensor],
@@ -1523,6 +1556,10 @@ const info = {
         SENSOR_ALTITUDE: {
             name: 'altitude', color: colors.sensor,
             features: [...featureGroups.location],
+        },
+        SENSOR_USER_LANGUAGE: {
+            name: 'user language', color: colors.sensor,
+            features: [...featureGroups.speech],
         },
         SENSOR_LONGITUDE: {
             name: 'longitude', color: colors.sensor,
@@ -1666,6 +1703,10 @@ const info = {
         },
         SENSOR_GAMEPAD_RIGHT_PRESSED: {
             name: 'gamepad right pressed', color: colors.cast,
+            features: [...featureGroups.cast],
+        },
+        SENSOR_SPEECH_RECOGNITION_LANGUAGE: {
+            name: 'listening language', color: colors.cast,
             features: [...featureGroups.cast],
         },
     },
