@@ -14,7 +14,7 @@ const colors = {
     userBricks: '98c204',
     sensor: '6b72cc',
     hardware: 'ff0000,',
-    embroidery: 'cc73a1',
+    embroidery: 'cb6e9e',
     cast: '886a4a',
     web: 'd26666',
 };
