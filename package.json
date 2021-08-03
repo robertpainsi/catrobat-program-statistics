@@ -22,7 +22,7 @@
     "mocha": "^7.0.0",
     "mocha-esm": "^1.1.1",
     "moment": "^2.24.0",
-    "xmldom": "^0.1.27",
+    "xmldom": "^0.6.0",
     "xpath": "^0.0.24"
   },
   "devDependencies": {
